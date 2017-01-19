@@ -13,7 +13,7 @@
 6. Done
 
 ### Documentations
-- Self-IVR Applicaiton Flow: `https://www.dropbox.com/s/yv5pohy5ir1igkb/Self-IVR%20Flow.pdf?dl=0`
+- Self-IVR Applicaiton Flow: `https://www.dropbox.com/s/yv5pohy5ir1igkb/Self-IVR%20Flow.pdf?dl=1`
 
 
 # Mobile Application
