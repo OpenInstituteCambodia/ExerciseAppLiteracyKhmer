@@ -11,3 +11,4 @@
 
 ## Prototype Guideline
 - Adobe XD: `https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/`
+- PDF: `https://www.dropbox.com/s/sce6n1wbmetbbjw/Current%20Prototype%20Mobile%20App.pdf?dl=1`
