@@ -5,6 +5,10 @@
 
 ### Getting Started
 
+#### Visit Project Page to see what need to be done.
+- `https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample/projects`
+
+#### Setting up the development enviroment
 1. `git clone https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample.git`
 2. `cd SAGE-Ionic2-Application-Sample`
 3. `ionic state restore`
