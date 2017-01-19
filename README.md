@@ -7,7 +7,8 @@
 2. `cd SAGE-Ionic2-Application-Sample`
 3. `ionic state restore`
 4. `npm install`
-5. Done
+5. `bower install`
+6. Done
 
 ## Prototype Guideline
 - Adobe XD: `https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/`
