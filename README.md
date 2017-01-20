@@ -15,6 +15,11 @@
   bower install
 ```
 
+#### Creating New Project
+```sh
+ionic start SAGE-Ionic2-Prototype --appname "SAGE Prototype" --id "org.self-ivr.prototype" --template "blank" --v2
+```
+
 ### Documentations
 
 #### Process Flow
