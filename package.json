@@ -1,7 +1,14 @@
 {
   "name": "ionic-hello-world",
   "author": "Ionic Framework",
+  "version": "0.0.1-rc.1",
   "homepage": "http://ionicframework.com/",
+  "bugs": "socheat@open.org.kh",
+  "license": "MIT",
+  "contributors": "Socheat",
+  "repository": "https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample",
+  "engines": {},
+  "keywords": ["prototype", "beta", "self-ivr"],
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
