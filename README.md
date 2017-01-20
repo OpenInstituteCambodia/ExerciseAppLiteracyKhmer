@@ -15,7 +15,7 @@
     npm install
     bower install
   ```
-6. Done and Start coding ⌨
+6. Done ✅ and Start coding ⌨
 
 
 
