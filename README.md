@@ -39,3 +39,12 @@ ionic state save
   <h3>Build with</h3>
   <a href="#"><img src="https://www.dropbox.com/s/fwfk6oku7p9plyi/ionic-logo.png?dl=1" /></a>
 </p>
+
+
+### Ionic Helper
+
+#### Speed up Splashscreen
+ - Update the following line in `config.xml`
+ ```xml
+ <preference name="SplashScreenDelay" value="1000" />
+ ```
