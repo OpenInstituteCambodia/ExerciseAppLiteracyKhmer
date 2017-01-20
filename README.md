@@ -15,6 +15,11 @@
   bower install
 ```
 
+#### Generating resources (Icon/Splashscreen)
+```sh
+npm run gen:resources
+```
+
 #### Creating New Project
 ```sh
 ionic start SAGE-Ionic2-Prototype --appname "SAGE Prototype" --id "org.self-ivr.prototype" --template "blank" --v2
