@@ -29,5 +29,5 @@
 
 <p align="center">
   <h3>Build with</h3>
-  ![Ionic](https://www.dropbox.com/s/fwfk6oku7p9plyi/ionic-logo.png?dl=1)
+  <a href="#"><img src="https://www.dropbox.com/s/fwfk6oku7p9plyi/ionic-logo.png?dl=1" /></a>
 </p>
