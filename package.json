@@ -8,7 +8,11 @@
   "contributors": "Socheat",
   "repository": "https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample",
   "engines": {},
-  "keywords": ["prototype", "beta", "self-ivr"],
+  "keywords": [
+    "prototype",
+    "beta",
+    "self-ivr"
+  ],
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -46,6 +50,12 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [],
+  "cordovaPlatforms": [
+    {
+      "platform": "android",
+      "version": "",
+      "locator": "android"
+    }
+  ],
   "description": "SAGE Prototype: An Ionic project"
 }
