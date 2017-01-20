@@ -7,15 +7,13 @@
 ### [Project Page](https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample/projects) | [Interactive Preview](https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/) | [Ionic Framework Documentations](http://ionicframework.com/docs/)
 
 #### Setting up the development enviroment
-1. Setting up work directory
-  ```sh
-    git clone https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample.git
-    cd SAGE-Ionic2-Application-Sample
-    ionic state restore
-    npm install
-    bower install
-  ```
-6. Done ✅ and Start coding ⌨
+```sh
+  git clone https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample.git
+  cd SAGE-Ionic2-Application-Sample
+  ionic state restore
+  npm install
+  bower install
+```
 
 ### Documentations
 
