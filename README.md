@@ -15,21 +15,6 @@
   bower install
 ```
 
-#### Generating resources (Icon/Splashscreen)
-```sh
-npm run gen:resources
-```
-
-#### Creating New Project
-```sh
-ionic start SAGE-Ionic2-Prototype --appname "SAGE Prototype" --id "org.self-ivr.prototype" --template "blank" --v2
-```
-
-#### Saving Working state
-```sh
-ionic state save
-```
-
 ### Documentations
 
 #### Process Flow
@@ -50,6 +35,22 @@ ionic state save
 
 #### Speed up Splashscreen
  - Update the following line in `config.xml`
+
  ```xml
  <preference name="SplashScreenDelay" value="1000" />
  ```
+
+#### Generating resources (Icon/Splashscreen)
+```sh
+npm run gen:resources
+```
+
+#### Creating New Project
+```sh
+ionic start SAGE-Ionic2-Prototype --appname "SAGE Prototype" --id "org.self-ivr.prototype" --template "blank" --v2
+```
+
+#### Saving Working state
+```sh
+ionic state save
+```
