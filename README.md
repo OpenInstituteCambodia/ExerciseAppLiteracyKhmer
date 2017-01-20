@@ -1,7 +1,6 @@
 ![SAGE](https://www.dropbox.com/s/chsmuritlgx9jmq/git.png?dl=1)
 
 # SAGE Ionic2 Application Sample
----
 
 ### Getting Started
 
