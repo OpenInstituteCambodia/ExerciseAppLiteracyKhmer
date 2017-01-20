@@ -27,8 +27,7 @@
 - Adobe XD: [Preview](https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/)
 - PDF: [Download PDF](https://www.dropbox.com/s/sce6n1wbmetbbjw/Current%20Prototype%20Mobile%20App.pdf?dl=1)
 
-<center>
+<p align="center">
   <h3>Build with</h3>
-  <br>
   ![Ionic](https://www.dropbox.com/s/fwfk6oku7p9plyi/ionic-logo.png?dl=1)
-</center>
+</p>
