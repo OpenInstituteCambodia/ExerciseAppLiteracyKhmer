@@ -20,6 +20,11 @@
 ionic start SAGE-Ionic2-Prototype --appname "SAGE Prototype" --id "org.self-ivr.prototype" --template "blank" --v2
 ```
 
+#### Saving Working state
+```sh
+ionic state save
+```
+
 ### Documentations
 
 #### Process Flow
