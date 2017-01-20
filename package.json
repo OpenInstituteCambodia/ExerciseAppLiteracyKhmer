@@ -2,6 +2,13 @@
   "name": "ionic-hello-world",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
+  "version": "0.0.1",
+  "keywords": ["beta"],
+  "bugs": "https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample.git",
+  "license": "",
+  "contributors": "socheatsok78",
+  "engines": {},
+  "repository": "https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample.git",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
