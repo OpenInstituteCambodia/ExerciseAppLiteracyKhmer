@@ -19,7 +19,7 @@
     "build": "ionic-app-scripts build",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "gen:resources": "ionic resources && mkdir res && mv platforms/android/res/{values,xml} res && rm -rf platforms/android/res && cp -r res platforms/android && rm -rf res"
+    "gen:resources": "rm -rf res && ionic resources && mkdir res && mv platforms/android/res/{values,xml} res && rm -rf platforms/android/res && cp -r res platforms/android"
   },
   "dependencies": {
     "@angular/common": "2.2.1",
