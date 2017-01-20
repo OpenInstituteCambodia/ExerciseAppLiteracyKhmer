@@ -1,4 +1,4 @@
-![SAGE](https://www.dropbox.com/s/chsmuritlgx9jmq/git.png?dl=1)
+![SAGE](https://www.dropbox.com/s/fhspe90nnvetrvm/sage-git.png?dl=1)
 
 # SAGE Ionic2 Application Sample
 
