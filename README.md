@@ -4,7 +4,7 @@
 
 ### Getting Started
 
-### [Design Guideline](https://www.dropbox.com/s/5ir333l5bc4hrpo/Self-IVR%20Guideline.docx?dl=1) | [Project Page](https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample/projects) | [Interactive Preview](https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/) | [Ionic Framework Documentations](http://ionicframework.com/docs/)
+### [Design Guideline](https://www.dropbox.com/s/k0051opg7kujndz/Self-IVR%20Guideline.pdf?dl=1) | [Project Page](https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample/projects) | [Interactive Preview](https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/) | [Ionic Framework Documentations](http://ionicframework.com/docs/)
 
 #### Setting up the development enviroment
 ```sh
