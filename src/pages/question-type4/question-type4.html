@@ -17,27 +17,34 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <div class="text-center">
-            <h1 style="text-align: center;">Sally and Jane were best FRI_ _ _S.</h1>
+          <div class="text-center" style="padding: 50px 0">
+            <h1 style="text-align: center;"style="font-size: 3.8em; text-align: center">
+              Sally and Jane were best
+              <br>FRI_ _ _S.
+            </h1>
         </div>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">AND</button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">IND</button>
-        </ion-col>
-      </ion-row>
 
-      <ion-row>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">DAY</button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPageCongrat">END</button>
-        </ion-col>
-      </ion-row>
+      <div class="btn-action">
+        <ion-row>
+          <ion-col width-50>
+            <button ion-button full [navPush]="pushPage">AND</button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button full [navPush]="pushPage">IND</button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col width-50>
+            <button ion-button full [navPush]="pushPage">DAY</button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button full [navPush]="pushPageCongrat">END</button>
+          </ion-col>
+        </ion-row>
+      </div>
+
   </ion-grid>
 </ion-content>
