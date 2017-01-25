@@ -37,3 +37,11 @@
 .button-inner {
   font-size: 40px;
 }
+
+.img-preview {
+  height: 256px;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position-x: 50% !important;
+  background-position-y: 50% !important;
+}
