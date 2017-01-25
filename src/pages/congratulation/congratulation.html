@@ -13,6 +13,27 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="center">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="text-center">
+          <h1 style="text-align: center;">Congratulation!</h1><br>
+          <h4 style="text-align: center;">You've choose the correct answer.</h4><br>
+          <h4 style="text-align: center;">Do you want to continue to the next question?</h4>
+      </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="center">
+        <button ion-button block [navPush]="pushPage">Continue</button>
+      </ion-col>
+    </ion-row>
 
+    <ion-row>
+      <ion-col class="center">
+        <button ion-button block [navPush]="pushPage">Cancel</button>
+      </ion-col>
+    </ion-row>
+</ion-grid>
 </ion-content>
