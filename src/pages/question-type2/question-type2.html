@@ -23,22 +23,25 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col width-50>
-        <button ion-button block [navPush]="pushPage">មាន់</button>
-      </ion-col>
-      <ion-col width-50>
-        <button ion-button block [navPush]="pushPageCongrat">សេក</button>
-      </ion-col>
-    </ion-row>
+    <div class="btn-action">
+      <ion-row>
+        <ion-col width-50>
+          <button ion-button block [navPush]="pushPage">មាន់</button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block [navPush]="pushPageCongrat">សេក</button>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col width-50>
-        <button ion-button block [navPush]="pushPage">ទា</button>
-      </ion-col>
-      <ion-col width-50>
-        <button ion-button block [navPush]="pushPage">ចាប</button>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col width-50>
+          <button ion-button block [navPush]="pushPage">ទា</button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block [navPush]="pushPage">ចាប</button>
+        </ion-col>
+      </ion-row>
+    </div>
+
 </ion-grid>
 </ion-content>
