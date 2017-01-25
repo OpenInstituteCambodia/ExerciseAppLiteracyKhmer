@@ -16,28 +16,30 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <div class="text-center">
+          <div class="question text-center">
             <h1 style="text-align: center;">1+1=?</h1>
         </div>
         </ion-col>
       </ion-row>
 
-      <ion-row>
-        <ion-col width-50>
-          <button ion-button block [navPush]="pushPage">1</button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button block [navPush]="pushPageCongrat">2</button>
-        </ion-col>
-      </ion-row>
+      <div class="btn-action">
+        <ion-row>
+          <ion-col width-50>
+            <button ion-button block [navPush]="pushPage">1</button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button block [navPush]="pushPageCongrat">2</button>
+          </ion-col>
+        </ion-row>
 
-      <ion-row>
-        <ion-col width-50>
-          <button ion-button block [navPush]="pushPage">3</button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button block [navPush]="pushPage">4</button>
-        </ion-col>
-      </ion-row>
+        <ion-row>
+          <ion-col width-50>
+            <button ion-button block [navPush]="pushPage">3</button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button block [navPush]="pushPage">4</button>
+          </ion-col>
+        </ion-row>
+      </div>
   </ion-grid>
 </ion-content>

@@ -14,3 +14,26 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.button-md {
+  height: 7em !important;
+}
+
+.question {
+  padding: 50px 0;
+}
+
+.question h1 {
+  font-size: 100px;
+}
+
+.btn-action {
+  position: fixed;
+  bottom: 0;
+  width: 97%;
+  box-sizing: border-box;
+}
+
+.button-inner {
+  font-size: 40px;
+}
