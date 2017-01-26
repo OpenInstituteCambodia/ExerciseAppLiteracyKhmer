@@ -1,5 +1,5 @@
 {
-  "name": "ionic-hello-world",
+  "name": "self-ivr-hello-world",
   "author": "Ionic Framework",
   "version": "0.0.1-rc.1",
   "homepage": "http://ionicframework.com/",
@@ -49,7 +49,8 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-device",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-media"
   ],
   "cordovaPlatforms": [
     {
@@ -58,5 +59,8 @@
       "locator": "android"
     }
   ],
-  "description": "SAGE Prototype: An Ionic project"
+  "description": "SAGE Prototype: An Ionic project",
+  "unused": [
+
+  ]
 }

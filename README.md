@@ -4,7 +4,7 @@
 
 ### Getting Started
 
-### [Project Page](https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample/projects) | [Interactive Preview](https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/) | [Ionic Framework Documentations](http://ionicframework.com/docs/)
+### [Design Guideline](https://www.dropbox.com/s/k0051opg7kujndz/Self-IVR%20Guideline.pdf?dl=1) | [Project Page](https://github.com/socheatsok78/SAGE-Ionic2-Application-Sample/projects) | [Interactive Preview](https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/) | [Ionic Framework Documentations](http://ionicframework.com/docs/)
 
 #### Setting up the development enviroment
 ```sh
@@ -24,6 +24,10 @@
 #### Prototype Guideline
 - Adobe XD: [Preview](https://xd.adobe.com/view/1378509c-8914-4500-860b-ee6f70877f84/)
 - PDF: [Download PDF](https://www.dropbox.com/s/sce6n1wbmetbbjw/Current%20Prototype%20Mobile%20App.pdf?dl=1)
+
+##### Sources
+- [Google Material Design](https://material.io/)
+- [Barricade Style Guide](https://styleguide.barricade.io/styles.html)
 
 <p align="center">
   <h3>Build with</h3>
