@@ -21,5 +21,5 @@ export class HomePage {
     this.pushPage3 = QuestionType3Page;
     this.pushPage4 = QuestionType4Page;
 
-}
+  }
 }
