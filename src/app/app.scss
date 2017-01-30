@@ -17,6 +17,10 @@
 
 .button-md {
   height: 7em !important;
+  color: #222;
+}
+.button-md.flat {
+  height: 7em !important;
   border-radius: 0;
   margin: 0;
   color: #222;
@@ -36,18 +40,14 @@
 
 .btn-action {
   position: fixed;
-  bottom: 0;
+  bottom: 60px;
   width: 97%;
   box-sizing: border-box;
   margin-bottom: 5px;
 }
 
-.btn-action ion-col {
-  padding: 0;
-  margin: 0;
-}
-
-.btn-action ion-row {
+.btn-action.flat ion-col,
+.btn-action.flat ion-row {
   padding: 0;
   margin: 0;
 }
