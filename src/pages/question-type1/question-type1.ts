@@ -22,8 +22,4 @@ export class QuestionType1Page {
     console.log('ionViewDidLoad QuestionType1Page');
   }
 
-  pressMe() {
-    alert("Pressed");
-  }
-
 }
