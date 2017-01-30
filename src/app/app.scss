@@ -15,6 +15,12 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+// Variable
+$color-1: #fff;
+$color-2: #fff;
+$color-3: #fff;
+$color-4: #fff;
+
 // Starting CSS
 
 .main {
@@ -26,7 +32,38 @@
 }
 
 .question {
-  
+  [question] {
+    height: 35vh;
+    position: relative;
+
+    &[single] {
+      .question {
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        h1 {
+          font-size: 5.5em;
+        }
+      }
+    } // Single
+
+    &[img] {
+      .img {
+        height: 100%;
+        width: auto;
+
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position-x: 50% !important;
+        background-position-y: 50% !important;
+
+      }
+    }
+  }
 }
 
 
