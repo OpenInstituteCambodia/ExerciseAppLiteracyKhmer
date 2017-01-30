@@ -16,10 +16,7 @@
 // automatically applied to the <body> element in the app.
 
 // Variable
-$color-1: #19A15F;
-$color-2: #4C8CF5;
-$color-3: #DE5347;
-$color-4: #FFCE43;
+$eyeCandy: #19A15F #4C8CF5 #DE5347 #FFCE43;
 
 // Starting CSS
 
@@ -95,9 +92,11 @@ $color-4: #FFCE43;
 
         border-radius: 0;
         border: 0;
-        
+
+        box-shadow: none;
       }
-    }
+
+    } // [no-padding]
 
     &[img] {
       [ion-button] {
@@ -117,5 +116,13 @@ $color-4: #FFCE43;
 
   [ion-button] {
     font-size: 1.8em;
+  }
+}
+
+@each $color in $eyeCandy {
+  $i: index($eyeCandy, $color);
+  [sbtn-color-#{$i}] {
+    background-color: $color;
+    color: #222;
   }
 }
