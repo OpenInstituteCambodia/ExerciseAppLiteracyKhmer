@@ -73,15 +73,16 @@ $color-4: #fff;
       }
     } // [img]
 
-    [sbtn-action] {
-      &[single] {
-        [ion-button] {
-          padding: 30px 0 !important;
-          background-color: red;
-        }
-      }
-    } // sbtn-action
   } // [question]
+
+  [sbtn-action] {
+    &[single] {
+      [ion-button] {
+        padding: 1em 0 !important;
+        font-size: 3.2em;
+      }
+    }
+  } // sbtn-action
 } // .question
 
 
