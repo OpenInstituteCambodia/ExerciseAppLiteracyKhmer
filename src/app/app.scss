@@ -83,6 +83,22 @@ $color-4: #FFCE43;
       }
     } // [single]
 
+    &[no-padding] {
+      ion-row,
+      ion-col {
+        padding: 0;
+      }
+
+      [ion-button] {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        border-radius: 0;
+        border: 0;
+        
+      }
+    }
+
     &[img] {
       [ion-button] {
         // padding: 50px 0 !important;
@@ -98,7 +114,7 @@ $color-4: #FFCE43;
 
 [sbtn-question] {
   text-align: center;
-  
+
   [ion-button] {
     font-size: 1.8em;
   }
