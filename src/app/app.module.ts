@@ -1,6 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MediaPlugin } from 'ionic-native';
 
 // Pages
 import { MyApp } from './app.component';
