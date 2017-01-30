@@ -15,6 +15,7 @@ export class HomePage {
   pushPage2;
   pushPage3;
   pushPage4;
+
   constructor(public navCtrl: NavController) {
     this.pushPage1 = QuestionType1Page;
     this.pushPage2 = QuestionType2Page;
