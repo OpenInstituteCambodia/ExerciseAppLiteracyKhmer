@@ -81,6 +81,15 @@ $color-4: #FFCE43;
         padding: 1em 0 !important;
         font-size: 3.2em;
       }
+    } // [single]
+
+    &[img] {
+      [ion-button] {
+        padding: 50px 0 !important;
+        background-size: cover !important;
+        background-repeat: no-repeat;
+      }
     }
+
   } // sbtn-action
 } // .question
