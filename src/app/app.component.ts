@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { Device, StatusBar, Splashscreen } from 'ionic-native';
 
 import { ivrController } from './ivrController';
 import { HomePage } from '../pages/home/home';
@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp  {
   rootPage = HomePage;
+  osPlatform = Device.platform;
   ivrController = new ivrController();
 
   constructor(platform: Platform) {
@@ -19,8 +20,13 @@ export class MyApp  {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-      console.log('constructor');
-      this.ivrController.playAudio();
+
+      // ivrController Code Block
+      if (this.osPlatform === "Android") {
+
+        this.ivrController.playAudio();
+      } // if Android
+
     });
 
   }

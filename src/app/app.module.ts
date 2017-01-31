@@ -3,7 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 // Pages
 import { MyApp } from './app.component';
-import { ivrController } from './ivrController';
+// import { ivrController } from './ivrController';
 import { HomePage } from '../pages/home/home';
 import {QuestionType1Page} from '../pages/question-type1/question-type1';
 import {QuestionType2Page} from '../pages/question-type2/question-type2';

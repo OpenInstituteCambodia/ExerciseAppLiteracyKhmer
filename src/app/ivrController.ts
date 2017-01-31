@@ -3,7 +3,7 @@ import { MediaPlugin } from 'ionic-native';
 export class ivrController {
 
   constructor() {
-    console.log("ivrController: active");
+    console.log("ivrController: Active");
   }
 
   playAudio(): any {
