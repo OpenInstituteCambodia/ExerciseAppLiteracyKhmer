@@ -1,4 +1,5 @@
 import { Device, MediaPlugin } from 'ionic-native';
+import { ivrToolbarCtl } from './ivr/toolbar';
 
 export class ivrController {
   // Pre-defined var
@@ -10,7 +11,6 @@ export class ivrController {
   // Constructor
   constructor(audiofile: string) {
     console.log("ivrController: Active");
-
     this.audioFile = audiofile;
   }
 
