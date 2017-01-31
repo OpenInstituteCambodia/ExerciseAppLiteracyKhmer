@@ -1,4 +1,4 @@
-
+import { MyApp } from '../../app/app.component';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {QuestionType1Page} from '../question-type1/question-type1';

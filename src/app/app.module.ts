@@ -21,7 +21,7 @@ import {CongratulationPage} from '../pages/congratulation/congratulation';
     QuestionType2Page,
     QuestionType3Page,
     QuestionType4Page,
-   CongratulationPage
+    CongratulationPage
 
   ],
   imports: [
