@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, ViewController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { ivrController } from './ivrController';
@@ -11,10 +11,12 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp  {
   public rootPage: any  = HomePage;
-  public showToolbar: boolean = true;
+  route = new ViewController();
 
   audioFile: string = "1.mp3";
   ivrController = new ivrController(this.audioFile);
+
+  public showToolbar: boolean = this.ivrController.toolbarToggle;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -25,6 +27,12 @@ export class MyApp  {
       // ivrController Code Block
       this.ivrController.playAudio();
 
+      console.log(this.route.willEnter);
     });
   }
+
+  set setToolbarStatus(status: boolean){
+    this.ivrController.toolbarToggle = true;
+  }
+
 }

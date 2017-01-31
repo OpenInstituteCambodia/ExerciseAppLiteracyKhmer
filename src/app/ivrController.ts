@@ -1,9 +1,10 @@
 import { Device, MediaPlugin } from 'ionic-native';
-import { ivrToolbarCtl } from './ivr/toolbar';
+// import { ivrToolbarCtl } from './ivr/toolbar';
 
 export class ivrController {
   // Pre-defined var
   osPlatform: string = Device.platform;
+  _toolbarToggle: boolean = false;
 
   // Variable
   audioFile: string;
@@ -12,6 +13,15 @@ export class ivrController {
   constructor(audiofile: string) {
     console.log("ivrController: Active");
     this.audioFile = audiofile;
+  }
+
+  // Set / Get
+  get toolbarToggle(): boolean {
+    return this._toolbarToggle;
+  }
+
+  set toolbarToggle(status: boolean) {
+    this._toolbarToggle = status;
   }
 
   // Start Block Function
