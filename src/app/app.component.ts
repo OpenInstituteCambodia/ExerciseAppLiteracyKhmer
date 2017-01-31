@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp  {
   public rootPage: any  = HomePage;
+  public showToolbar: boolean = true;
 
   audioFile: string = "1.mp3";
   ivrController = new ivrController(this.audioFile);
