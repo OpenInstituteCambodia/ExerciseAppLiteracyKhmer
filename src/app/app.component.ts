@@ -11,7 +11,6 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp  {
   rootPage = HomePage;
-  osPlatform = Device.platform;
   ivrController = new ivrController();
 
   constructor(platform: Platform) {
@@ -22,10 +21,10 @@ export class MyApp  {
       Splashscreen.hide();
 
       // ivrController Code Block
-      if (this.osPlatform === "Android") {
 
-        this.ivrController.playAudio();
-      } // if Android
+
+      this.ivrController.playAudio();
+
 
     });
 
