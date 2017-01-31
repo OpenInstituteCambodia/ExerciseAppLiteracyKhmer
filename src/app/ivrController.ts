@@ -1,5 +1,3 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
 import { MediaPlugin } from 'ionic-native';
 
 export class ivrController {
