@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { Device, StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { ivrController } from './ivrController';
 import { HomePage } from '../pages/home/home';
@@ -11,7 +11,8 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp  {
   rootPage = HomePage;
-  ivrController = new ivrController();
+  audioFile: string = "1.mp3";
+  ivrController = new ivrController(this.audioFile);
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -21,8 +22,6 @@ export class MyApp  {
       Splashscreen.hide();
 
       // ivrController Code Block
-
-
       this.ivrController.playAudio();
 
 

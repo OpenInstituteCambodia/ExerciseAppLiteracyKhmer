@@ -8,8 +8,10 @@ export class ivrController {
   audioFile: string;
 
   // Constructor
-  constructor() {
+  constructor(audiofile: string) {
     console.log("ivrController: Active");
+
+    this.audioFile = audiofile;
   }
 
   // Start Block Function
@@ -17,7 +19,7 @@ export class ivrController {
     if (this.osPlatform === "Android") {
       console.log("ivrController: playAudio(): Play");
       const onStatusUpdate = (status) => console.log(status);
-      const file = new MediaPlugin('/android_asset/www/assets/audio/1.mp3', onStatusUpdate);
+      const file = new MediaPlugin('/android_asset/www/assets/audio/'+this.audioFile, onStatusUpdate);
 
       file.init.then(() => {
         console.log('ivrController: playAudio(): Playback Finished');
