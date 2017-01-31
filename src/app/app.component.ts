@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { Platform, ActionSheetController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+import { ivrController } from './ivrController';
 import { HomePage } from '../pages/home/home';
 
 
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp  {
   rootPage = HomePage;
+  ivrController = new ivrController();
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
@@ -17,7 +19,11 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
+      console.log('constructor');
+      this.ivrController.playAudio();
     });
+
   }
+
 
 }
