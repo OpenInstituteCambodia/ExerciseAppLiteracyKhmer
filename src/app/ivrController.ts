@@ -16,9 +16,6 @@ export class ivrController {
   }
 
   // TODO
-  get theQuestions():any {
-    return this.ivrQuestion.getQuestions;
-  }
 
   setQuestion(questionID: number): void {
     console.log("ivrQuestion: setQuestion(): " + questionID);

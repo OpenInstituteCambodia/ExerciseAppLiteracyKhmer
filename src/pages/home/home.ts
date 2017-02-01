@@ -11,15 +11,9 @@ export class HomePage {
   _navCtl;
   ivrController = new ivrController();
 
-  questionList = this.ivrController.theQuestions;
-
   constructor(public navCtrl: NavController) {
     this._navCtl = navCtrl;
 
-    console.log(
-      "Number of Question in ivrQuestion: ",
-      this.ivrController.theQuestions
-    );
   }
 
   ionViewWillLeave() {
