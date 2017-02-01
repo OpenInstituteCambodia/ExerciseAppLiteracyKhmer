@@ -15,9 +15,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
     this._navCtl = navCtrl;
 
-    this.questionList = [
-      1,2,3,4
-    ]
+    this.questionList = this.ivrController.getQuestions;
   }
 
   ionViewWillLeave() {
