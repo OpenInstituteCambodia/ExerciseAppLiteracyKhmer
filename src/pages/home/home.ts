@@ -24,7 +24,7 @@ export class HomePage {
   }
 
   route(url: any): any {
-    console.log(this.routeAdr[url]);
+    // console.log(this.routeAdr[url]);
     this._navCtl.push(this.routeAdr[url]);
   }
 }
