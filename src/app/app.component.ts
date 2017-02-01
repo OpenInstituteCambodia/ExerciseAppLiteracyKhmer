@@ -16,8 +16,6 @@ export class MyApp  {
   // audioFile: string = "1.mp3";
   ivrController = new ivrController();
 
-  public showToolbar: boolean = this.ivrController.toolbarToggle;
-
   constructor(platform: Platform) {
     platform.ready().then(() => {
 
@@ -25,7 +23,6 @@ export class MyApp  {
       Splashscreen.hide();
 
       console.log(this.route.willEnter);
-      console.log(this.showToolbar);
     });
   }
 

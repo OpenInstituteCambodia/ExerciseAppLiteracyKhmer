@@ -36,10 +36,6 @@ export class HomePage {
     this.ivrController.playAudio('1.mp3');
   }
 
-  public showToolbar() {
-    this.ivrController.toolbarToggle = true;
-    console.log(this.ivrController.toolbarToggle);
-  }
 
   route(url: any): any {
     console.log("HomePage: route(): " + this.routeAdr[url]);

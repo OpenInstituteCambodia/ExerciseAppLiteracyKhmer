@@ -4,7 +4,6 @@ import { Device, MediaPlugin } from 'ionic-native';
 export class ivrController {
   // Pre-defined var
   osPlatform: string = Device.platform;
-  _toolbarToggle: boolean = false;
 
   // Variable
   file: any;
@@ -15,14 +14,6 @@ export class ivrController {
     console.log("ivrController: Active");
   }
 
-  // Set / Get
-  get toolbarToggle(): boolean {
-    return this._toolbarToggle;
-  }
-
-  set toolbarToggle(status: boolean) {
-    this._toolbarToggle = status;
-  }
 
 
   // Start Block Function
@@ -40,13 +31,14 @@ export class ivrController {
         });
 
         // play the file
-        this.file.play();
+        // this.file.play();
       }
     } // if Android
   } // playAudio()
 
   stopAudio() {
     if (this.osPlatform === "Android") {
+      console.log('ivrController: stopAudio(): Playback Finished');
       // Stop Playback
       this.file.stop();
     }
