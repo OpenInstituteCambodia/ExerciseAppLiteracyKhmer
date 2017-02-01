@@ -10,10 +10,14 @@ import { QuestionPage } from '../question/question';
 export class HomePage {
   _navCtl;
   ivrController = new ivrController();
+  questionList;
 
   constructor(public navCtrl: NavController) {
     this._navCtl = navCtrl;
 
+    this.questionList = [
+      1,2,3,4
+    ]
   }
 
   ionViewWillLeave() {
