@@ -24,6 +24,14 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
     this._navCtl = navCtrl;
 
+  }
+
+  // ionViewWillLeave() {
+  //   console.log('welcome home');
+  //   this.ivrController.stopAudio();
+  // }
+
+  ionViewDidEnter() {
     // ivrController Code Block
     this.ivrController.playAudio('1.mp3');
   }
@@ -35,7 +43,8 @@ export class HomePage {
 
   route(url: any): any {
     console.log("HomePage: route(): " + this.routeAdr[url]);
-    this.ivrController.playAudio(url+'.mp3');
+    // this.ivrController.stopAudio();
+    // this.ivrController.playAudio(url+'.mp3');
     this._navCtl.push(this.routeAdr[url]);
   }
 }
