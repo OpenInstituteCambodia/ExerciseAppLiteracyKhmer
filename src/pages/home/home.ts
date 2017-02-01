@@ -35,6 +35,8 @@ export class HomePage {
     // this.ivrController.stopAudio();
     // this.ivrController.playAudio(url+'.mp3');
     // this._navCtl.push(this.routeAdr[url]);
+
+    this.ivrController.setQuestion(1);
     this._navCtl.push(QuestionPage);
   }
 }

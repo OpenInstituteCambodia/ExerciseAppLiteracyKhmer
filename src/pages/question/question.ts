@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { ivrQuestion } from '../../app/ivr/ivrQuestion';
+
 /*
   Generated class for the Question page.
 
@@ -12,6 +14,7 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'question.html'
 })
 export class QuestionPage {
+  ivrQuestion = new ivrQuestion();
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
