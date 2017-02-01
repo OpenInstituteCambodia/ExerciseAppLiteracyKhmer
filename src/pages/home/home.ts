@@ -11,10 +11,6 @@ export class HomePage {
   _navCtl;
   ivrController = new ivrController();
 
-  routeAdr: any = [
-    QuestionPage
-  ];
-
   constructor(public navCtrl: NavController) {
     this._navCtl = navCtrl;
 
@@ -31,12 +27,9 @@ export class HomePage {
 
 
   route(url: any): any {
-    console.log("HomePage: route(): " + this.routeAdr[url]);
-    // this.ivrController.stopAudio();
-    // this.ivrController.playAudio(url+'.mp3');
-    // this._navCtl.push(this.routeAdr[url]);
+    console.log("HomePage: route(): " + url);
 
-    this.ivrController.setQuestion(1);
+    this.ivrController.setQuestion(url);
     this._navCtl.push(QuestionPage);
   }
 }

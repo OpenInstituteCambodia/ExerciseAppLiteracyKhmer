@@ -13,9 +13,38 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="question center">
+    <ion-grid>
+      <ion-row question single>
+        <ion-col>
+          <div class="question text-center">
+            <h1 style="text-align: center;"></h1>
+        </div>
+        </ion-col>
+      </ion-row>
 
+      <div sbtn-action single no-padding>
+        <ion-row>
+          <ion-col width-50>
+            <button ion-button block sbtn-color-1 [navPush]="pushPage"></button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button block sbtn-color-2 [navPush]="pushPageCongrat"></button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col width-50>
+            <button ion-button block sbtn-color-3 [navPush]="pushPage"></button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button block sbtn-color-4 [navPush]="pushPage"></button>
+          </ion-col>
+        </ion-row>
+      </div>
+  </ion-grid>
 </ion-content>
+
 
 <ion-footer sbtn-question>
   <ion-toolbar>
@@ -23,7 +52,7 @@
     <button ion-button clear>
       <ion-icon name="arrow-back"></ion-icon>
     </button>
-    <button ion-button clear>
+    <button ion-button clear (click)="">
       <ion-icon name="refresh"></ion-icon>
     </button>
     <button ion-button clear>
