@@ -11,9 +11,9 @@
     <ion-grid>
 
       <!-- <ion-row center> -->
-        <!-- <ion-col width-30 > -->
-          <button *ngFor="let q of questionList" ion-button block (click)="route(0)">{{q}}</button>
-        <!-- </ion-col> -->
+        <ion-col width-30 >
+          <button *ngFor="let q of questionList; let i = index" ion-button block (click)="route(i)">{{q}}</button>
+        </ion-col>
       <!-- </ion-row> -->
 
 

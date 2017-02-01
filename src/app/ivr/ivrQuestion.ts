@@ -3,7 +3,8 @@ export class ivrQuestion {
     1,
     2,
     3,
-    4
+    4,
+    5
   ];
   _numberOfQuestion: number = Object.keys(this.questions).length;
 
