@@ -10,10 +10,13 @@ export class ivrController {
   audioFile: string;
 
   // Constructor
-  constructor(audiofile: string) {
+  constructor() {
     console.log("ivrController: Active");
-    this.audioFile = audiofile;
   }
+  // constructor(audiofile: string) {
+  //   console.log("ivrController: Active");
+  //   // this.audioFile = audiofile;
+  // }
 
   // Set / Get
   get toolbarToggle(): boolean {
@@ -24,21 +27,24 @@ export class ivrController {
     this._toolbarToggle = status;
   }
 
+
   // Start Block Function
-  playAudio(): any {
+  playAudio(audiofile: any): any {
     if (this.osPlatform === "Android") {
       console.log("ivrController: playAudio(): Play");
       const onStatusUpdate = (status) => console.log(status);
-      const file = new MediaPlugin('/android_asset/www/assets/audio/'+this.audioFile, onStatusUpdate);
+      const file = new MediaPlugin('/android_asset/www/assets/audio/' + audiofile, onStatusUpdate);
 
-      file.init.then(() => {
-        console.log('ivrController: playAudio(): Playback Finished');
-      }, (err) => {
-        console.log('ivrController: playAudio(): Somthing went wrong! Error code: ' + err.code + ' Message: ' + err.message);
-      });
+      if (audiofile != '') {
+        file.init.then(() => {
+          console.log('ivrController: playAudio(): Playback Finished');
+        }, (err) => {
+          console.log('ivrController: playAudio(): Somthing went wrong! Error code: ' + err.code + 'Filename: ' + audiofile + ' Message: ' + err.message);
+        });
 
-      // play the file
-      file.play();
+        // play the file
+        file.play();
+      }
     } // if Android
   }
 
