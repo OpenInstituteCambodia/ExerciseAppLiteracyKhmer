@@ -2,10 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ivrController } from '../../app/ivrController';
 import { QuestionPage } from '../question/question';
-import { QuestionType1Page } from '../question-type1/question-type1';
-import { QuestionType2Page } from '../question-type2/question-type2';
-import { QuestionType3Page } from '../question-type3/question-type3';
-import { QuestionType4Page } from '../question-type4/question-type4';
 
 @Component({
   selector: 'page-home',
@@ -16,10 +12,6 @@ export class HomePage {
   ivrController = new ivrController();
 
   routeAdr: any = [
-    QuestionType1Page,
-    QuestionType2Page,
-    QuestionType3Page,
-    QuestionType4Page,
     QuestionPage
   ];
 
@@ -28,12 +20,11 @@ export class HomePage {
 
   }
 
-  // ionViewWillLeave() {
-  //   console.log('welcome home');
-  //   this.ivrController.stopAudio();
-  // }
+  ionViewWillLeave() {
+    this.ivrController.stopAudio();
+  }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     // ivrController Code Block
     this.ivrController.playAudio('1.mp3');
   }
