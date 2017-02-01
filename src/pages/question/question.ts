@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
 import { ivrQuestion } from '../../app/ivr/ivrQuestion';
+import { HomePage } from '../home/home';
 
 /*
   Generated class for the Question page.
@@ -15,8 +15,11 @@ import { ivrQuestion } from '../../app/ivr/ivrQuestion';
 })
 export class QuestionPage {
   ivrQuestion = new ivrQuestion();
+  BackHome;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.BackHome = HomePage;
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
