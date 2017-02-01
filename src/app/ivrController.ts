@@ -1,5 +1,5 @@
 import { Device, MediaPlugin } from 'ionic-native';
-// import { ivrToolbarCtl } from './ivr/toolbar';
+import { ivrQuestion } from './ivr/ivrQuestion';
 
 export class ivrController {
   // Pre-defined var
@@ -31,7 +31,7 @@ export class ivrController {
         });
 
         // play the file
-        // this.file.play();
+        this.file.play();
       }
     } // if Android
   } // playAudio()
