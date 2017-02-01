@@ -34,6 +34,7 @@ export class HomePage {
     console.log("HomePage: route(): " + this.routeAdr[url]);
     // this.ivrController.stopAudio();
     // this.ivrController.playAudio(url+'.mp3');
-    this._navCtl.push(this.routeAdr[url]);
+    // this._navCtl.push(this.routeAdr[url]);
+    this._navCtl.push(QuestionPage);
   }
 }
