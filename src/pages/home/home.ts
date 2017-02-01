@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ivrController } from '../../app/ivrController';
+import { QuestionPage } from '../question/question';
 import { QuestionType1Page } from '../question-type1/question-type1';
 import { QuestionType2Page } from '../question-type2/question-type2';
 import { QuestionType3Page } from '../question-type3/question-type3';
@@ -19,6 +20,7 @@ export class HomePage {
     QuestionType2Page,
     QuestionType3Page,
     QuestionType4Page,
+    QuestionPage
   ];
 
   constructor(public navCtrl: NavController) {
