@@ -13,10 +13,6 @@ export class ivrController {
   constructor() {
     console.log("ivrController: Active");
   }
-  // constructor(audiofile: string) {
-  //   console.log("ivrController: Active");
-  //   // this.audioFile = audiofile;
-  // }
 
   // Set / Get
   get toolbarToggle(): boolean {
@@ -29,7 +25,7 @@ export class ivrController {
 
 
   // Start Block Function
-  playAudio(audiofile: any): any {
+  playAudio(audiofile: string): any {
     if (this.osPlatform === "Android") {
       console.log("ivrController: playAudio(): Play");
       const onStatusUpdate = (status) => console.log(status);
