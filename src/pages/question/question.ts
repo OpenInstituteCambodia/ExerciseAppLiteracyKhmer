@@ -15,10 +15,9 @@ import { HomePage } from '../home/home';
 })
 export class QuestionPage {
   ivrQuestion = new ivrQuestion();
-  BackHome;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.BackHome = HomePage;
+
   }
 
   ionViewDidLoad() {
