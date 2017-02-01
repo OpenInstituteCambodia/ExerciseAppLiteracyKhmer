@@ -14,7 +14,9 @@ export class ivrController {
     console.log("ivrController: Active");
   }
 
-
+  setQuestion(questionID: number): void {
+    console.log("ivrQuestion: setQuestion(): " + questionID);
+  }
 
   // Start Block Function
   playAudio(audiofile: string): any {
