@@ -4,6 +4,7 @@ import { ivrQuestion } from './ivr/ivrQuestion';
 export class ivrController {
   // Pre-defined var
   osPlatform: string = Device.platform;
+  ivrQuestion = new ivrQuestion();
 
   // Variable
   file: any;
@@ -12,6 +13,11 @@ export class ivrController {
   // Constructor
   constructor() {
     console.log("ivrController: Active");
+  }
+
+  // TODO
+  get theQuestions():any {
+    return this.ivrQuestion.getQuestions;
   }
 
   setQuestion(questionID: number): void {

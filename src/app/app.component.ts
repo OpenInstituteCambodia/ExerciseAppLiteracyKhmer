@@ -18,11 +18,8 @@ export class MyApp  {
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
-
       StatusBar.styleDefault();
       Splashscreen.hide();
-
-      console.log(this.route.willEnter);
     });
   }
 
