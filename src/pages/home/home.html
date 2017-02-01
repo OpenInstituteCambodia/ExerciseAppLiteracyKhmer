@@ -10,30 +10,21 @@
 
     <ion-grid>
 
-      <ion-row center *ngFor="let number of questionList">
+      <ion-row center>
         <ion-col width-30>
-          <button ion-button block (click)="route('QuestionType1Page')">1</button>
+          <button ion-button block (click)="route(1)">1</button>
         </ion-col>
         <ion-col width-30>
-          <button ion-button block (click)="route('QuestionType2Page')">2</button>
+          <button ion-button block (click)="route(2)">2</button>
         </ion-col>
       </ion-row>
 
       <ion-row center>
         <ion-col width-30>
-          <button ion-button block (click)="route('QuestionType1Page')">1</button>
+          <button ion-button block (click)="route(2)">3</button>
         </ion-col>
         <ion-col width-30>
-          <button ion-button block (click)="route('QuestionType2Page')">2</button>
-        </ion-col>
-      </ion-row>
-
-      <ion-row center>
-        <ion-col width-30>
-          <button ion-button block (click)="route(QuestionType3Page)">3</button>
-        </ion-col>
-        <ion-col width-30>
-          <button ion-button block (click)="route(QuestionType4Page)">4</button>
+          <button ion-button block (click)="route(3)">4</button>
         </ion-col>
       </ion-row>
 

@@ -12,14 +12,19 @@ import {QuestionType4Page} from '../question-type4/question-type4';
 })
 export class HomePage {
   _navCtl;
-  questionList: number = 2;
+  routeAdr: any = [
+    QuestionType1Page,
+    QuestionType2Page,
+    QuestionType3Page,
+    QuestionType4Page,
+  ];
 
   constructor(public navCtrl: NavController) {
     this._navCtl = navCtrl;
   }
 
   route(url: any): any {
-    console.log(url);
-    this._navCtl.push(url);
+    console.log(this.routeAdr[url]);
+    this._navCtl.push(this.routeAdr[url]);
   }
 }
