@@ -13,8 +13,8 @@ export class MyApp  {
   public rootPage: any  = HomePage;
   route = new ViewController();
 
-  audioFile: string = "1.mp3";
-  ivrController = new ivrController(this.audioFile);
+  // audioFile: string = "1.mp3";
+  ivrController = new ivrController();
 
   public showToolbar: boolean = this.ivrController.toolbarToggle;
 
@@ -24,15 +24,9 @@ export class MyApp  {
       StatusBar.styleDefault();
       Splashscreen.hide();
 
-      // ivrController Code Block
-      this.ivrController.playAudio();
-
       console.log(this.route.willEnter);
+      console.log(this.showToolbar);
     });
-  }
-
-  set setToolbarStatus(status: boolean){
-    this.ivrController.toolbarToggle = true;
   }
 
 }
