@@ -33,4 +33,8 @@ export class QuestionPage {
     this.ivrController.stopAudio();
   }
 
+  replayAudio(){
+    alert("Replay Audio");
+  }
+
 }
