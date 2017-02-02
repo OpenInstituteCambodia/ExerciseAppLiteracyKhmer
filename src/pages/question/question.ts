@@ -2,15 +2,11 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ivrController } from '../../app/ivrController';
 import { ivrQuestion } from '../../app/ivr/ivrQuestion';
+
 import { HomePage } from '../home/home';
 import {CongratulationPage} from '../congratulation/congratulation';
 
-/*
-  Generated class for the Question page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html'
