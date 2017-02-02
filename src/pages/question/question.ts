@@ -18,7 +18,7 @@ export class QuestionPage {
   displayQuestionID: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.displayQuestionID = this.ivrQuestion.getViewQuestionNumber;
+    this.displayQuestionID = navParams.get("e_id");
   }
 
   ionViewDidLoad() {
