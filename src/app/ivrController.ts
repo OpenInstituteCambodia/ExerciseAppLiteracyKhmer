@@ -54,4 +54,19 @@ export class ivrController {
     }
   } // stopAudio()
 
+  replayAudio(audio_id: string) {
+    if (this.osPlatform === "Android") {
+      // get current playback position
+      let currentPlaybackPosition;
+      this.file.getCurrentPosition().then((position) => {
+        console.log("ivrController: replayAudio() = ", position);
+        currentPlaybackPosition = position;
+      });
+      if (currentPlaybackPosition > 0) {
+        this.stopAudio();
+        this.playAudio(audio_id);
+      }
+    }
+  }
+
 }
