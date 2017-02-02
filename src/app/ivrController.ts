@@ -59,10 +59,10 @@ export class ivrController {
       // get current playback position
       let currentPlaybackPosition;
       this.file.getCurrentPosition().then((position) => {
-        console.log("ivrController: replayAudio() = ", position);
         currentPlaybackPosition = position;
       });
       if (currentPlaybackPosition > 0) {
+        console.log("ivrController: replayAudio() = ", currentPlaybackPosition);
         this.stopAudio();
         this.playAudio(audio_id);
       }
