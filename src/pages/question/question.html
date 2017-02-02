@@ -16,25 +16,151 @@
 <ion-content class="question center">
     <!-- Question 1 -->
       <div *ngIf="displayQuestionID == 1" class="ivrQuestion_1">
-        1
+        <ion-grid>
+          <ion-row question single>
+            <ion-col>
+              <div class="question text-center">
+                <h1 style="text-align: center;">1+1=?</h1>
+            </div>
+            </ion-col>
+          </ion-row>
+
+          <div sbtn-action single no-padding>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-1 [navPush]="pushPage">1</button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-2 [navPush]="pushPageCongrat">2</button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-3 [navPush]="pushPage">3</button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-4 [navPush]="pushPage">4</button>
+              </ion-col>
+            </ion-row>
+          </div>
+      </ion-grid>
       </div>
     <!-- End Question 1 -->
 
     <!-- Question 2 -->
       <div *ngIf="displayQuestionID == 2" class="ivrQuestion_2">
-        2
+        <ion-grid>
+          <ion-row question img>
+            <ion-col width-100>
+              <!-- <img src="" class="center" alt=""> -->
+              <div class="img" style="background: url('assets/img/parrot.jpg')">
+
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <div sbtn-action single>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-1 [navPush]="pushPage">មាន់</button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-2 [navPush]="pushPageCongrat">សេក</button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-3 [navPush]="pushPage">ទា</button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-4 [navPush]="pushPage">ចាប</button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+      </ion-grid>
       </div>
     <!-- End Question 2 -->
 
     <!-- Question 3 -->
       <div *ngIf="displayQuestionID == 3" class="ivrQuestion_3">
-        3
+        <ion-grid>
+          <ion-row question single>
+            <ion-col>
+              <div class="question text-center">
+                <h1 style="text-align: center;">សេះ</h1>
+            </div>
+            </ion-col>
+          </ion-row>
+
+          <div sbtn-action img>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block [navPush]="pushPage" style="background: url('assets/img/cow.png') ;" >
+                  <!-- <img src="assets/img/cow.png" class="center" alt=""> -->
+                </button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block [navPush]="pushPage" style="background: url('assets/img/donkey.png');">
+                  <!-- <img src="assets/img/donkey.png" class="center" alt=""> -->
+                </button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block [navPush]="pushPageCongrat" style="background: url('assets/img/horse.png');">
+                  <!-- <img src="assets/img/horse.png" class="center" alt=""> -->
+                </button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block [navPush]="pushPage" style="background: url('assets/img/buffalo.png');">
+                  <!-- <img src="assets/img/buffalo.png" class="center" alt="" > -->
+                </button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+      </ion-grid>
       </div>
     <!-- End Question 3 -->
 
     <!-- Question 4 -->
       <div *ngIf="displayQuestionID == 4" class="ivrQuestion_4">
-        4
+        <ion-grid>
+          <ion-row question paragh>
+            <ion-col>
+              <div class="question text-center">
+                <h1 style="text-align: center;">
+                  Sally and Jane were best
+                  <br>fri _ _ _s.
+                </h1>
+            </div>
+            </ion-col>
+          </ion-row>
+
+          <div sbtn-action single>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button full [navPush]="pushPage">AND</button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button full [navPush]="pushPage">IND</button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button full [navPush]="pushPage">DAY</button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button full [navPush]="pushPageCongrat">END</button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+      </ion-grid>
       </div>
     <!-- End Question 4 -->
 </ion-content>
