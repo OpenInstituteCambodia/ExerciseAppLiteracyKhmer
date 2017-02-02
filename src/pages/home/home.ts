@@ -23,7 +23,7 @@ export class HomePage {
     this.ivrController.stopAudio();
   }
 
-  ionViewWillEnter() {
+  ionViewDidEnter() {
     // ivrController Code Block
     this.ivrController.playAudio('1.mp3');
   }

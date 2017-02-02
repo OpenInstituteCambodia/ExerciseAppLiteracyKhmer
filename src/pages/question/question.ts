@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ivrController } from '../../app/ivrController';
 import { ivrQuestion } from '../../app/ivr/ivrQuestion';
 import { HomePage } from '../home/home';
 
@@ -15,14 +16,22 @@ import { HomePage } from '../home/home';
 })
 export class QuestionPage {
   ivrQuestion = new ivrQuestion();
+  ivrController = new ivrController();
   displayQuestionID: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.displayQuestionID = navParams.get("e_id");
+
   }
 
+  ionViewDidEnter() {
+    this.ivrController.playAudio(this.displayQuestionID+'.mp3');
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
+  }
+  ionViewWillLeave() {
+    this.ivrController.stopAudio();
   }
 
 }
