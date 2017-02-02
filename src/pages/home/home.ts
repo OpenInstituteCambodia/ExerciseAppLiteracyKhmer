@@ -25,7 +25,7 @@ export class HomePage {
 
   ionViewDidEnter() {
     // ivrController Code Block
-    this.ivrController.playAudio('1.mp3');
+    this.ivrController.playAudio('0.mp3');
   }
 
   route(url: any): any {
