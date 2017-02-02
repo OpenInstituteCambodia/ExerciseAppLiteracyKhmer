@@ -3,12 +3,10 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ivrController } from '../../app/ivrController';
 import { ivrQuestion } from '../../app/ivr/ivrQuestion';
 
-/*
-  Generated class for the Question page.
+import { HomePage } from '../home/home';
+import {CongratulationPage} from '../congratulation/congratulation';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html'
@@ -17,9 +15,11 @@ export class QuestionPage {
   ivrQuestion = new ivrQuestion();
   ivrController = new ivrController();
   displayQuestionID: number;
+  pushPageCongrat;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.displayQuestionID = navParams.get("e_id");
+    this.pushPageCongrat = CongratulationPage;
 
   }
 
