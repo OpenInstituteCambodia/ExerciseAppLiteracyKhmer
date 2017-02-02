@@ -3,7 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ivrController } from '../../app/ivrController';
 import { ivrQuestion } from '../../app/ivr/ivrQuestion';
 
-import { HomePage } from '../home/home';
 import {CongratulationPage} from '../congratulation/congratulation';
 
 
