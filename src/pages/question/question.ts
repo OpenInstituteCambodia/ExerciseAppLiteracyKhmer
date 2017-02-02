@@ -31,9 +31,11 @@ export class QuestionPage {
   ionViewDidEnter() {
     this.ivrController.playAudio(this.displayQuestionID+'.mp3');
   }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
   }
+
   ionViewWillLeave() {
     this.ivrController.stopAudio();
   }
