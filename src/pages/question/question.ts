@@ -5,6 +5,7 @@ import { ivrQuestion } from '../../app/ivr/ivrQuestion';
 import {Platform} from 'ionic-angular';
 import {AlertController} from 'ionic-angular';
 import {CongratulationPage} from '../congratulation/congratulation';
+import {WrongAnswerPage} from '../wrong-answer/wrong-answer';
 
 
 @Component({
@@ -16,11 +17,13 @@ export class QuestionPage {
   ivrController = new ivrController();
   displayQuestionID: number;
   pushPageCongrat;
+  pushPageWrong;
   platform;
 
   constructor( public alert: AlertController,public navCtrl: NavController, public navParams: NavParams , platform: Platform) {
     this.displayQuestionID = navParams.get("e_id");
     this.pushPageCongrat = CongratulationPage;
+    this.pushPageWrong = WrongAnswerPage;
     this.platform = platform;
 
   }
@@ -49,10 +52,10 @@ export class QuestionPage {
         title: 'Confirm',
         message: 'Do you want to exit?',
         buttons: [{
-          text: "exit?",
+          text: "Yes",
           handler: () => { this.exitApp() }
         }, {
-          text: "Cancel",
+          text: "No",
           role: 'cancel'
         }]
       })

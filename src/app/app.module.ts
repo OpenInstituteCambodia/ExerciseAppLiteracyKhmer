@@ -11,6 +11,7 @@ import {QuestionType2Page} from '../pages/question-type2/question-type2';
 import {QuestionType3Page} from '../pages/question-type3/question-type3';
 import {QuestionType4Page} from '../pages/question-type4/question-type4';
 import {CongratulationPage} from '../pages/congratulation/congratulation';
+import {WrongAnswerPage} from '../pages/wrong-answer/wrong-answer';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {CongratulationPage} from '../pages/congratulation/congratulation';
     QuestionType3Page,
     QuestionType4Page,
     CongratulationPage,
-    QuestionPage
+    QuestionPage,
+    WrongAnswerPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -38,7 +40,8 @@ import {CongratulationPage} from '../pages/congratulation/congratulation';
     QuestionType3Page,
     QuestionType4Page,
     CongratulationPage,
-    QuestionPage
+    QuestionPage,
+    WrongAnswerPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
