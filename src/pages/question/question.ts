@@ -33,4 +33,9 @@ export class QuestionPage {
     this.ivrController.stopAudio();
   }
 
+  replayAudio(){
+    // alert("Replay Audio");
+    this.ivrController.replayAudio(this.displayQuestionID+".mp3");
+  }
+
 }

@@ -30,7 +30,7 @@ export class ivrController {
   playAudio(audiofile: string): any {
     if (this.osPlatform === "Android") {
       console.log("ivrController: playAudio(): Play");
-      const onStatusUpdate = (status) => console.log(status);
+      const onStatusUpdate = (status) => console.log("ivrController: playAudio(): onStatusUpdate" ,status);
       this.file = new MediaPlugin('/android_asset/www/assets/audio/' + audiofile, onStatusUpdate);
 
       if (audiofile != '') {
@@ -53,5 +53,20 @@ export class ivrController {
       this.file.stop();
     }
   } // stopAudio()
+
+  replayAudio(audio_id: string) {
+    if (this.osPlatform === "Android") {
+      // get current playback position
+      let currentPlaybackPosition;
+      this.file.getCurrentPosition().then((position) => {
+        currentPlaybackPosition = position;
+        if (currentPlaybackPosition > 0 || currentPlaybackPosition < 0) {
+          this.stopAudio();
+          this.playAudio(audio_id);
+        }
+        console.log("ivrController: replayAudio() = ", currentPlaybackPosition);
+      });
+    }
+  }
 
 }
