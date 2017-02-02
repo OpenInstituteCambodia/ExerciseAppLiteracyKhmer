@@ -19,12 +19,14 @@ export class QuestionPage {
   pushPageCongrat;
   pushPageWrong;
   platform;
+  poproot;
 
   constructor( public alert: AlertController, public navCtrl: NavController, public navParams: NavParams , platform: Platform) {
     this.displayQuestionID = navParams.get("e_id");
     this.pushPageCongrat = CongratulationPage;
     this.pushPageWrong = WrongAnswerPage;
     this.platform = platform;
+    this.poproot = navCtrl;
 
     if (navParams.get("e_id") > 4) {
         navCtrl.popToRoot();
@@ -51,6 +53,9 @@ export class QuestionPage {
     );
   }
 
+  back(){
+    this.poproot.popToRoot();
+  }
 
 
   replayAudio(){
