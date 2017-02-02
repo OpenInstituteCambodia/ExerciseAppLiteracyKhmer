@@ -24,6 +24,8 @@ $eyeCandy: #19A15F #4C8CF5 #DE5347 #FFCE43;
   display: none !important;
 }
 
+
+
 .main {
   [ion-button] {
     padding: 50px 0;
@@ -83,7 +85,12 @@ $eyeCandy: #19A15F #4C8CF5 #DE5347 #FFCE43;
         font-size: 3.2em;
       }
     } // [single]
-    &[single-2] {*
+    &[single-2] {
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      width: 97%;
+
       [ion-button] {
         padding: 1em 0 !important;
       }
@@ -125,6 +132,10 @@ $eyeCandy: #19A15F #4C8CF5 #DE5347 #FFCE43;
   [ion-button] {
     font-size: 1.8em;
   }
+}
+
+[answer-head] {
+  font-size: 4rem;
 }
 
 @each $color in $eyeCandy {
