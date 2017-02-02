@@ -5,15 +5,11 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { ivrController } from './ivrController';
 import { HomePage } from '../pages/home/home';
 
-
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp  {
   public rootPage: any  = HomePage;
-  route = new ViewController();
-
-  // audioFile: string = "1.mp3";
   ivrController = new ivrController();
 
   constructor(platform: Platform) {
