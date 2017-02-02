@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ivrController } from '../../app/ivrController';
 import { ivrQuestion } from '../../app/ivr/ivrQuestion';
 import { HomePage } from '../home/home';
+import {CongratulationPage} from '../congratulation/congratulation';
 
 /*
   Generated class for the Question page.
@@ -18,9 +19,11 @@ export class QuestionPage {
   ivrQuestion = new ivrQuestion();
   ivrController = new ivrController();
   displayQuestionID: number;
+  pushPageCongrat;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.displayQuestionID = navParams.get("e_id");
+    this.pushPageCongrat = CongratulationPage;
 
   }
 
