@@ -6,54 +6,43 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="home">
+<ion-content class="home main">
 
     <ion-grid>
 
+      <!-- <ion-row center> -->
+        <!-- <ion-col width-30 >
+          <button *ngFor="let q of questionList; let i = index" ion-button block (click)="route(i)">
+            {{ q.q_id }}
+          </button>
+        </ion-col> -->
+      <!-- </ion-row> -->
+
       <ion-row center>
-        <ion-col width-30>
-          <button ion-button block [navPush]="pushPage1">1</button>
+        <ion-col width-30 >
+          <button ion-button block (click)="route(1)">
+            1
+          </button>
         </ion-col>
-        <ion-col width-30>
-          <button ion-button block [navPush]="pushPage2">2</button>
+        <ion-col width-30 >
+          <button ion-button block (click)="route(2)">
+            2
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row center>
+        <ion-col width-30 >
+          <button ion-button block (click)="route(3)">
+            3
+          </button>
+        </ion-col>
+        <ion-col width-30 >
+          <button ion-button block (click)="route(4)">
+            4
+          </button>
         </ion-col>
       </ion-row>
 
-      <ion-row center>
-        <ion-col width-30>
-          <button ion-button full [navPush]="pushPage3">3</button>
-        </ion-col>
-        <ion-col width-30>
-          <button ion-button full [navPush]="pushPage4">4</button>
-        </ion-col>
-      </ion-row>
-
-      <ion-row center>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">5</button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">6</button>
-        </ion-col>
-      </ion-row>
-
-      <ion-row center>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">7</button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">8</button>
-        </ion-col>
-      </ion-row>
-
-      <ion-row center>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">9</button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button full [navPush]="pushPage">10</button>
-        </ion-col>
-      </ion-row>
 
     </ion-grid>
 

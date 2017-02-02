@@ -12,9 +12,9 @@
 
 </ion-header>
 
-<ion-content class="center">
+<ion-content class="question center">
     <ion-grid>
-      <ion-row>
+      <ion-row question single>
         <ion-col>
           <div class="question text-center">
             <h1 style="text-align: center;">1+1=?</h1>
@@ -22,22 +22,22 @@
         </ion-col>
       </ion-row>
 
-      <div class="btn-action">
+      <div sbtn-action single no-padding>
         <ion-row>
           <ion-col width-50>
-            <button class="color-1" ion-button block [navPush]="pushPage">1</button>
+            <button ion-button block sbtn-color-1 [navPush]="pushPage">1</button>
           </ion-col>
           <ion-col width-50>
-            <button class="color-2" ion-button block [navPush]="pushPageCongrat">2</button>
+            <button ion-button block sbtn-color-2 [navPush]="pushPageCongrat">2</button>
           </ion-col>
         </ion-row>
 
         <ion-row>
           <ion-col width-50>
-            <button class="color-3" ion-button block [navPush]="pushPage">3</button>
+            <button ion-button block sbtn-color-3 [navPush]="pushPage">3</button>
           </ion-col>
           <ion-col width-50>
-            <button class="color-4" ion-button block [navPush]="pushPage">4</button>
+            <button ion-button block sbtn-color-4 [navPush]="pushPage">4</button>
           </ion-col>
         </ion-row>
       </div>

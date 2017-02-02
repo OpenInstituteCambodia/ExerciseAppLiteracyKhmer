@@ -1,10 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MediaPlugin } from 'ionic-native';
 
 // Pages
 import { MyApp } from './app.component';
+// import { ivrController } from './ivrController';
 import { HomePage } from '../pages/home/home';
+import { QuestionPage } from '../pages/question/question';
 import {QuestionType1Page} from '../pages/question-type1/question-type1';
 import {QuestionType2Page} from '../pages/question-type2/question-type2';
 import {QuestionType3Page} from '../pages/question-type3/question-type3';
@@ -15,13 +16,14 @@ import {CongratulationPage} from '../pages/congratulation/congratulation';
 @NgModule({
   declarations: [
     MyApp,
+    // ivrController,
     HomePage,
     QuestionType1Page,
     QuestionType2Page,
     QuestionType3Page,
     QuestionType4Page,
-     CongratulationPage
-
+    CongratulationPage,
+    QuestionPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,12 +31,14 @@ import {CongratulationPage} from '../pages/congratulation/congratulation';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    // ivrController,
     HomePage,
     QuestionType1Page,
     QuestionType2Page,
     QuestionType3Page,
     QuestionType4Page,
-    CongratulationPage
+    CongratulationPage,
+    QuestionPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

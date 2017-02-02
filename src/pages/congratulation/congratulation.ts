@@ -12,8 +12,14 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'congratulation.html'
 })
 export class CongratulationPage {
+  poproot;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.poproot = navCtrl;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  }
+  back(){
+    this.poproot.popToRoot();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CongratulationPage');

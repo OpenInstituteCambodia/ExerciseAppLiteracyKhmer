@@ -12,9 +12,9 @@
 
 </ion-header>
 
-<ion-content class="center">
+<ion-content class="question center">
     <ion-grid>
-      <ion-row>
+      <ion-row question single>
         <ion-col>
           <div class="question text-center">
             <h1 style="text-align: center;">សេះ</h1>
@@ -22,15 +22,15 @@
         </ion-col>
       </ion-row>
 
-      <div class="btn-action">
+      <div sbtn-action img>
         <ion-row>
           <ion-col width-50>
-            <button ion-button block [navPush]="pushPage" style="background: url('assets/img/cow.png') ; height:120px; background-size: cover !important;" >
+            <button ion-button block [navPush]="pushPage" style="background: url('assets/img/cow.png') ;" >
               <!-- <img src="assets/img/cow.png" class="center" alt=""> -->
             </button>
           </ion-col>
           <ion-col width-50>
-            <button ion-button block [navPush]="pushPage" style="background: url('assets/img/donkey.png'); height:120px;background-size: cover !important; ">
+            <button ion-button block [navPush]="pushPage" style="background: url('assets/img/donkey.png');">
               <!-- <img src="assets/img/donkey.png" class="center" alt=""> -->
             </button>
           </ion-col>
@@ -38,12 +38,12 @@
 
         <ion-row>
           <ion-col width-50>
-            <button ion-button block [navPush]="pushPageCongrat" style="background: url('assets/img/horse.png') ; height:120px;background-size: cover !important;">
+            <button ion-button block [navPush]="pushPageCongrat" style="background: url('assets/img/horse.png');">
               <!-- <img src="assets/img/horse.png" class="center" alt=""> -->
             </button>
           </ion-col>
           <ion-col width-50>
-            <button ion-button block [navPush]="pushPage" style="background: url('assets/img/buffalo.png'); height:120px;background-size: cover !important;">
+            <button ion-button block [navPush]="pushPage" style="background: url('assets/img/buffalo.png');">
               <!-- <img src="assets/img/buffalo.png" class="center" alt="" > -->
             </button>
           </ion-col>

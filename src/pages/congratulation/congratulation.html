@@ -7,34 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>congratulation</ion-title>
+    <ion-title>Congratulation</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="center">
+<ion-content class="question center">
   <ion-grid>
     <ion-row style="margin: 12% 0;">
       <ion-col>
         <div class="text-center">
           <h1 style="text-align: center;">Congratulation!</h1><br>
-          <h4 style="text-align: center;">You've choose the correct answer.</h4><br>
+          <h4 style="text-align: center;">You've choose the correct answer.</h4>
           <h4 style="text-align: center;">Do you want to continue to the next question?</h4>
       </div>
       </ion-col>
     </ion-row>
-    <div class="btn-action">
-
+    <div sbtn-action single single-2>
       <ion-row>
         <ion-col class="center">
-          <button ion-button block [navPush]="pushPage">Continue</button>
+          <button ion-button block clear [navPush]="pushPage">Continue</button>
         </ion-col>
       </ion-row>
 
       <ion-row>
         <ion-col class="center">
-          <button ion-button block [navPush]="pushPage">Cancel</button>
+          <button ion-button block clear (click)="back()">Cancel</button>
         </ion-col>
       </ion-row>
     </div>
