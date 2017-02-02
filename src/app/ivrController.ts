@@ -22,6 +22,8 @@ export class ivrController {
 
   setQuestion(questionID: number): void {
     console.log("ivrQuestion: setQuestion(): " + questionID);
+    this.ivrQuestion.setViewQuestionNumber = questionID;
+    console.log(this.ivrQuestion);
   }
 
   // Start Block Function
@@ -46,7 +48,7 @@ export class ivrController {
 
   stopAudio() {
     if (this.osPlatform === "Android") {
-      console.log('ivrController: stopAudio(): Playback Finished');
+      console.log('ivrController: stopAudio(): Playback Stoped');
       // Stop Playback
       this.file.stop();
     }

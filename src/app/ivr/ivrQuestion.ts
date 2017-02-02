@@ -69,12 +69,25 @@ export class ivrQuestion {
 
   _numberOfQuestion: number = Object.keys(this.questions).length;
 
-  constructor(){
+  private _viewQuestionNumber: number;
 
+  constructor(){
+    
   }
 
   // TODO
   get getQuestions() {
     return this.questions;
   }
+
+  set setViewQuestionNumber(id: number) {
+    console.log("ivrQuestion: setViewQuestionNumber(): Assigned = " +  id);
+    this._viewQuestionNumber = id;
+  }
+
+  get getViewQuestionNumber() {
+    console.log("ivrQuestion: setViewQuestionNumber(): Passing = " +  this._viewQuestionNumber);
+    return this._viewQuestionNumber;
+  }
+
 }

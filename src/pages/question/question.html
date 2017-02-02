@@ -14,35 +14,29 @@
 
 
 <ion-content class="question center">
-    <ion-grid>
-      <ion-row question single>
-        <ion-col>
-          <div class="question text-center">
-            <h1 style="text-align: center;"></h1>
-        </div>
-        </ion-col>
-      </ion-row>
-
-      <div sbtn-action single no-padding>
-        <ion-row>
-          <ion-col width-50>
-            <button ion-button block sbtn-color-1></button>
-          </ion-col>
-          <ion-col width-50>
-            <button ion-button block sbtn-color-2></button>
-          </ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col width-50>
-            <button ion-button block sbtn-color-3></button>
-          </ion-col>
-          <ion-col width-50>
-            <button ion-button block sbtn-color-4></button>
-          </ion-col>
-        </ion-row>
+    <!-- Question 1 -->
+      <div *ngIf="displayQuestionID == 1" class="ivrQuestion_1">
+        1
       </div>
-  </ion-grid>
+    <!-- End Question 1 -->
+
+    <!-- Question 2 -->
+      <div *ngIf="displayQuestionID == 2" class="ivrQuestion_2">
+        2
+      </div>
+    <!-- End Question 2 -->
+
+    <!-- Question 3 -->
+      <div *ngIf="displayQuestionID == 3" class="ivrQuestion_3">
+        3
+      </div>
+    <!-- End Question 3 -->
+
+    <!-- Question 4 -->
+      <div *ngIf="displayQuestionID == 4" class="ivrQuestion_4">
+        4
+      </div>
+    <!-- End Question 4 -->
 </ion-content>
 
 

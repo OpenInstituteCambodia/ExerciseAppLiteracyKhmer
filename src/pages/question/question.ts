@@ -15,9 +15,10 @@ import { HomePage } from '../home/home';
 })
 export class QuestionPage {
   ivrQuestion = new ivrQuestion();
+  displayQuestionID: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+    this.displayQuestionID = this.ivrQuestion.getViewQuestionNumber;
   }
 
   ionViewDidLoad() {

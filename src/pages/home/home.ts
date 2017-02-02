@@ -10,6 +10,7 @@ import { QuestionPage } from '../question/question';
 export class HomePage {
   _navCtl;
   ivrController = new ivrController();
+  
   questionList;
 
   constructor(public navCtrl: NavController) {
