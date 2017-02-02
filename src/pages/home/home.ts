@@ -8,14 +8,11 @@ import { QuestionPage } from '../question/question';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  _navCtl;
   ivrController = new ivrController();
 
   questionList;
 
   constructor(public navCtrl: NavController) {
-    this._navCtl = navCtrl;
-
     this.questionList = this.ivrController.getQuestions;
   }
 
@@ -32,7 +29,7 @@ export class HomePage {
     console.log("HomePage: route(): " + url);
 
     this.ivrController.setQuestion(url);
-    this._navCtl.push(
+    this.navCtrl.push(
       QuestionPage, {
         e_id: url
       }

@@ -31,7 +31,7 @@
                 <button ion-button block sbtn-color-1 [navPush]="pushPageWrong">1</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 [navPush]="pushPageCongrat">2</button>
+                <button ion-button block sbtn-color-2 (click)="answerCorrect()">2</button>
               </ion-col>
             </ion-row>
 
@@ -66,7 +66,7 @@
                 <button ion-button block sbtn-color-1 [navPush]="pushPageWrong">មាន់</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 [navPush]="pushPageCongrat">សេក</button>
+                <button ion-button block sbtn-color-2 (click)="answerCorrect()">សេក</button>
               </ion-col>
             </ion-row>
             <ion-row>
@@ -110,7 +110,7 @@
 
             <ion-row>
               <ion-col width-50>
-                <button ion-button block [navPush]="pushPageCongrat" style="background: url('assets/img/horse.png');">
+                <button ion-button block (click)="answerCorrect()" style="background: url('assets/img/horse.png');">
                   <!-- <img src="assets/img/horse.png" class="center" alt=""> -->
                 </button>
               </ion-col>
@@ -155,7 +155,7 @@
                 <button ion-button block sbtn-color-3 [navPush]="pushPageWrong">DAY</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-4 [navPush]="pushPageCongrat">END</button>
+                <button ion-button block sbtn-color-4 (click)="answerCorrect()">END</button>
               </ion-col>
             </ion-row>
           </div>

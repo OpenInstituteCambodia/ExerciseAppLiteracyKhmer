@@ -20,18 +20,21 @@ export class QuestionPage {
   pushPageWrong;
   platform;
 
-  constructor( public alert: AlertController,public navCtrl: NavController, public navParams: NavParams , platform: Platform) {
+  constructor( public alert: AlertController, public navCtrl: NavController, public navParams: NavParams , platform: Platform) {
     this.displayQuestionID = navParams.get("e_id");
     this.pushPageCongrat = CongratulationPage;
     this.pushPageWrong = WrongAnswerPage;
     this.platform = platform;
 
+    if (navParams.get("e_id") > 4) {
+        navCtrl.popToRoot();
+    }
   }
 
   ionViewDidEnter() {
     this.ivrController.playAudio(this.displayQuestionID+'.mp3');
   }
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
   }
@@ -39,6 +42,16 @@ export class QuestionPage {
   ionViewWillLeave() {
     this.ivrController.stopAudio();
   }
+
+  answerCorrect() {
+    this.navCtrl.push(
+      CongratulationPage, {
+        e_id: this.displayQuestionID
+      }
+    );
+  }
+
+
 
   replayAudio(){
     // alert("Replay Audio");

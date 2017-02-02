@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { QuestionPage } from '../question/question';
 /*
   Generated class for the Congratulation page.
 
@@ -13,10 +13,21 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CongratulationPage {
   poproot;
+  displayQuestionID: number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.poproot = navCtrl;
-
+    this.displayQuestionID = navParams.get("e_id");
   }
+
+  // TODO
+  continueQuestion() {
+    this.navCtrl.push(
+      QuestionPage, {
+        e_id: this.displayQuestionID+1
+      }
+    );
+  }
+
   back(){
     this.poproot.popToRoot();
   }
