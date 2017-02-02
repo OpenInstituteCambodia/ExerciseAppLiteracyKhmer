@@ -60,12 +60,12 @@ export class ivrController {
       let currentPlaybackPosition;
       this.file.getCurrentPosition().then((position) => {
         currentPlaybackPosition = position;
-      });
-      if (currentPlaybackPosition > 0) {
+        if (currentPlaybackPosition > 0 || currentPlaybackPosition < 0) {
+          this.stopAudio();
+          this.playAudio(audio_id);
+        }
         console.log("ivrController: replayAudio() = ", currentPlaybackPosition);
-        this.stopAudio();
-        this.playAudio(audio_id);
-      }
+      });
     }
   }
 
