@@ -33,8 +33,7 @@ export class HomePage {
 
     this.ivrController.setQuestion(url);
     this._navCtl.push(
-      QuestionPage,
-      {
+      QuestionPage, {
         e_id: url
       }
     );
