@@ -15,7 +15,7 @@ export class ivrToolbar {
     this._platform = platform;
   }
 
-  exitBtn(){
+  exitBtn(): void {
     console.log("ivrController: QuestionPage: exit(): Active");
     let alert = this.alert.create({
       title: 'Confirm',

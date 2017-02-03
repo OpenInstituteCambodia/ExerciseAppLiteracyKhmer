@@ -13,7 +13,7 @@ export class ivrAudio {
   }
 
   // Start Block Function
-  playAudio(audiofile: string): any {
+  playAudio(audiofile: string): void {
     if (this.osPlatform === "Android") {
       console.log("ivrController: playAudio(): Play");
       const onStatusUpdate = (status) => console.log("ivrController: playAudio(): onStatusUpdate" ,status);
@@ -32,7 +32,7 @@ export class ivrAudio {
     } // if Android
   } // playAudio()
 
-  stopAudio() {
+  stopAudio(): void {
     if (this.osPlatform === "Android") {
       console.log('ivrController: stopAudio(): Playback Stoped');
       // Stop Playback
@@ -40,7 +40,7 @@ export class ivrAudio {
     }
   } // stopAudio()
 
-  replayAudio(audio_id: string) {
+  replayAudio(audio_id: string): void {
     if (this.osPlatform === "Android") {
       // get current playback position
       let currentPlaybackPosition;

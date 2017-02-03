@@ -29,15 +29,15 @@ export class ivrController {
   }
 
   // Start Block Function
-  playAudio(audiofile: string): any {
+  playAudio(audiofile: string): void {
     this.ivrAudio.playAudio(audiofile);
   } // playAudio()
 
-  stopAudio() {
+  stopAudio(): void {
     this.ivrAudio.stopAudio();
   } // stopAudio()
 
-  replayAudio(audio_id: string) {
+  replayAudio(audio_id: string): void {
     this.ivrAudio.replayAudio(audio_id);
   }
 

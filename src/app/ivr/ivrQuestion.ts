@@ -92,7 +92,7 @@ export class ivrQuestion {
     this._viewQuestionNumber = id;
   }
 
-  get getViewQuestionNumber() {
+  get getViewQuestionNumber(): number {
     console.log("ivrQuestion: setViewQuestionNumber(): Passing = " +  this._viewQuestionNumber);
     return this._viewQuestionNumber;
   }
