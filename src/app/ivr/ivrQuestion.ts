@@ -66,13 +66,20 @@ export class ivrQuestion {
       q_audio_wrong: "question_4_wrong.mp3",
     },
   ];
+  // Pre-defined var
 
+
+  // Variable
   _numberOfQuestion: number = Object.keys(this.questions).length;
+
+
+  // Constructor
+
 
   private _viewQuestionNumber: number;
 
   constructor(){
-    
+
   }
 
   // TODO

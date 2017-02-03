@@ -1,4 +1,6 @@
 import { Device, MediaPlugin } from 'ionic-native';
+
+import { ivrToolbar } from './ivr/ivrToolbar';
 import { ivrQuestion } from './ivr/ivrQuestion';
 
 export class ivrController {

@@ -1,9 +1,17 @@
 import { Platform, AlertController } from 'ionic-angular';
-export class ivrToolbarCtl {
+export class ivrToolbar {
+  // Pre-defined var
   public status: boolean = false;
+  _platform;
+
+  // Variable
+
+
+  // Constructor
+
 
   constructor( public alert: AlertController, platform: Platform ){
-
+    this._platform = platform;
   }
 
   exitBtn(){
@@ -14,7 +22,7 @@ export class ivrToolbarCtl {
           text: "Yes",
           handler: () => {
             console.log("ivrController: QuestionPage: exit(): Exit Application!")
-            this.platform.exitApp();
+            this._platform.exitApp();
           }
         }, {
           text: "No",
