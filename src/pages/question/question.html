@@ -163,6 +163,157 @@
       </ion-grid>
       </div>
     <!-- End Question 4 -->
+
+    <!-- Question 5 -->
+      <div *ngIf="displayQuestionID == 5" class="ivrQuestion_5">
+        <ion-grid>
+          <ion-row question paragh>
+            <ion-col>
+              <div class="question text-center">
+                <h1 style="text-align: center;">
+                  តើឥន្ធនូមានប៉ុន្មានពណ៌?
+                </h1>
+            </div>
+            </ion-col>
+          </ion-row>
+
+          <div sbtn-action single>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong">4</button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-2 [navPush]="pushPageWrong">5</button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong">6</button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-4 (click)="answerCorrect()">7</button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+      </ion-grid>
+      </div>
+    <!-- End Question 5 -->
+
+    <!-- Question 6 -->
+      <div *ngIf="displayQuestionID == 6" class="ivrQuestion_6">
+        <ion-grid>
+          <ion-row question paragh>
+            <!-- <ion-col>
+              <div class="question text-center">
+                <h1 style="text-align: center;">
+                  Sally and Jane were best
+                  <br>fri _ _ _s.
+                </h1>
+            </div>
+            </ion-col> -->
+          </ion-row>
+
+          <div sbtn-action single>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong"></button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-2 [navPush]="pushPageWrong"></button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-3 (click)="answerCorrect()"></button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-4 [navPush]="pushPageWrong"></button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+      </ion-grid>
+      </div>
+    <!-- End Question 6 -->
+
+    <!-- Question 7 -->
+      <div *ngIf="displayQuestionID == 7" class="ivrQuestion_7">
+        <ion-grid>
+          <ion-row question paragh>
+            <!-- <ion-col>
+              <div class="question text-center">
+                <h1 style="text-align: center;">
+                  Sally and Jane were best
+                  <br>fri _ _ _s.
+                </h1>
+            </div>
+            </ion-col> -->
+          </ion-row>
+
+          <div sbtn-action single>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-1 (click)="answerCorrect()"></button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-2 [navPush]="pushPageWrong"></button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong"></button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-4 [navPush]="pushPageWrong"></button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+      </ion-grid>
+      </div>
+    <!-- End Question 7 -->
+    <!-- Question 8 -->
+      <div *ngIf="displayQuestionID == 8" class="ivrQuestion_8">
+        <ion-grid>
+          <ion-row question paragh>
+            <!-- <ion-col>
+              <div class="question text-center">
+                <h1 style="text-align: center;">
+                  Sally and Jane were best
+                  <br>fri _ _ _s.
+                </h1>
+            </div>
+            </ion-col> -->
+          </ion-row>
+
+          <div sbtn-action single>
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong"></button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-2 (click)="answerCorrect()"></button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong"></button>
+              </ion-col>
+              <ion-col width-50>
+                <button ion-button block sbtn-color-4 [navPush]="pushPageWrong"></button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+      </ion-grid>
+      </div>
+    <!-- End Question 4 -->
+
 </ion-content>
 
 
