@@ -53,7 +53,8 @@
     "cordova-plugin-device",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-media"
+    "cordova-plugin-media",
+    "cordova-plugin-sqlite-2"
   ],
   "cordovaPlatforms": [
     {

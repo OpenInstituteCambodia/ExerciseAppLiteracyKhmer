@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { ivrController } from '../../app/ivrController';
 /*
   Generated class for the WrongAnswer page.
 
@@ -13,6 +13,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class WrongAnswerPage {
   poproot;
+  ivrController = new ivrController();
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.poproot = navCtrl;
   }

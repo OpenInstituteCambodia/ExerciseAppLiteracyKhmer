@@ -8,41 +8,37 @@ export class ivrAudio {
   file: any;
   audioFile: string;
 
-  constructor() {
-
-  }
+  constructor() { }
 
   // Start Block Function
   playAudio(audiofile: string): void {
     if (this.osPlatform === "Android") {
       console.log("ivrController: playAudio(): Play");
-      const onStatusUpdate = (status) => console.log("ivrController: playAudio(): onStatusUpdate" ,status);
+      const onStatusUpdate = (status) => console.log("ivrController: playAudio(): onStatusUpdate" , status);
       this.file = new MediaPlugin('/android_asset/www/assets/audio/' + audiofile, onStatusUpdate);
-
       if (audiofile != '') {
         this.file.init.then(() => {
           console.log('ivrController: playAudio(): Playback Finished');
         }, (err) => {
           console.log('ivrController: playAudio(): Somthing went wrong! Error code: ' + err.code + ' Filename: ' + audiofile + ' Message: ' + err.message);
         });
-
-        // play the file
         this.file.play();
+        console.log("ivrController: MediaPlugin: this.file", this.file);
       }
     } // if Android
   } // playAudio()
 
   stopAudio(): void {
     if (this.osPlatform === "Android") {
+      console.log('ivrController: stopAudio(): Playback Released');
+      this.file.release();
       console.log('ivrController: stopAudio(): Playback Stoped');
-      // Stop Playback
       this.file.stop();
     }
   } // stopAudio()
 
   replayAudio(audio_id: string): void {
     if (this.osPlatform === "Android") {
-      // get current playback position
       let currentPlaybackPosition;
       this.file.getCurrentPosition().then((position) => {
         currentPlaybackPosition = position;
