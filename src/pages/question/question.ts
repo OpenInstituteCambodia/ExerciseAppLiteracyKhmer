@@ -27,7 +27,7 @@ export class QuestionPage {
     this.platform = platform;
     this.poproot = navCtrl;
 
-    if (navParams.get("e_id") > 4) {
+    if (navParams.get("e_id") > 8) {
         navCtrl.popToRoot();
     }
   }
