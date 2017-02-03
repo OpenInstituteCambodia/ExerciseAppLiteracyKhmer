@@ -14,7 +14,7 @@ export class ivrAudio {
   playAudio(audiofile: string): void {
     if (this.osPlatform === "Android") {
       console.log("ivrController: playAudio(): Play");
-      const onStatusUpdate = (status) => console.log("ivrController: playAudio(): onStatusUpdate" ,status);
+      const onStatusUpdate = (status) => console.log("ivrController: playAudio(): onStatusUpdate" , status);
       this.file = new MediaPlugin('/android_asset/www/assets/audio/' + audiofile, onStatusUpdate);
       if (audiofile != '') {
         this.file.init.then(() => {
@@ -23,19 +23,17 @@ export class ivrAudio {
           console.log('ivrController: playAudio(): Somthing went wrong! Error code: ' + err.code + ' Filename: ' + audiofile + ' Message: ' + err.message);
         });
         this.file.play();
+        console.log("ivrController: MediaPlugin: this.file", this.file);
       }
     } // if Android
   } // playAudio()
 
-  stopAudio(): boolean {
-    if(this.file === null) {
-      return false;
-    }
+  stopAudio(): void {
     if (this.osPlatform === "Android") {
+      console.log('ivrController: stopAudio(): Playback Released');
+      this.file.release();
       console.log('ivrController: stopAudio(): Playback Stoped');
       this.file.stop();
-      this.file = null;
-      console.log('ivrController: stopAudio(): this.file = ', this.file);
     }
   } // stopAudio()
 
