@@ -1,5 +1,7 @@
+import { Injectable } from '@angular/core';
 import { Platform, AlertController } from 'ionic-angular';
 
+@Injectable()
 export class ivrToolbar {
   // Pre-defined var
   public status: boolean = false;
@@ -9,8 +11,6 @@ export class ivrToolbar {
 
 
   // Constructor
-
-
   constructor( public alert: AlertController, platform: Platform ){
     this._platform = platform;
   }
@@ -20,16 +20,19 @@ export class ivrToolbar {
     let alert = this.alert.create({
       title: 'Confirm',
       message: 'Do you want to exit?',
-      buttons: [{
-        text: "Yes",
-        handler: () => {
-          console.log("ivrController: QuestionPage: exit(): Exit Application!");
-          this._platform.exitApp();
-        }
-      }, {
-        text: "No",
-        role: 'cancel'
-      }]
+      buttons: [
+        {
+          text: "No",
+          role: 'cancel'
+        },
+        {
+          text: "Yes",
+          handler: () => {
+            console.log("ivrController: QuestionPage: exit(): Exit Application!");
+            this._platform.exitApp();
+          }
+        },
+      ]
     });
     alert.present();
   }
