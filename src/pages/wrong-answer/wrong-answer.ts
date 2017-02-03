@@ -19,7 +19,6 @@ export class WrongAnswerPage {
   }
 
   back(){
-    this.ivrController.stopAudio();
     this.poproot.popToRoot();
   }
 

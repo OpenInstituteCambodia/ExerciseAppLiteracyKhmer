@@ -31,7 +31,6 @@ export class CongratulationPage {
   }
 
   back(){
-    this.ivrController.stopAudio();
     this.poproot.popToRoot();
   }
 
