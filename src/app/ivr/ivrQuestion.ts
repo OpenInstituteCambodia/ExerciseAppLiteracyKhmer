@@ -1,7 +1,10 @@
+import { Injectable } from '@angular/core';
+
+@Injectable()
 export class ivrQuestion {
   // Set Static Question in an Array
   questions: any = [
-    
+
   ];
   // Pre-defined var
 

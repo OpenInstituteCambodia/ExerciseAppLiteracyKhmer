@@ -1,5 +1,7 @@
+import { Injectable } from '@angular/core';
 import { Device, MediaPlugin } from 'ionic-native';
 
+@Injectable()
 export class ivrAudio {
   // Pre-defined var
   osPlatform: string = Device.platform;

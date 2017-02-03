@@ -1,9 +1,11 @@
+import { Injectable } from '@angular/core';
 import { Device } from 'ionic-native';
 
 import { ivrAudio } from './ivr/ivrAudio';
 import { ivrToolbar } from './ivr/ivrToolbar';
 import { ivrQuestion } from './ivr/ivrQuestion';
 
+@Injectable()
 export class ivrController {
   // Pre-defined var
   osPlatform: string = Device.platform;
