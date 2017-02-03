@@ -6,10 +6,6 @@ import { MyApp } from './app.component';
 // import { ivrController } from './ivrController';
 import { HomePage } from '../pages/home/home';
 import { QuestionPage } from '../pages/question/question';
-import {QuestionType1Page} from '../pages/question-type1/question-type1';
-import {QuestionType2Page} from '../pages/question-type2/question-type2';
-import {QuestionType3Page} from '../pages/question-type3/question-type3';
-import {QuestionType4Page} from '../pages/question-type4/question-type4';
 import {CongratulationPage} from '../pages/congratulation/congratulation';
 import {WrongAnswerPage} from '../pages/wrong-answer/wrong-answer';
 
@@ -19,10 +15,6 @@ import {WrongAnswerPage} from '../pages/wrong-answer/wrong-answer';
     MyApp,
     // ivrController,
     HomePage,
-    QuestionType1Page,
-    QuestionType2Page,
-    QuestionType3Page,
-    QuestionType4Page,
     CongratulationPage,
     QuestionPage,
     WrongAnswerPage
@@ -35,10 +27,6 @@ import {WrongAnswerPage} from '../pages/wrong-answer/wrong-answer';
     MyApp,
     // ivrController,
     HomePage,
-    QuestionType1Page,
-    QuestionType2Page,
-    QuestionType3Page,
-    QuestionType4Page,
     CongratulationPage,
     QuestionPage,
     WrongAnswerPage
