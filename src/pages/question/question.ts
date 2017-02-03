@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Platform, NavController, NavParams, AlertController } from 'ionic-angular';
+
 import { ivrController } from '../../app/ivrController';
 import { ivrQuestion } from '../../app/ivr/ivrQuestion';
-import {Platform} from 'ionic-angular';
-import {AlertController} from 'ionic-angular';
 import {CongratulationPage} from '../congratulation/congratulation';
 import {WrongAnswerPage} from '../wrong-answer/wrong-answer';
 
@@ -53,27 +52,24 @@ export class QuestionPage {
     );
   }
 
-  back(){
+  backBtn(){
     this.poproot.popToRoot();
   }
 
-
-  replayAudio(){
-    // alert("Replay Audio");
+  replayBtn(){
     this.ivrController.replayAudio(this.displayQuestionID+".mp3");
   }
 
-  exitApp(){
-    this.platform.exitApp();
-    console.log('click exitApp');
-  }
-  exit(){
+  exitBtn(){
       let alert = this.alert.create({
         title: 'Confirm',
         message: 'Do you want to exit?',
         buttons: [{
           text: "Yes",
-          handler: () => { this.exitApp() }
+          handler: () => {
+            console.log("ivrController: QuestionPage: exit(): Exit Application!")
+            this.platform.exitApp();
+          }
         }, {
           text: "No",
           role: 'cancel'
