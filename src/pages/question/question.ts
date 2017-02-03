@@ -17,16 +17,15 @@ export class QuestionPage {
   ivrQuestion = new ivrQuestion();
   ivrController = new ivrController();
   displayQuestionID: number;
+
   pushPageCongrat;
   pushPageWrong;
-  platform;
   poproot;
 
-  constructor( public alert: AlertController, public navCtrl: NavController, public navParams: NavParams , platform: Platform, private ivrToolbar: ivrToolbar) {
+  constructor( public navCtrl: NavController, public navParams: NavParams, private ivrToolbar: ivrToolbar) {
     this.displayQuestionID = navParams.get("e_id");
     this.pushPageCongrat = CongratulationPage;
     this.pushPageWrong = WrongAnswerPage;
-    this.platform = platform;
     this.poproot = navCtrl;
 
     if (navParams.get("e_id") > 4) {
@@ -65,26 +64,7 @@ export class QuestionPage {
   }
 
   exitBtn(){
-
     this.ivrToolbar.exitBtn();
-    // let alert = this.alert.create({
-    //   title: 'Confirm',
-    //   message: 'Do you want to exit?',
-    //   buttons: [
-    //     {
-    //       text: "No",
-    //       role: 'cancel'
-    //     },
-    //     {
-    //       text: "Yes",
-    //       handler: () => {
-    //         console.log("ivrController: QuestionPage: exit(): Exit Application!")
-    //         this.platform.exitApp();
-    //       }
-    //     }
-    //   ]
-    // })
-    // alert.present();
   }
 
 }

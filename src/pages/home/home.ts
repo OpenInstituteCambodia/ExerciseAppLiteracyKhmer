@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
 import { ivrController } from '../../app/ivrController';
+import { ivrToolbar } from '../../app/ivr/ivrToolbar';
 import { QuestionPage } from '../question/question';
 import { Platform, NavController, NavParams, AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
-
+  templateUrl: 'home.html',
+  providers: [ ivrToolbar ]
 })
 export class HomePage {
   ivrController = new ivrController();
   platform;
   questionList;
 
-  constructor(public alert: AlertController, public navCtrl: NavController, public navParams: NavParams , platform: Platform) {
+  constructor(public alert: AlertController, public navCtrl: NavController, public navParams: NavParams , platform: Platform, private ivrToolbar: ivrToolbar) {
     this.questionList = this.ivrController.getQuestions;
     this.platform = platform;
   }
@@ -40,23 +41,6 @@ export class HomePage {
   }
 
   exitBtn(){
-    let alert = this.alert.create({
-      title: 'Confirm',
-      message: 'Do you want to exit?',
-      buttons: [
-        {
-          text: "No",
-          role: 'cancel'
-        },
-        {
-          text: "Yes",
-          handler: () => {
-            console.log("ivrController: QuestionPage: exit(): Exit Application!")
-            this.platform.exitApp();
-          }
-        }
-      ]
-    })
-    alert.present();
+    this.ivrToolbar.exitBtn();
   }
 }
