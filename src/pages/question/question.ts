@@ -3,13 +3,15 @@ import { Platform, NavController, NavParams, AlertController } from 'ionic-angul
 
 import { ivrController } from '../../app/ivrController';
 import { ivrQuestion } from '../../app/ivr/ivrQuestion';
+import { ivrToolbar } from '../../app/ivr/ivrToolbar';
 import {CongratulationPage} from '../congratulation/congratulation';
 import {WrongAnswerPage} from '../wrong-answer/wrong-answer';
 
 
 @Component({
   selector: 'page-question',
-  templateUrl: 'question.html'
+  templateUrl: 'question.html',
+  providers: [ivrToolbar]
 })
 export class QuestionPage {
   ivrQuestion = new ivrQuestion();
@@ -20,7 +22,7 @@ export class QuestionPage {
   platform;
   poproot;
 
-  constructor( public alert: AlertController, public navCtrl: NavController, public navParams: NavParams , platform: Platform) {
+  constructor( public alert: AlertController, public navCtrl: NavController, public navParams: NavParams , platform: Platform, private ivrToolbar: ivrToolbar) {
     this.displayQuestionID = navParams.get("e_id");
     this.pushPageCongrat = CongratulationPage;
     this.pushPageWrong = WrongAnswerPage;
@@ -30,6 +32,8 @@ export class QuestionPage {
     if (navParams.get("e_id") > 4) {
         navCtrl.popToRoot();
     }
+
+    console.log("ivrController: ivrToolbar: @Injectable ", ivrToolbar);
   }
 
   ionViewDidEnter() {
@@ -61,24 +65,26 @@ export class QuestionPage {
   }
 
   exitBtn(){
-    let alert = this.alert.create({
-      title: 'Confirm',
-      message: 'Do you want to exit?',
-      buttons: [
-        {
-          text: "No",
-          role: 'cancel'
-        },
-        {
-          text: "Yes",
-          handler: () => {
-            console.log("ivrController: QuestionPage: exit(): Exit Application!")
-            this.platform.exitApp();
-          }
-        }
-      ]
-    })
-    alert.present();
+
+    this.ivrToolbar.exitBtn();
+    // let alert = this.alert.create({
+    //   title: 'Confirm',
+    //   message: 'Do you want to exit?',
+    //   buttons: [
+    //     {
+    //       text: "No",
+    //       role: 'cancel'
+    //     },
+    //     {
+    //       text: "Yes",
+    //       handler: () => {
+    //         console.log("ivrController: QuestionPage: exit(): Exit Application!")
+    //         this.platform.exitApp();
+    //       }
+    //     }
+    //   ]
+    // })
+    // alert.present();
   }
 
 }

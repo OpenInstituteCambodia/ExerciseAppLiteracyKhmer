@@ -1,5 +1,7 @@
+import { Injectable } from '@angular/core';
 import { Platform, AlertController } from 'ionic-angular';
 
+@Injectable()
 export class ivrToolbar {
   // Pre-defined var
   public status: boolean = false;
@@ -9,8 +11,6 @@ export class ivrToolbar {
 
 
   // Constructor
-
-
   constructor( public alert: AlertController, platform: Platform ){
     this._platform = platform;
   }
