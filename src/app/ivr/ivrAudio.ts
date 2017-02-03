@@ -29,6 +29,7 @@ export class ivrAudio {
 
   stopAudio(): void {
     if (this.osPlatform === "Android") {
+      // this.plt.is('ios')
       console.log('ivrController: stopAudio(): Playback Released');
       this.file.release();
       console.log('ivrController: stopAudio(): Playback Stoped');
