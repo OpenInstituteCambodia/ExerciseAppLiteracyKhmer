@@ -1,4 +1,5 @@
 import { Platform, AlertController } from 'ionic-angular';
+
 export class ivrToolbar {
   // Pre-defined var
   public status: boolean = false;

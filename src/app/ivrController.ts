@@ -1,4 +1,4 @@
-import { Device, MediaPlugin } from 'ionic-native';
+import { Device } from 'ionic-native';
 
 import { ivrAudio } from './ivr/ivrAudio';
 import { ivrToolbar } from './ivr/ivrToolbar';
