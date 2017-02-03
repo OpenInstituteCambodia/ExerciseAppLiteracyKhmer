@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { ivrController } from '../../app/ivrController';
 import { ivrToolbar } from '../../app/ivr/ivrToolbar';
 import { QuestionPage } from '../question/question';
@@ -24,8 +24,7 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
-    // ivrController Code Block
-    this.ivrController.playAudio('0.mp3');
+
   }
 
   route(url: any): any {
@@ -38,6 +37,11 @@ export class HomePage {
         e_id: url
       }
     );
+  }
+
+  playSound() {
+    // ivrController Code Block
+    this.ivrController.replayAudio('0.mp3');
   }
 
   exitBtn(){
