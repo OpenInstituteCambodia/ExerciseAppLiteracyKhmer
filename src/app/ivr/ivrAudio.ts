@@ -7,7 +7,7 @@ export class ivrAudio {
   // Variable
   file: any;
   audioFile: string;
-  
+
   constructor() {
 
   }
@@ -23,7 +23,7 @@ export class ivrAudio {
         this.file.init.then(() => {
           console.log('ivrController: playAudio(): Playback Finished');
         }, (err) => {
-          console.log('ivrController: playAudio(): Somthing went wrong! Error code: ' + err.code + 'Filename: ' + audiofile + ' Message: ' + err.message);
+          console.log('ivrController: playAudio(): Somthing went wrong! Error code: ' + err.code + ' Filename: ' + audiofile + ' Message: ' + err.message);
         });
 
         // play the file
