@@ -23,7 +23,6 @@ export class ivrAudio {
           console.log('ivrController: playAudio(): Somthing went wrong! Error code: ' + err.code + ' Filename: ' + audiofile + ' Message: ' + err.message);
         });
         this.file.play();
-        console.log("ivrController: MediaPlugin: this.file", this.file);
       }
     } // if Android
   } // playAudio()
