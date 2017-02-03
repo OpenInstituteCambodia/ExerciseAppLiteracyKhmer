@@ -6,6 +6,7 @@ import { QuestionPage } from '../question/question';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
+
 })
 export class HomePage {
   ivrController = new ivrController();
