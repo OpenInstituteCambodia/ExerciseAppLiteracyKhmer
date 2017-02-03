@@ -41,7 +41,7 @@ export class HomePage {
 
   playSound() {
     // ivrController Code Block
-    this.ivrController.replayAudio('0.mp3');
+    this.ivrController.playAudio('0.mp3');
   }
 
   exitBtn(){
