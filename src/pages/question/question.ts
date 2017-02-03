@@ -32,7 +32,6 @@ export class QuestionPage {
         navCtrl.popToRoot();
     }
 
-    console.log("ivrController: ivrToolbar: @Injectable ", ivrToolbar);
   }
 
   ionViewDidEnter() {
