@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { ivrController } from '../../app/ivrController';
 import { QuestionPage } from '../question/question';
+import { Platform, NavController, NavParams, AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -10,11 +10,12 @@ import { QuestionPage } from '../question/question';
 })
 export class HomePage {
   ivrController = new ivrController();
-
+  platform;
   questionList;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public alert: AlertController, public navCtrl: NavController, public navParams: NavParams , platform: Platform) {
     this.questionList = this.ivrController.getQuestions;
+    this.platform = platform;
   }
 
   ionViewWillLeave() {
@@ -30,10 +31,29 @@ export class HomePage {
     console.log("HomePage: route(): " + url);
 
     this.ivrController.setQuestion(url);
+
     this.navCtrl.push(
       QuestionPage, {
         e_id: url
       }
     );
+  }
+
+  exitBtn(){
+    let alert = this.alert.create({
+      title: 'Confirm',
+      message: 'Do you want to exit?',
+      buttons: [{
+        text: "Yes",
+        handler: () => {
+          console.log("ivrController: QuestionPage: exit(): Exit Application!")
+          this.platform.exitApp();
+        }
+      }, {
+        text: "No",
+        role: 'cancel'
+      }]
+    })
+    alert.present();
   }
 }
