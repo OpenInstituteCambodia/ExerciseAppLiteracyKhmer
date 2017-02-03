@@ -26,7 +26,6 @@ export class ivrController {
   setQuestion(questionID: number): void {
     console.log("ivrQuestion: setQuestion(): " + questionID);
     this.ivrQuestion.setViewQuestionNumber = questionID;
-    console.log(this.ivrQuestion);
   }
 
   // Start Block Function
