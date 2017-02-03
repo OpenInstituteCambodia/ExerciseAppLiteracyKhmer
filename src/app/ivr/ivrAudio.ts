@@ -40,6 +40,7 @@ export class ivrAudio {
   replayAudio(audio_id: string): void {
     if (this.osPlatform === "Android") {
       let currentPlaybackPosition;
+      console.log("ivrController: replayAudio() this.file = ", this.file);
       this.file.getCurrentPosition().then((position) => {
         currentPlaybackPosition = position;
         if (currentPlaybackPosition > 0 || currentPlaybackPosition < 0) {
@@ -49,5 +50,9 @@ export class ivrAudio {
         console.log("ivrController: replayAudio() = ", currentPlaybackPosition);
       });
     }
+  }
+
+  pressPlayReset() {
+
   }
 }
