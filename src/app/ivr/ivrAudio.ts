@@ -32,11 +32,17 @@ export class ivrAudio {
     } // if Android
   } // playAudio()
 
-  stopAudio(): void {
+  stopAudio(): boolean {
+    if(this.file === null) {
+      return false;
+    }
     if (this.osPlatform === "Android") {
       console.log('ivrController: stopAudio(): Playback Stoped');
       // Stop Playback
       this.file.stop();
+
+      this.file = null;
+      console.log('ivrController: stopAudio(): this.file = ', this.file);
     }
   } // stopAudio()
 

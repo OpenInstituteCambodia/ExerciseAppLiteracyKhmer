@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { QuestionPage } from '../question/question';
+import { ivrController } from '../../app/ivrController';
 /*
   Generated class for the Congratulation page.
 
@@ -13,6 +14,7 @@ import { QuestionPage } from '../question/question';
 })
 export class CongratulationPage {
   poproot;
+  ivrController = new ivrController();
   displayQuestionID: number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.poproot = navCtrl;
@@ -29,6 +31,7 @@ export class CongratulationPage {
   }
 
   back(){
+    this.ivrController.stopAudio();
     this.poproot.popToRoot();
   }
 

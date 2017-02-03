@@ -53,6 +53,7 @@ export class QuestionPage {
   }
 
   backBtn(){
+    this.ivrController.stopAudio();
     this.poproot.popToRoot();
   }
 
