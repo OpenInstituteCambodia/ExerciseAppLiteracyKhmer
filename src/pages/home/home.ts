@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { ivrController } from '../../app/ivrController';
 import { ivrToolbar } from '../../app/ivr/ivrToolbar';
 import { QuestionPage } from '../question/question';
