@@ -28,19 +28,19 @@
           <div sbtn-action single no-padding>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong">1</button>
+                <button ion-button block sbtn-color-1 (click)="questionanswer(1)">1</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 (click)="answerCorrect()">2</button>
+                <button ion-button block sbtn-color-2 (click)="questionanswer(2)">2</button>
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong">3</button>
+                <button ion-button block sbtn-color-3 (click)="questionanswer(3)">3</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-4 [navPush]="pushPageWrong">4</button>
+                <button ion-button block sbtn-color-4 (click)="questionanswer(4)">4</button>
               </ion-col>
             </ion-row>
           </div>
@@ -63,18 +63,18 @@
           <div sbtn-action single>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong">មាន់</button>
+                <button ion-button block sbtn-color-1 (click)="questionanswer(1)">មាន់</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 (click)="answerCorrect()">សេក</button>
+                <button ion-button block sbtn-color-2 (click)="questionanswer(2)">សេក</button>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong">ទា</button>
+                <button ion-button block sbtn-color-3 (click)="questionanswer(3)">ទា</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-4 [navPush]="pushPageWrong">ចាប</button>
+                <button ion-button block sbtn-color-4 (click)="questionanswer(4)">ចាប</button>
               </ion-col>
             </ion-row>
           </div>
@@ -97,12 +97,12 @@
           <div sbtn-action img>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block [navPush]="pushPageWrong" style="background: url('assets/img/cow.png') ;" >
+                <button ion-button block (click)="questionanswer(1)" style="background: url('assets/img/cow.png') ;" >
                   <!-- <img src="assets/img/cow.png" class="center" alt=""> -->
                 </button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block [navPush]="pushPageWrong" style="background: url('assets/img/donkey.png');">
+                <button ion-button block (click)="questionanswer(2)" style="background: url('assets/img/donkey.png');">
                   <!-- <img src="assets/img/donkey.png" class="center" alt=""> -->
                 </button>
               </ion-col>
@@ -110,12 +110,12 @@
 
             <ion-row>
               <ion-col width-50>
-                <button ion-button block (click)="answerCorrect()" style="background: url('assets/img/horse.png');">
+                <button ion-button block (click)="questionanswer(3)" style="background: url('assets/img/horse.png');">
                   <!-- <img src="assets/img/horse.png" class="center" alt=""> -->
                 </button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block [navPush]="pushPageWrong" style="background: url('assets/img/buffalo.png');">
+                <button ion-button block (click)="questionanswer(4)" style="background: url('assets/img/buffalo.png');">
                   <!-- <img src="assets/img/buffalo.png" class="center" alt="" > -->
                 </button>
               </ion-col>
@@ -143,19 +143,19 @@
           <div sbtn-action single>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong">AND</button>
+                <button ion-button block sbtn-color-1 (click)="questionanswer(1)">AND</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 [navPush]="pushPageWrong">IND</button>
+                <button ion-button block sbtn-color-2 (click)="questionanswer(2)">IND</button>
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong">DAY</button>
+                <button ion-button block sbtn-color-3 (click)="questionanswer(3)">DAY</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-4 (click)="answerCorrect()">END</button>
+                <button ion-button block sbtn-color-4 (click)="questionanswer(4)">END</button>
               </ion-col>
             </ion-row>
           </div>
@@ -180,19 +180,19 @@
           <div sbtn-action single>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong">4</button>
+                <button ion-button block sbtn-color-1 (click)="questionanswer(1)">4</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 [navPush]="pushPageWrong">5</button>
+                <button ion-button block sbtn-color-2 (click)="questionanswer(2)">5</button>
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong">6</button>
+                <button ion-button block sbtn-color-3 (click)="questionanswer(3)">6</button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-4 (click)="answerCorrect()">7</button>
+                <button ion-button block sbtn-color-4 (click)="questionanswer(4)">7</button>
               </ion-col>
             </ion-row>
           </div>
@@ -218,19 +218,19 @@
           <div sbtn-action single>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-1 (click)="questionanswer(1)"></button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-2 (click)="questionanswer(2)"></button>
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-3 (click)="answerCorrect()"></button>
+                <button ion-button block sbtn-color-3 (click)="questionanswer(3)"></button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-4 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-4 (click)="questionanswer(4)"></button>
               </ion-col>
             </ion-row>
           </div>
@@ -256,19 +256,19 @@
           <div sbtn-action single>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-1 (click)="answerCorrect()"></button>
+                <button ion-button block sbtn-color-1 (click)="questionanswer(1)"></button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-2 (click)="questionanswer(2)"></button>
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-3 (click)="questionanswer(3)"></button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-4 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-4 (click)="questionanswer(4)"></button>
               </ion-col>
             </ion-row>
           </div>
@@ -294,19 +294,19 @@
           <div sbtn-action single>
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-1 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-1 (click)="questionanswer(1)"></button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-2 (click)="answerCorrect()"></button>
+                <button ion-button block sbtn-color-2 (click)="questionanswer(2)"></button>
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col width-50>
-                <button ion-button block sbtn-color-3 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-3 (click)="questionanswer(3)"></button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block sbtn-color-4 [navPush]="pushPageWrong"></button>
+                <button ion-button block sbtn-color-4 (click)="questionanswer(4)"></button>
               </ion-col>
             </ion-row>
           </div>
