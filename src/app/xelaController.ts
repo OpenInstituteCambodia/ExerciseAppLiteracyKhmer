@@ -1,5 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { Device } from 'ionic-native';
+import { NavController, NavParams } from 'ionic-angular';
 
 // xelaModule
 import { xelaAudio } from './xelaModule/xelaAudio';
@@ -20,7 +21,6 @@ import { xelaRoute } from './xelaModule/xelaRoute';
 @Injectable()
 export class xelaController {
   private _media_player = new xelaAudio();
-  private _route = new xelaRoute();
 
   constructor( ) {
     console.log("xelaController: Active!");
@@ -30,8 +30,9 @@ export class xelaController {
   }
 
   public play_audio(_file: string): void {
+    console.log("xelaController: play_audio() -> xelaAudio: play()");
     this._media_player.play(_file);
-
   }
+
 
 }

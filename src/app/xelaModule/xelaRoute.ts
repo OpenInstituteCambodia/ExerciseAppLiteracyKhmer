@@ -17,17 +17,16 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Injectable()
 export class xelaRoute {
-
   constructor(
-    private _navCtrl?: NavController,
-    private _navParams?: NavParams ) {
+    public navCtrl: NavController,
+    public navParams: NavParams ) {
       console.log("xelaController: xelaRoute: Active!");
-      console.log("xelaController: xelaRoute: route() -> ", this._navCtrl);
+      console.log("xelaController: xelaRoute: route() -> ", this.navCtrl);
   }
 
   public route(page: any, index: any): void {
-    console.log("xelaController: xelaRoute: route() -> ", this._navCtrl);
-    this._navCtrl.push(
+    console.log("xelaController: xelaRoute: route() -> ", this.navCtrl);
+    this.navCtrl.push(
       page, {
         q_id: index
       }
