@@ -11,9 +11,6 @@ import { NavController, NavParams } from 'ionic-angular';
 export class QuestionPage {
 
   constructor( public navCtrl: NavController, public navParams: NavParams) {
-    if (navParams.get("q_id") > 8) {
-        navCtrl.popToRoot();
-    }
 
   }
 
