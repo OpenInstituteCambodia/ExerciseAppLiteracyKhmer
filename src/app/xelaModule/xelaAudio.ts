@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Platform } from 'ionic-angular';
 import { Device, MediaPlugin } from 'ionic-native';
 
 /*
@@ -16,8 +15,8 @@ import { Device, MediaPlugin } from 'ionic-native';
 
 @Injectable()
 export class xelaAudio {
-  private media_player: string;
-  public platform = new Platform();
+  private _media_player: any;
+  private _platform = Device.platform;
 
   constructor( ) {
     console.log("xelaController: xelaAudio: Active!");
@@ -27,8 +26,22 @@ export class xelaAudio {
 
   }
 
-  public play() {
+  public play(_audio_filename: string): boolean {
+    if (_audio_filename === '') { // Do Nothing if No File is provided
+      console.log("xelaController: xelaAudio: play() -> NO FILENAME PROVIDED");
+      return false;
+    }
 
+    // Inspecting Platform for linking asset file
+    if (this._platform === 'Android') {
+      _audio_filename = '/android_asset/www/assets/audio/' + _audio_filename;
+    }
+    
+    console.log("xelaController: xelaAudio: play() -> ", _audio_filename);
+    const onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
+    this._media_player = new MediaPlugin( _audio_filename, onStatusUpdate );
+
+    return true;
   }
 
 }

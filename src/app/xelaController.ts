@@ -18,13 +18,17 @@ import { xelaAudio } from './xelaModule/xelaAudio';
 
 @Injectable()
 export class xelaController {
-  private audio = new xelaAudio();
+  private _media_player = new xelaAudio();
 
   constructor( ) {
     console.log("xelaController: Active!");
   }
 
   public static main(): void {
+  }
+
+  public media_play(_file: string): void {
+    this._media_player.play(_file);
 
   }
 
