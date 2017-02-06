@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
 
 import { xelaController } from '../../app/xelaController';
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
@@ -10,11 +10,14 @@ import { xelaRoute } from '../../app/xelaModule/xelaRoute';
   providers: [ xelaController, xelaRoute ]
 })
 export class QuestionPage {
-
+  q_id: number;
   constructor(
     private _xela: xelaController,
-    private _route: xelaRoute
-  ) { }
+    private _route: xelaRoute,
+    private _param: NavParams
+  ) {
+    this.q_id = this._param.get("q_id");
+  }
 
   ionViewDidEnter() {
 
