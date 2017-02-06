@@ -20,17 +20,20 @@ export class HomePage {
   }
 
   ionViewWillLeave() {
-
+    this.xela.stop_audio();
   }
 
   ionViewDidEnter() {
-    this.xela.play_audio("index.mp3");
+
   }
 
   public question(index: number) {
     this.route.route(QuestionPage, index);
   }
 
+  playSound() {
+    this.xela.play_audio("index.mp3");
+  }
 
 }
 
