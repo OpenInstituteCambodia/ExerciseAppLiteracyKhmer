@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   name: "xelaRoute"
@@ -12,13 +13,24 @@ import { Injectable } from '@angular/core';
   licenses: "GNU GPL"
 */
 
+/* public navCtrl: NavController, public navParams: NavParams */
+
 @Injectable()
 export class xelaRoute {
-  constructor() {
 
+  constructor(
+    private _navCtrl?: NavController,
+    private _navParams?: NavParams ) {
+      console.log("xelaController: xelaRoute: Active!");
+      console.log("xelaController: xelaRoute: route() -> ", this._navCtrl);
   }
 
-  public route(page: any): any {
-
+  public route(page: any, index: any): void {
+    console.log("xelaController: xelaRoute: route() -> ", this._navCtrl);
+    this._navCtrl.push(
+      page, {
+        index: index
+      }
+    );
   }
 }
