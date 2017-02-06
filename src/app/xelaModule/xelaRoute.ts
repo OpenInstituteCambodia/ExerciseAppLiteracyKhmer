@@ -29,7 +29,7 @@ export class xelaRoute {
     console.log("xelaController: xelaRoute: route() -> ", this._navCtrl);
     this._navCtrl.push(
       page, {
-        index: index
+        q_id: index
       }
     );
   }
