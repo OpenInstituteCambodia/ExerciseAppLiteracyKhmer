@@ -46,7 +46,7 @@ export class xelaAudio {
     this._media_player.init.then((suc) => {
       console.log("xelaController: xelaAudio: _media_player: Init -> ", suc);
     }, (err) => {
-      console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + "Filename: " + _audio_filename + "Message: " + err.message);
+      console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _audio_filename + ", Message: " + err.message);
     });
 
     console.log("xelaController: xelaAudio: play() -> ", _audio_filename);
