@@ -36,11 +36,18 @@ export class xelaAudio {
     if (this._platform === 'Android') {
       _audio_filename = '/android_asset/www/assets/audio/' + _audio_filename;
     }
-    
-    console.log("xelaController: xelaAudio: play() -> ", _audio_filename);
+
     const onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
     this._media_player = new MediaPlugin( _audio_filename, onStatusUpdate );
 
+    this._media_player.init.then((suc) => {
+      console.log("xelaController: xelaAudio: _media_player: Init -> ", suc);
+    }, (err) => {
+      console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + "Filename: " + _audio_filename + "Message: " + err.message);
+    });
+
+    console.log("xelaController: xelaAudio: play() -> ", _audio_filename);
+    this._media_player.play();
     return true;
   }
 
