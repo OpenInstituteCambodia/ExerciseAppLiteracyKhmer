@@ -1,10 +1,7 @@
-import { Component, Injectable } from '@angular/core';
-import { Device } from 'ionic-native';
-import { NavController, NavParams } from 'ionic-angular';
+import { Injectable } from '@angular/core';
 
 // xelaModule
 import { xelaAudio } from './xelaModule/xelaAudio';
-import { xelaRoute } from './xelaModule/xelaRoute';
 
 /*
   name: "xelaController"
