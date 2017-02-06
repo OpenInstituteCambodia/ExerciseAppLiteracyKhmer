@@ -9,6 +9,8 @@ import { QuestionPage } from '../pages/question/question';
 import {CongratulationPage} from '../pages/congratulation/congratulation';
 import {WrongAnswerPage} from '../pages/wrong-answer/wrong-answer';
 
+// Testing
+import { xelaController } from './xelaController';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,6 @@ import {WrongAnswerPage} from '../pages/wrong-answer/wrong-answer';
     QuestionPage,
     WrongAnswerPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, xelaController]
 })
 export class AppModule {}
