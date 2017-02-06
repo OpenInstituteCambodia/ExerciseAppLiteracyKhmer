@@ -1,23 +1,23 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
-// Pages
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { QuestionPage } from '../pages/question/question';
-import {CongratulationPage} from '../pages/congratulation/congratulation';
-import {WrongAnswerPage} from '../pages/wrong-answer/wrong-answer';
-
-// Testing
 import { xelaController } from './xelaController';
+import { MyApp } from './app.component';
+import { MenuPage } from '../pages/menu/menu';
+import { QuestionPage } from '../pages/question/question';
+import { ResultPage } from '../pages/result/result';
+
+/*
+  NOTHING TO EDIT HERE !!!
+  GO AWAY!!!
+*/
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    CongratulationPage,
+    MenuPage,
     QuestionPage,
-    WrongAnswerPage
+    ResultPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,10 +25,9 @@ import { xelaController } from './xelaController';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    CongratulationPage,
+    MenuPage,
     QuestionPage,
-    WrongAnswerPage
+    ResultPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, xelaController]
 })
