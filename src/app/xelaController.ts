@@ -10,7 +10,7 @@ import { Device } from 'ionic-native';
     "Sinat Heum (heumsinatgic25@gmail.com)",
     "Sorya Phoeun (soryaphoeun08@gmail.com)"
   ]
-  licenses: ""
+  licenses: "GNU GPL"
 */
 
 @Injectable()
