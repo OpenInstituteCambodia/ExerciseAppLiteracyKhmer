@@ -3,24 +3,26 @@ import { NavParams } from 'ionic-angular';
 
 import { xelaController } from '../../app/xelaController';
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
+import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
 
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
-  providers: [ xelaController, xelaRoute ]
+  providers: [ xelaController, xelaRoute, xelaToolbar ]
 })
 export class QuestionPage {
-  q_id: number;
+  q_id: any;
   constructor(
     private _xela: xelaController,
     private _route: xelaRoute,
+    private _toolbar: xelaToolbar,
     private _param: NavParams
   ) {
     this.q_id = this._param.get("q_id");
   }
 
   ionViewDidEnter() {
-
+    this._xela.play_audio(this.q_id+'.mp3');
   }
 
   ionViewDidLoad() {
@@ -40,11 +42,12 @@ export class QuestionPage {
   }
 
   public button_replay_question(): void {
-
+    this._xela.replay_audio(this.q_id+'.mp3');
   }
 
   public button_exit_application(): void {
-
+    console.log("exit app");
+    this._toolbar.exit();
   }
 
 }
