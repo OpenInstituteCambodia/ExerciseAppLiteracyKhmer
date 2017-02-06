@@ -24,7 +24,7 @@ export class xelaRoute {
       console.log("xelaController: xelaRoute: route() -> ", this.navCtrl);
   }
 
-  public route(page: any, index: any): void {
+  public route(page: any, index: number): void {
     console.log("xelaController: xelaRoute: route() -> ", this.navCtrl);
     this.navCtrl.push(
       page, {
