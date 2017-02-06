@@ -21,11 +21,19 @@ export class xelaRoute {
     public navCtrl: NavController,
     public navParams: NavParams ) {
       console.log("xelaController: xelaRoute: Active!");
-      console.log("xelaController: xelaRoute: route() -> ", this.navCtrl);
   }
 
   public route(page: any, index: number): void {
-    console.log("xelaController: xelaRoute: route() -> ", this.navCtrl);
+    console.log("xelaController: xelaRoute: route() -> ", index);
+    this.navCtrl.push(
+      page, {
+        p_id: index
+      }
+    );
+  }
+
+  public question(page: any, index: number): void {
+    console.log("xelaController: xelaRoute: question() -> ", index);
     this.navCtrl.push(
       page, {
         q_id: index
@@ -33,12 +41,13 @@ export class xelaRoute {
     );
   }
 
-  public question(): void {
-
-  }
-
-  public result(): void {
-
+  public result(page: any, index: number): void {
+    console.log("xelaController: xelaRoute: result() -> ", index);
+    this.navCtrl.push(
+      page, {
+        r_id: index
+      }
+    );
   }
 
   public popToRoot(): void {
