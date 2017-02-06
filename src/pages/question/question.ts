@@ -7,7 +7,7 @@ import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
-  providers: [ xelaRoute ]
+  providers: [ xelaController, xelaRoute ]
 })
 export class QuestionPage {
 

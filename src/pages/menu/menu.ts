@@ -29,7 +29,10 @@ export class MenuPage {
   }
 
   public question(index: number) {
-    this._route.route(QuestionPage, index);
+    this._route.question(
+      QuestionPage,
+      index
+    );
   }
 
   public button_play_audio() {
