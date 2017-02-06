@@ -54,4 +54,15 @@ export class xelaAudio {
     return true;
   }
 
+  public stop(): void {
+    if (this._platform === 'Android' || this._platform === 'iOS') {
+      if (this._media_player !== "undefined") {
+        this._media_player.stop();
+        console.log("xelaController: xelaAudio: stop() -> success");
+        this._media_player.release();
+        console.log("xelaController: xelaAudio: stop() -> release() -> success");
+      }
+    }
+  }
+
 }
