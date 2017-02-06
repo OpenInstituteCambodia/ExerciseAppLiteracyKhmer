@@ -5,6 +5,8 @@ import { xelaController } from '../../app/xelaController';
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
 
+import { ResultPage } from '../result/result';
+
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
@@ -34,7 +36,11 @@ export class QuestionPage {
   }
 
   public answer(a_id: number): void {
-
+    a_id = 1;
+    this._route.result(
+      ResultPage,
+      a_id
+    );
   }
 
   public button_push_root(): void {
