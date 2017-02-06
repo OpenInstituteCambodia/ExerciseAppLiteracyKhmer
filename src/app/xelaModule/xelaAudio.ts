@@ -17,7 +17,7 @@ import { Device, MediaPlugin } from 'ionic-native';
 @Injectable()
 export class xelaAudio {
   private audio_filename: string = "miclejackson_moonwalk.mp3";
-  public plt = new Platform();
+  public platform = new Platform();
 
   constructor( ) {
     console.log("xelaController: xelaAudio: Active!");
