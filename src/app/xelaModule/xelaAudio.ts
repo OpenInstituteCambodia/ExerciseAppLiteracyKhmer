@@ -16,7 +16,7 @@ import { Device, MediaPlugin } from 'ionic-native';
 
 @Injectable()
 export class xelaAudio {
-  private audio_filename: string;
+  private media_player: string;
   public platform = new Platform();
 
   constructor( ) {
@@ -24,6 +24,10 @@ export class xelaAudio {
   }
 
   public static main(): void {
+
+  }
+
+  public play() {
 
   }
 
