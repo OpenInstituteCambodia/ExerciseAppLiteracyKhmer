@@ -32,4 +32,8 @@ export class xelaRoute {
       }
     );
   }
+
+  public popToRoot(): void {
+    this.navCtrl.popToRoot();
+  }
 }
