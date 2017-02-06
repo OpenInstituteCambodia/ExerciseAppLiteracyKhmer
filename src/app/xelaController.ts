@@ -34,5 +34,10 @@ export class xelaController {
     this._media_player.play(_file);
   }
 
+  public stop_audio(): void {
+    console.log("xelaController: play_audio() -> xelaAudio: stop()");
+    this._media_player.stop();
+  }
+
 
 }
