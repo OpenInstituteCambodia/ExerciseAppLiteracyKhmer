@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { xelaController } from '../../app/xelaController';
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 
 @Component({
@@ -10,9 +11,10 @@ import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 })
 export class QuestionPage {
 
-  constructor( private _route: xelaRoute ) {
-
-  }
+  constructor(
+    private _xela: xelaController,
+    private _route: xelaRoute
+  ) { }
 
   ionViewDidEnter() {
 
@@ -23,11 +25,23 @@ export class QuestionPage {
   }
 
   ionViewWillLeave() {
+    this._xela.stop_audio();
+  }
+
+  public answer(a_id: number): void {
 
   }
 
   public button_push_root(): void {
     this._route.popToRoot();
+  }
+
+  public button_replay_question(): void {
+
+  }
+
+  public button_exit_application(): void {
+
   }
 
 }
