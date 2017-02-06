@@ -29,7 +29,7 @@ export class xelaController {
   public static main(): void {
   }
 
-  public media_play(_file: string): void {
+  public play_audio(_file: string): void {
     this._media_player.play(_file);
 
   }

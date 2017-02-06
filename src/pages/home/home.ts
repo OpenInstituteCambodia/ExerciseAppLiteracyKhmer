@@ -21,7 +21,7 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
-    this.xela.media_play("index.mp3");
+    this.xela.play_audio("index.mp3");
   }
 
 
