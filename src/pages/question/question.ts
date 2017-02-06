@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-
+import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
-  providers: []
+  providers: [ xelaRoute ]
 })
 export class QuestionPage {
 
-  constructor( public navCtrl: NavController, public navParams: NavParams) {
+  constructor( private _route: xelaRoute ) {
 
   }
 
@@ -24,6 +24,10 @@ export class QuestionPage {
 
   ionViewWillLeave() {
 
+  }
+
+  public button_push_root(): void {
+    this._route.popToRoot();
   }
 
 }
