@@ -215,40 +215,26 @@
           <div sbtn-action img>
             <ion-row>
               <ion-col width-50>
-<<<<<<< HEAD
-                <button ion-button block [navPush]="pushPageWrong" style="background: url('assets/img/buffalo.png');">
+                <button ion-button block (click)="questionanswer(1)" style="background: url('assets/img/buffalo.png');">
                   <!-- <img src="assets/img/buffalo.png" class="center" alt="" > -->
                 </button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block [navPush]="pushPageWrong" style="background: url('assets/img/horse.png');">
+                <button ion-button block (click)="questionanswer(2)" style="background: url('assets/img/horse.png');">
                   <!-- <img src="assets/img/horse.png" class="center" alt=""> -->
                 </button>
-=======
-                <button ion-button block sbtn-color-1 (click)="questionanswer(1)"></button>
-              </ion-col>
-              <ion-col width-50>
-                <button ion-button block sbtn-color-2 (click)="questionanswer(2)"></button>
->>>>>>> 432162e392d9f85d255044ac203e4d50ab3bb437
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col width-50>
-<<<<<<< HEAD
-                <button ion-button block (click)="answerCorrect()" style="background: url('assets/img/cow.png') ;" >
+                <button ion-button block (click)="questionanswer(3)" style="background: url('assets/img/cow.png') ;" >
                   <!-- <img src="assets/img/cow.png" class="center" alt=""> -->
                 </button>
               </ion-col>
               <ion-col width-50>
-                <button ion-button block [navPush]="pushPageWrong" style="background: url('assets/img/donkey.png');">
+                <button ion-button block (click)="questionanswer(4)" style="background: url('assets/img/donkey.png');">
                   <!-- <img src="assets/img/donkey.png" class="center" alt=""> -->
                 </button>
-=======
-                <button ion-button block sbtn-color-3 (click)="questionanswer(3)"></button>
-              </ion-col>
-              <ion-col width-50>
-                <button ion-button block sbtn-color-4 (click)="questionanswer(4)"></button>
->>>>>>> 432162e392d9f85d255044ac203e4d50ab3bb437
               </ion-col>
             </ion-row>
 
@@ -272,32 +258,18 @@
           <div sbtn-action single>
             <ion-row>
               <ion-col width-50>
-<<<<<<< HEAD
                 <button ion-button block sbtn-color-1 (click)="answerCorrect()">ផ្កាឈូក</button>
               </ion-col>
               <ion-col width-50>
                 <button ion-button block sbtn-color-2 [navPush]="pushPageWrong">ក្រហម</button>
-=======
-                <button ion-button block sbtn-color-1 (click)="questionanswer(1)"></button>
-              </ion-col>
-              <ion-col width-50>
-                <button ion-button block sbtn-color-2 (click)="questionanswer(2)"></button>
->>>>>>> 432162e392d9f85d255044ac203e4d50ab3bb437
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col width-50>
-<<<<<<< HEAD
                 <button ion-button block sbtn-color-3 [navPush]="pushPageWrong">ទឹកក្រូច</button>
               </ion-col>
               <ion-col width-50>
                 <button ion-button block sbtn-color-4 [navPush]="pushPageWrong">ស្វាយ</button>
-=======
-                <button ion-button block sbtn-color-3 (click)="questionanswer(3)"></button>
-              </ion-col>
-              <ion-col width-50>
-                <button ion-button block sbtn-color-4 (click)="questionanswer(4)"></button>
->>>>>>> 432162e392d9f85d255044ac203e4d50ab3bb437
               </ion-col>
             </ion-row>
           </div>
