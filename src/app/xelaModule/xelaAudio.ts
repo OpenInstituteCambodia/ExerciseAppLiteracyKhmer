@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Device, MediaPlugin } from 'ionic-native';
 
 /*
-  name: "xelaController"
+  name: "xelaAudio"
   description: "Self Audio Introduction System, Used for children, literacy or disabled people to help navigate on using the application."
   author: ""
   developers: [
