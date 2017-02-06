@@ -1,5 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Device } from 'ionic-native';
+
+// xelaModule
+import { xelaAudio } from './xelaModule/xelaAudio';
 
 /*
   name: "xelaController"
@@ -15,8 +18,9 @@ import { Device } from 'ionic-native';
 
 @Injectable()
 export class xelaController {
+  private audio = new xelaAudio();
 
-  constructor() {
+  constructor( ) {
     console.log("xelaController: Active!");
   }
 

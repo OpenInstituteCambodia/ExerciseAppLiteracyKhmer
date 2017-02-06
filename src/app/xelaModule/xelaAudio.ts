@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Platform } from 'ionic-angular';
 import { Device, MediaPlugin } from 'ionic-native';
 
 /*
@@ -15,8 +16,10 @@ import { Device, MediaPlugin } from 'ionic-native';
 
 @Injectable()
 export class xelaAudio {
+  private audio_filename: string = "miclejackson_moonwalk.mp3";
+  public plt = new Platform();
 
-  constructor() {
+  constructor( ) {
     console.log("xelaController: xelaAudio: Active!");
   }
 
