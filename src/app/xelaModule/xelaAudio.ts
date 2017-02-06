@@ -58,7 +58,7 @@ export class xelaAudio {
     if (this._platform === 'Android' || this._platform === 'iOS') {
       if (typeof this._media_player !== "undefined") {
         this._media_player.stop();
-        console.log("xelaController: xelaAudio: stop() -> success", this._media_player);
+        console.log("xelaController: xelaAudio: stop() -> success");
         this._media_player.release();
         console.log("xelaController: xelaAudio: stop() -> release() -> success");
       }
@@ -66,6 +66,7 @@ export class xelaAudio {
   }
 
   public replay(_audio_filename: string): void {
+    console.log("xelaController: xelaAudio: replay() -> Stopping Current Playback");
     this.stop();
     console.log("xelaController: xelaAudio: replay() -> Replaying Audio -> ", _audio_filename);
     this.play(_audio_filename);
