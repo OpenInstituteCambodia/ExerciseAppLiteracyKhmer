@@ -41,11 +41,12 @@ export class xelaRoute {
     );
   }
 
-  public result(page: any, index: number): void {
-    console.log("xelaController: xelaRoute: result() -> ", index);
+  public result(page: any, option: any): void {
+    console.log("xelaController: xelaRoute: result() -> ", option);
     this.navCtrl.push(
       page, {
-        r_id: index
+        r_id: option["r_id"],
+        next_question: option["next_question"]
       }
     );
   }

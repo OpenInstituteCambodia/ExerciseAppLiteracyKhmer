@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <!-- Correct Answer -->
-    <div *ngIf="a_result === 1">
+    <div *ngIf="r_id === 1">
       <ion-grid>
         <ion-row style="margin: 12% 0;">
           <ion-col>
@@ -29,13 +29,13 @@
         <div sbtn-action single single-2>
           <ion-row>
             <ion-col class="center">
-              <button ion-button block clear (click)="continueQuestion()">Continue</button>
+              <button ion-button block clear (click)="button_action_confirm()">Continue</button>
             </ion-col>
           </ion-row>
 
           <ion-row>
             <ion-col class="center">
-              <button ion-button block clear (click)="back()">Cancel</button>
+              <button ion-button block clear (click)="button_action_cancel()">Cancel</button>
             </ion-col>
           </ion-row>
         </div>
@@ -44,7 +44,7 @@
   <!-- End Correct Answer -->
 
   <!-- Wrong Answer -->
-    <div *ngIf="a_result === 0">
+    <div *ngIf="r_id === 0">
       <ion-grid>
         <ion-row style="margin: 12% 0;">
           <ion-col>
@@ -59,13 +59,13 @@
         <div sbtn-action single single-2>
           <ion-row>
             <ion-col class="center">
-              <button ion-button block clear navPop >Try Again</button>
+              <button ion-button block clear (click)="button_action_confirm()" >Try Again</button>
             </ion-col>
           </ion-row>
 
           <ion-row>
             <ion-col class="center">
-              <button ion-button block clear (click)="back()">Cancel</button>
+              <button ion-button block clear (click)="button_action_cancel()">Cancel</button>
             </ion-col>
           </ion-row>
         </div>
