@@ -55,18 +55,18 @@ export class xelaAudio {
   }
 
   public stop(): void {
-    console.log("xelaController: xelaAudio: stop() -> Active", this._media_player);
-    // if (this._platform === 'Android' || this._platform === 'iOS') {
-    //   if (this._media_player !== "undefined") {
-    //     this._media_player.stop();
-    //     console.log("xelaController: xelaAudio: stop() -> success");
-    //     this._media_player.release();
-    //     console.log("xelaController: xelaAudio: stop() -> release() -> success");
-    //   }
-    // }
+    if (this._platform === 'Android' || this._platform === 'iOS') {
+      if (typeof this._media_player !== "undefined") {
+        this._media_player.stop();
+        console.log("xelaController: xelaAudio: stop() -> success", this._media_player);
+        this._media_player.release();
+        console.log("xelaController: xelaAudio: stop() -> release() -> success");
+      }
+    }
   }
 
   public replay(_audio_filename: string): void {
+    this.stop();
     console.log("xelaController: xelaAudio: replay() -> Replaying Audio -> ", _audio_filename);
     this.play(_audio_filename);
   }
