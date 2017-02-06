@@ -33,6 +33,14 @@ export class xelaRoute {
     );
   }
 
+  public question(): void {
+
+  }
+
+  public result(): void {
+
+  }
+
   public popToRoot(): void {
     this.navCtrl.popToRoot();
   }
