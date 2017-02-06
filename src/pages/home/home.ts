@@ -13,10 +13,7 @@ export class HomePage {
   constructor(
     private xela: xelaController,
     private route: xelaRoute) {
-    // TODO
-    /*
-      - Re route function from ivrController in to xelaController
-    */
+
   }
 
   ionViewWillLeave() {
