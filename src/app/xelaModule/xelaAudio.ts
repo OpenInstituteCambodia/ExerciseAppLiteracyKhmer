@@ -15,7 +15,7 @@ import { Device, MediaPlugin } from 'ionic-native';
 
 @Injectable()
 export class xelaAudio {
-  private _media_player: any;
+  public _media_player: any;
   private _platform = Device.platform;
 
   constructor( ) {
@@ -54,24 +54,21 @@ export class xelaAudio {
     return true;
   }
 
-  public stop(): boolean {
-    if (this._platform === 'Android' || this._platform === 'iOS') {
-      if (this._media_player !== "undefined") {
-        this._media_player.stop();
-        console.log("xelaController: xelaAudio: stop() -> success");
-        this._media_player.release();
-        console.log("xelaController: xelaAudio: stop() -> release() -> success");
-        return true;
-      }
-    }
-    return false;
+  public stop(): void {
+    console.log("xelaController: xelaAudio: stop() -> Active", this._media_player);
+    // if (this._platform === 'Android' || this._platform === 'iOS') {
+    //   if (this._media_player !== "undefined") {
+    //     this._media_player.stop();
+    //     console.log("xelaController: xelaAudio: stop() -> success");
+    //     this._media_player.release();
+    //     console.log("xelaController: xelaAudio: stop() -> release() -> success");
+    //   }
+    // }
   }
 
   public replay(_audio_filename: string): void {
-    if(this.stop() === true) {
-      console.log("xelaController: xelaAudio: replay() -> Replaying Audio -> ", _audio_filename);
-      this.play(_audio_filename);
-    }
+    console.log("xelaController: xelaAudio: replay() -> Replaying Audio -> ", _audio_filename);
+    this.play(_audio_filename);
   }
 
 }

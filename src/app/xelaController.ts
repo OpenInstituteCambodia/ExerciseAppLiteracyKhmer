@@ -36,9 +36,9 @@ export class xelaController {
     this._media_player.stop();
   }
 
-  public replay_audio(audio_filename: string) {
+  public replay_audio(_file: string): void {
     console.log("xelaController: replay_audio() -> xelaAudio: replay()");
-    this._media_player.replay(audio_filename);
+    this._media_player.replay(_file);
   }
 
 }

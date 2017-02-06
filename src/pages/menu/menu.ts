@@ -30,8 +30,12 @@ export class MenuPage {
     this._route.route(QuestionPage, index);
   }
 
-  playSound() {
-    this._xela.play_audio("index.mp3");
+  public button_play_audio() {
+    this._xela.replay_audio("index.mp3");
+  }
+
+  public button_exit_application(): void {
+    console.log("exit app");
   }
 
 }
