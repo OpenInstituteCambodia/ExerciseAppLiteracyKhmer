@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { xelaController } from '../../app/xelaController';
+import { xelaRoute } from '../../app/xelaModule/xelaRoute';
+import { QuestionPage } from '../question/question';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [ xelaController ]
+  providers: [ xelaController, xelaRoute ]
 })
 export class HomePage {
 
   constructor(
-    private xela: xelaController ) {
+    private xela: xelaController,
+    private route: xelaRoute) {
     // TODO
     /*
       - Re route function from ivrController in to xelaController
@@ -22,6 +25,10 @@ export class HomePage {
 
   ionViewDidEnter() {
     this.xela.play_audio("index.mp3");
+  }
+
+  public question(index: number) {
+    this.route.route(QuestionPage, index);
   }
 
 
