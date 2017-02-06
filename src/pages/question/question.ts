@@ -23,12 +23,12 @@ export class QuestionPage {
   poproot;
 
   constructor( public navCtrl: NavController, public navParams: NavParams, private ivrToolbar: ivrToolbar) {
-    this.displayQuestionID = navParams.get("e_id");
+    this.displayQuestionID = navParams.get("q_id");
     this.pushPageCongrat = CongratulationPage;
     this.pushPageWrong = WrongAnswerPage;
     this.poproot = navCtrl;
 
-    if (navParams.get("e_id") > 8) {
+    if (navParams.get("q_id") > 8) {
         navCtrl.popToRoot();
     }
 
@@ -49,7 +49,7 @@ export class QuestionPage {
   answerCorrect() {
     this.navCtrl.push(
       CongratulationPage, {
-        e_id: this.displayQuestionID
+        q_id: this.displayQuestionID
       }
     );
   }
