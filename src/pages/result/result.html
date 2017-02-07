@@ -13,63 +13,59 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="question center">
   <!-- Correct Answer -->
-    <div *ngIf="r_id === 1">
-      <ion-grid>
-        <ion-row style="margin: 12% 0;">
-          <ion-col>
-            <div class="text-center">
-              <h1 answer-head style="text-align: center;">Congratulation!</h1><br>
-              <h4 style="text-align: center;">You've choose the correct answer.</h4>
-              <h4 style="text-align: center;">Do you want to continue to the next question?</h4>
-          </div>
+    <ion-grid *ngIf="r_id === 1">
+      <ion-row style="margin: 12% 0;">
+        <ion-col>
+          <div class="text-center">
+            <h1 answer-head style="text-align: center;">Congratulation!</h1><br>
+            <h4 style="text-align: center;">You've choose the correct answer.</h4>
+            <h4 style="text-align: center;">Do you want to continue to the next question?</h4>
+        </div>
+        </ion-col>
+      </ion-row>
+      <div sbtn-action single single-2>
+        <ion-row>
+          <ion-col class="center">
+            <button ion-button block clear (click)="button_action_confirm()">Continue</button>
           </ion-col>
         </ion-row>
-        <div sbtn-action single single-2>
-          <ion-row>
-            <ion-col class="center">
-              <button ion-button block clear (click)="button_action_confirm()">Continue</button>
-            </ion-col>
-          </ion-row>
 
-          <ion-row>
-            <ion-col class="center">
-              <button ion-button block clear (click)="button_action_cancel()">Cancel</button>
-            </ion-col>
-          </ion-row>
-        </div>
-      </ion-grid>
-    </div>
+        <ion-row>
+          <ion-col class="center">
+            <button ion-button block clear (click)="button_action_cancel()">Cancel</button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
   <!-- End Correct Answer -->
 
   <!-- Wrong Answer -->
-    <div *ngIf="r_id === 0">
-      <ion-grid>
-        <ion-row style="margin: 12% 0;">
-          <ion-col>
-            <div class="text-center">
-              <h1 answer-head style="text-align: center;">Aww!</h1><br>
-              <h4 style="text-align: center;">You've choose the wrong answer.</h4>
-              <br>
-              <br>
-            </div>
+    <ion-grid *ngIf="r_id === 0">
+      <ion-row style="margin: 12% 0;">
+        <ion-col>
+          <div class="text-center">
+            <h1 answer-head style="text-align: center;">Aww!</h1><br>
+            <h4 style="text-align: center;">You've choose the wrong answer.</h4>
+            <br>
+            <br>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div sbtn-action single single-2>
+        <ion-row>
+          <ion-col class="center">
+            <button ion-button block clear (click)="button_action_confirm()" >Try Again</button>
           </ion-col>
         </ion-row>
-        <div sbtn-action single single-2>
-          <ion-row>
-            <ion-col class="center">
-              <button ion-button block clear (click)="button_action_confirm()" >Try Again</button>
-            </ion-col>
-          </ion-row>
 
-          <ion-row>
-            <ion-col class="center">
-              <button ion-button block clear (click)="button_action_cancel()">Cancel</button>
-            </ion-col>
-          </ion-row>
-        </div>
-      </ion-grid>
-    </div>
+        <ion-row>
+          <ion-col class="center">
+            <button ion-button block clear (click)="button_action_cancel()">Cancel</button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
   <!-- End Wrong Answer -->
 </ion-content>
