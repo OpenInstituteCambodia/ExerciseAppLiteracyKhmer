@@ -35,7 +35,7 @@ export class ResultPage {
   }
 
   public button_action_cancel(): void {
-
+    this._route.popToRoot();
   }
 
 }

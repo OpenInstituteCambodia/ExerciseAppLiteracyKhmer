@@ -38,7 +38,7 @@ export class QuestionPage {
   public answer(a_id: number): void {
     
     let opt = {
-      r_id: 1,
+      r_id: a_id,
       next_question: this.q_id
     };
     this._route.result(

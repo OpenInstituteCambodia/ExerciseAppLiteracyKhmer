@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 
 import { xelaController } from '../../app/xelaController';
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
