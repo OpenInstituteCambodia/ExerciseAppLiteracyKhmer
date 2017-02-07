@@ -27,10 +27,16 @@ export class MenuPage {
 
   }
 
-  public question(index: number) {
+  public question(q_type: number, l_id: number, p_id: number, q_id: number) {
+    let opt = {
+      q_type: q_type,
+      l_id: l_id,
+      p_id: p_id,
+      q_id: q_id
+    };
     this._route.question(
       QuestionPage,
-      index
+      opt
     );
   }
 

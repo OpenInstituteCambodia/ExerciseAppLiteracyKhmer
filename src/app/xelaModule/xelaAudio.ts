@@ -34,7 +34,7 @@ export class xelaAudio {
 
     // Inspecting Platform for linking asset file
     if (this._platform === 'Android') {
-      _audio_filename = '/android_asset/www/assets/audio/' + _audio_filename;
+      _audio_filename = '/android_asset/www/assets/audio/general/' + _audio_filename;
     }else {
       console.log("xelaController: xelaAudio: play() -> PLATFORM NOT SUPPORTED");
       return false;

@@ -36,7 +36,7 @@ export class QuestionPage {
   }
 
   ionViewDidEnter() {
-    this._xela.play_audio(this.q_id+'.mp3');
+    this._xela.play_audio("M"+this.q_id+'.mp3');
   }
 
   ionViewDidLoad() {
