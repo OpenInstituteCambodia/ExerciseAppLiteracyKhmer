@@ -28,10 +28,17 @@ export class ResultPage {
   }
 
   public button_action_confirm(): void {
-    this._route.question(
-      QuestionPage,
-      this.next_question+1
-    );
+    if (this.r_id === 1) {
+      this._route.question(
+        QuestionPage,
+        this.next_question+1
+      );
+    }else if (this.r_id === 0) {
+      this._route.question(
+        QuestionPage,
+        this.next_question
+      );
+    }
   }
 
   public button_action_cancel(): void {
