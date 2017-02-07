@@ -21,6 +21,9 @@ export class QuestionPage {
     private _param: NavParams
   ) {
     this.q_id = this._param.get("q_id");
+    if(this.q_id == 9) {
+      this._route.popToRoot();
+    }
   }
 
   ionViewDidEnter() {
@@ -36,7 +39,7 @@ export class QuestionPage {
   }
 
   public answer(a_id: number): void {
-    
+
     let opt = {
       r_id: a_id,
       next_question: this.q_id
