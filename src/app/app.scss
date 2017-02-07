@@ -136,13 +136,17 @@ $eyeCandy3DHighligh: #4C8CF5;
 [sbtn-question] {
   text-align: center;
 
-  .toolbar {
-    padding-left: 50px;
-    padding-right: 50px;
+  &[home-footer] {
+    .toolbar {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
+
 
   [ion-button] {
     font-size: 1.8em;
+    padding: 0 10%;
   }
 }
 
@@ -152,6 +156,16 @@ $eyeCandy3DHighligh: #4C8CF5;
 
 [answer-head] {
   font-size: 4rem;
+}
+
+[content-middle] {
+  .question {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
 }
 
 @each $color in $eyeCandy {
