@@ -135,9 +135,18 @@ $eyeCandy3DHighligh: #4C8CF5;
 [sbtn-question] {
   text-align: center;
 
+  .toolbar {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
   [ion-button] {
     font-size: 1.8em;
   }
+}
+
+.toolbar-title {
+  text-align: center !important;
 }
 
 [answer-head] {
