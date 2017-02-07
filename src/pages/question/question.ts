@@ -36,6 +36,7 @@ export class QuestionPage {
   }
 
   public answer(a_id: number): void {
+    
     let opt = {
       r_id: 1,
       next_question: this.q_id
