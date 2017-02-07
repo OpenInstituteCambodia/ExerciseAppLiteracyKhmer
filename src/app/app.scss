@@ -160,6 +160,11 @@ $eyeCandy3DHighligh: #4C8CF5;
 }
 
 [content-middle] {
+  position: absolute !important;
+  top: 50% !important;
+  left: 0 !important;
+  transform: translate(0, -100%);
+
   .question {
     position: absolute;
     top: 50%;
