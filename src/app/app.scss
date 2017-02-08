@@ -70,7 +70,8 @@ $eyeCandy3DHighligh: #4C8CF5;
         width: auto;
 
         background-repeat: no-repeat !important;
-        background-size: cover !important;
+        background-size: contain !important;
+        // background-size: cover !important;
         background-position-x: 50% !important;
         background-position-y: 50% !important;
 
@@ -123,10 +124,21 @@ $eyeCandy3DHighligh: #4C8CF5;
       [ion-button] {
         // padding: 50px 0 !important;
         // padding: 1em 0 !important;
-        padding: 1.25em 0 !important;
+        padding: 1.2em 0 !important;
         font-size: 3.2em;
-        background-size: cover !important;
-        background-repeat: no-repeat;
+        background-size: contain !important;
+        // background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position-x: 50% !important;
+        background-position-y: 50% !important;
+
+        @each $color in $eyeCandy {
+          $i: index($eyeCandy, $color);
+          &[sbtn-color-#{$i}] {
+            border: 10px solid $color;
+            // color: #222;
+          }
+        }
       }
     }
 
