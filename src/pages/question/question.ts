@@ -134,7 +134,53 @@ export class QuestionPage {
   }
 
   public button_replay_question(): void {
-    // this._xela.replay_audio(this.q_id+'.mp3');
+    let opt;
+
+    if (this._id == 1) {
+      opt = {
+        _id: 1,
+        q_type: 1,
+        q_id: "L3P36",
+        init_sound: 3
+      };
+    }else if (this._id == 2) {
+      opt = {
+        _id: 2,
+        q_type: 2,
+        q_id: "L3P36",
+        init_sound: 5
+      };
+    }else if (this._id == 3) {
+      opt = {
+        _id: 3,
+        q_type: 3,
+        q_id: "L3P36",
+        init_sound: 11
+      };
+    }else if (this._id == 4) {
+      opt = {
+        _id: 4,
+        q_type: 1,
+        q_id: "L3P36",
+        init_sound: 12
+      };
+    }else if (this._id == 5) {
+      opt = {
+        _id: 5,
+        q_type: 2,
+        q_id: "L3P36",
+        init_sound: 13
+      };
+    }else if (this._id == 6) {
+      opt = {
+        _id: 6,
+        q_type: 3,
+        q_id: "L3P36",
+        init_sound: 1
+      };
+    }
+
+    this._xela.replay_audio(opt);
   }
 
   public button_exit_application(): void {
