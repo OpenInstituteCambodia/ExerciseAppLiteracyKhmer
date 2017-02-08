@@ -13,13 +13,10 @@ import { ResultPage } from '../result/result';
   providers: [ xelaController, xelaRoute, xelaToolbar ]
 })
 export class QuestionPage {
-  q_type: any;
-  l_id: any;
-  p_id: any;
-  q_id: any;
-  c_id: any;
-
+  _id: number;
   q_id_long: any;
+  init_sound: number;
+
 
   constructor(
     private _xela: xelaController,
@@ -27,15 +24,7 @@ export class QuestionPage {
     private _toolbar: xelaToolbar,
     private _param: NavParams
   ) {
-    this.q_type = this._param.get("q_type");
-    this.l_id = this._param.get("l_id");
-    this.p_id = this._param.get("p_id");
-    this.q_id = this._param.get("q_id");
-    this.c_id = this._param.get("c_id");
 
-    this.q_id_long = "L"+this.l_id+"P"+this.p_id+"Q"+this.q_id;
-    console.log("QuestionPage: this.q_id_long -> ", this.q_id_long);
-    console.log("QuestionPage: this.c_id -> ", this.c_id);
     // if(this.q_id == 9) {
     //   this._route.popToRoot();
     // }
@@ -43,11 +32,7 @@ export class QuestionPage {
 
   ionViewDidEnter() {
     let opt = {
-      q_type: this.q_type,
-      l_id: this.l_id,
-      p_id: this.p_id,
-      q_id: this.q_id,
-      c_id: this.c_id
+
     };
     console.log("QuestoinPage: let opt = ", opt);
     this._xela.play_audio(opt);
@@ -72,11 +57,7 @@ export class QuestionPage {
     }
 
     let opt = {
-      q_type: this.q_type,
-      l_id: this.l_id,
-      p_id: this.p_id,
-      q_id: this.q_id,
-      c_id: this.c_id
+
     };
 
     console.log("xelaController: validate_answer(): The result is -> ", result);
@@ -113,7 +94,7 @@ export class QuestionPage {
   }
 
   public button_replay_question(): void {
-    this._xela.replay_audio(this.q_id+'.mp3');
+    // this._xela.replay_audio(this.q_id+'.mp3');
   }
 
   public button_exit_application(): void {
