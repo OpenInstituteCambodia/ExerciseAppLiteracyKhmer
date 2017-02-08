@@ -21,14 +21,6 @@ export class QuestionPage {
 
   q_id_long: any;
 
-  // Question Type Filename
-  private _M1: string = 'M1.mp3';
-  private _M2: string = 'M2.mp3';
-  private _M3: string = 'M3.mp3';
-  private _M4: string = 'M4.mp3';
-  private _YES: string = "Yes.mp3";
-  private _NO: string = "No.mp3";
-
   constructor(
     private _xela: xelaController,
     private _route: xelaRoute,
