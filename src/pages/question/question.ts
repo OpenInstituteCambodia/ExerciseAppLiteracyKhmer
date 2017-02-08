@@ -83,6 +83,21 @@ export class QuestionPage {
 
     this._xela.play_result(opt, result);
 
+    // let opt_page = {
+    //   q_type: this.q_type,
+    //   l_id: this.l_id,
+    //   p_id: this.p_id,
+    //   q_id: this.q_id,
+    //   c_id: this.c_id
+    // };
+    //
+    // setTimeout(function() {
+    //   this._route.question(
+    //     QuestionPage,
+    //     opt_page
+    //   );
+    // }, 2000);
+
     // let opt = {
     //   r_id: a_id,
     //   next_question: this.q_id
