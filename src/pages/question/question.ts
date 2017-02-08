@@ -70,7 +70,17 @@ export class QuestionPage {
       result = "No";
     }
 
+    let opt = {
+      q_type: this.q_type,
+      l_id: this.l_id,
+      p_id: this.p_id,
+      q_id: this.q_id,
+      c_id: this.c_id
+    };
+
     console.log("xelaController: validate_answer(): The result is -> ", result);
+
+    this._xela.play_result(opt, result);
 
     // let opt = {
     //   r_id: a_id,

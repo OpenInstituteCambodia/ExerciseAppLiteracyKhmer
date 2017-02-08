@@ -59,6 +59,7 @@ export class xelaAudio {
       console.log("xelaController: xelaAudio: play() M2 Duration ->", this._media_player.getDuration());
 
       setTimeout(function(){
+        this._media_player.release();
         // Then Playing the Secondary Audio
         // --------------------------------
         let audio_filename = "L"+_audio["l_id"]+"P"+_audio["p_id"]+"_"+_audio["q_id"]+".mp3";
@@ -85,28 +86,40 @@ export class xelaAudio {
     return true;
   }
 
-  public correct(_audio: any): boolean {
+  public correct(_audio: any, _result: any): boolean {
     if (_audio === '') { // Do Nothing if No File is provided
       console.log("xelaController: xelaAudio: play() -> NO FILENAME PROVIDED");
       return false;
     }
 
-    let _YM = "Yes.mp3";
+    let _YM = "/android_asset/www/assets/audio/general/"+_result+".mp3";
+
+    console.log("xelaController: xelaAudio: playDebug() -> Question Type is M2", _audio);
 
     const onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
-    this._media_player = new MediaPlugin( _YM, onStatusUpdate );
+    // Playing user Choice
+    // --------------------------------
+    let audio_filename = "L"+_audio["l_id"]+"P"+_audio["p_id"]+"_"+_audio["q_id"]+".mp3";
+    audio_filename = "/android_asset/www/assets/audio/lessons/"+audio_filename;
+    console.log("xelaController: xelaAudio: play() -> let audio_filename", audio_filename);
+    this._media_player = new MediaPlugin( audio_filename, onStatusUpdate );
     this._media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _audio + ", Message: " + err.message); });
 
-    // let audio_filename = "L"+_audio["l_id"]+"P"+_audio["p_id"]+"_"+_audio["q_id"]+".mp3"; // Eg. L3P36Q1_1.mp3
-    // audio_filename = "/android_asset/www/assets/audio/lessons/"+audio_filename;
-    // console.log("xelaController: xelaAudio: play() -> let audio_filename", audio_filename);
-    // this._media_player = new MediaPlugin( audio_filename, onStatusUpdate );
-    // this._media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _audio + ", Message: " + err.message); });
-    // console.log("xelaController: xelaAudio: play() -> ", audio_filename);
-
+    console.log("xelaController: xelaAudio: play() -> ", audio_filename);
     this._media_player.play();
 
-    return true;
+    setTimeout(function(){
+      this._media_player.release();
+      // Say it correct or not
+      // --------------------------------
+      this._media_player = new MediaPlugin( _YM, onStatusUpdate );
+      this._media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _audio + ", Message: " + err.message); });
+
+      console.log("xelaController: xelaAudio: play() -> ", _YM);
+      this._media_player.play();
+
+      console.log("xelaController: xelaAudio: play() M2 Duration ->", this._media_player.getDuration());
+    }, 1500);
   }
 
   public stop(): void {

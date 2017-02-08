@@ -31,14 +31,9 @@ export class xelaController {
     this._media_player.play(_audio);
   }
 
-  public validate_answer(a_id: number): void {
-    let result;
-    if (a_id === 1) {
-      result = "Yes";
-    }else if(a_id === 0) {
-      result = "No";
-    }
-    console.log("xelaController: validate_answer(): The result is -> ", result);
+  public play_result(_audio: any, _result: any): void {
+    console.log("xelaController: play_result() -> xelaAudio: correct()");
+    this._media_player.correct(_audio, _result);
   }
 
   public stop_audio(): void {
