@@ -63,14 +63,23 @@ export class QuestionPage {
 
   public answer(a_id: number): void {
 
-    let opt = {
-      r_id: a_id,
-      next_question: this.q_id
-    };
-    this._route.result(
-      ResultPage,
-      opt
-    );
+    let result;
+    if (a_id === 1) {
+      result = "Yes";
+    }else if(a_id === 0) {
+      result = "No";
+    }
+
+    console.log("xelaController: validate_answer(): The result is -> ", result);
+
+    // let opt = {
+    //   r_id: a_id,
+    //   next_question: this.q_id
+    // };
+    // this._route.result(
+    //   ResultPage,
+    //   opt
+    // );
   }
 
   public button_push_root(): void {
