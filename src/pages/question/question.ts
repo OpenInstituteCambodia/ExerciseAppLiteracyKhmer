@@ -13,7 +13,7 @@ import { ResultPage } from '../result/result';
   providers: [ xelaController, xelaRoute, xelaToolbar ]
 })
 export class QuestionPage {
-  _id: number;
+  public _id: number;
   q_id_long: any;
   init_sound: number;
 
@@ -24,6 +24,7 @@ export class QuestionPage {
     private _toolbar: xelaToolbar,
     private _param: NavParams
   ) {
+    this._id = this._param.get("_id");
 
     // if(this.q_id == 9) {
     //   this._route.popToRoot();
@@ -31,11 +32,11 @@ export class QuestionPage {
   }
 
   ionViewDidEnter() {
-    let opt = {
-
-    };
-    console.log("QuestoinPage: let opt = ", opt);
-    this._xela.play_audio(opt);
+    // let opt = {
+    //
+    // };
+    // console.log("QuestoinPage: let opt = ", opt);
+    // this._xela.play_audio(opt);
   }
 
   ionViewDidLoad() {

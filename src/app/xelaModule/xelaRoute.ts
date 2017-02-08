@@ -36,11 +36,7 @@ export class xelaRoute {
     console.log("xelaController: xelaRoute: question() -> ", option);
     this.navCtrl.push(
       page, {
-        q_type: option["q_type"], // Question Type M1, M2, -> M4
-        l_id: option["l_id"], // Lesson Number
-        p_id: option["p_id"], // Page Number
-        q_id: option["q_id"], // Question Number
-        c_id: option["c_id"] // Question Number
+        _id: option["_id"], // Question Type M1, M2, -> M4
       }
     );
   }

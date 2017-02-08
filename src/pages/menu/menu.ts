@@ -34,13 +34,9 @@ export class MenuPage {
   //   );
   // }
 
-  public question(q_type: number, l_id: number, p_id: number, q_id: number, c_id: number) {
+  public question(_id: number, q_type: number, q_id: string, init_sound: number) {
     let opt = {
-      q_type: q_type,
-      l_id: l_id,
-      p_id: p_id,
-      q_id: q_id,
-      c_id: c_id
+      _id: _id,
     };
     this._route.question(
       QuestionPage,
