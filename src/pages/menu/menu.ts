@@ -27,12 +27,20 @@ export class MenuPage {
 
   }
 
-  public question(q_type: number, l_id: number, p_id: number, q_id: number) {
+  // public question(opt: any) {
+  //   this._route.question(
+  //     QuestionPage,
+  //     opt
+  //   );
+  // }
+
+  public question(q_type: number, l_id: number, p_id: number, q_id: number, c_id: number) {
     let opt = {
       q_type: q_type,
       l_id: l_id,
       p_id: p_id,
-      q_id: q_id
+      q_id: q_id,
+      c_id: c_id
     };
     this._route.question(
       QuestionPage,
@@ -41,7 +49,7 @@ export class MenuPage {
   }
 
   public button_play_audio() {
-    this._xela.replay_audio("index.mp3");
+    // this._xela.replay_audio("menu0.mp3");
   }
 
   public button_exit_application(): void {

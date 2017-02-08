@@ -26,9 +26,14 @@ export class xelaController {
   public static main(): void {
   }
 
-  public play_audio(_file: string): void {
+  public play_audio(_audio: any): void {
     console.log("xelaController: play_audio() -> xelaAudio: play()");
-    this._media_player.play(_file);
+    this._media_player.play(_audio);
+  }
+
+  public play_result(_audio: any, _result: any): void {
+    console.log("xelaController: play_result() -> xelaAudio: correct()");
+    this._media_player.correct(_audio, _result);
   }
 
   public stop_audio(): void {
