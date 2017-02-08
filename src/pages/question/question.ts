@@ -47,7 +47,13 @@ export class QuestionPage {
   }
 
   ionViewDidEnter() {
-    this._xela.play_audio("M"+this.q_type+'.mp3');
+    let opt = {
+      q_type: this.q_type,
+      l_id: this.l_id,
+      p_id: this.p_id,
+      q_id: this.q_id
+    };
+    this._xela.play_audio(opt);
   }
 
   ionViewDidLoad() {
