@@ -62,6 +62,7 @@ export class QuestionPage {
   }
 
   public answer(a_id: number): void {
+    this._xela.stop_audio();
 
     let result;
     if (a_id === 1) {

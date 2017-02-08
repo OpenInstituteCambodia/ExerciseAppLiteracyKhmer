@@ -59,7 +59,6 @@ export class xelaAudio {
       console.log("xelaController: xelaAudio: play() M2 Duration ->", this._media_player.getDuration());
 
       setTimeout(function(){
-        this._media_player.release();
         // Then Playing the Secondary Audio
         // --------------------------------
         let audio_filename = "L"+_audio["l_id"]+"P"+_audio["p_id"]+"_"+_audio["q_id"]+".mp3";
@@ -109,7 +108,6 @@ export class xelaAudio {
     this._media_player.play();
 
     setTimeout(function(){
-      this._media_player.release();
       // Say it correct or not
       // --------------------------------
       this._media_player = new MediaPlugin( _YM, onStatusUpdate );
@@ -118,7 +116,6 @@ export class xelaAudio {
       console.log("xelaController: xelaAudio: play() -> ", _YM);
       this._media_player.play();
 
-      console.log("xelaController: xelaAudio: play() M2 Duration ->", this._media_player.getDuration());
     }, 1500);
   }
 
