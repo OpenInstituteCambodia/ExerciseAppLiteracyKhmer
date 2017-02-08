@@ -14,29 +14,76 @@ import { ResultPage } from '../result/result';
 })
 export class QuestionPage {
   public _id: number;
-  q_id_long: any;
-  init_sound: number;
+  q_type: any;
+  q_id: any;
+  init_sound: any;
 
 
   constructor(
     private _xela: xelaController,
-    private _route: xelaRoute,
+    public _route: xelaRoute,
     private _toolbar: xelaToolbar,
     private _param: NavParams
   ) {
     this._id = this._param.get("_id");
+    this.q_type = this._param.get("q_type");
+    this.q_id = this._param.get("q_id");
+    this.init_sound = this._param.get("init_sound");
 
-    // if(this.q_id == 9) {
-    //   this._route.popToRoot();
-    // }
+    if(this._id == 7) {
+      this._route.popToRoot();
+    }
   }
 
   ionViewDidEnter() {
-    // let opt = {
-    //
-    // };
+    let opt;
+
+    if (this._id == 1) {
+      opt = {
+        _id: 1,
+        q_type: 1,
+        q_id: "L3P36",
+        init_sound: 3
+      };
+    }else if (this._id == 2) {
+      opt = {
+        _id: 2,
+        q_type: 2,
+        q_id: "L3P36",
+        init_sound: 5
+      };
+    }else if (this._id == 3) {
+      opt = {
+        _id: 3,
+        q_type: 3,
+        q_id: "L3P36",
+        init_sound: 11
+      };
+    }else if (this._id == 4) {
+      opt = {
+        _id: 4,
+        q_type: 1,
+        q_id: "L3P36",
+        init_sound: 12
+      };
+    }else if (this._id == 5) {
+      opt = {
+        _id: 5,
+        q_type: 2,
+        q_id: "L3P36",
+        init_sound: 13
+      };
+    }else if (this._id == 6) {
+      opt = {
+        _id: 6,
+        q_type: 3,
+        q_id: "L3P36",
+        init_sound: 1
+      };
+    }
+
     // console.log("QuestoinPage: let opt = ", opt);
-    // this._xela.play_audio(opt);
+    this._xela.play_audio(opt);
   }
 
   ionViewDidLoad() {
@@ -47,7 +94,7 @@ export class QuestionPage {
     this._xela.stop_audio();
   }
 
-  public answer(a_id: number): void {
+  public answer(a_id: number, choice: number): void {
     this._xela.stop_audio();
 
     let result;
@@ -58,36 +105,28 @@ export class QuestionPage {
     }
 
     let opt = {
-
+      _id: this._id,
+      q_type: this.q_type,
+      q_id: this.q_id,
+      init_sound: choice
     };
 
     console.log("xelaController: validate_answer(): The result is -> ", result);
 
     this._xela.play_result(opt, result);
 
-    // let opt_page = {
-    //   q_type: this.q_type,
-    //   l_id: this.l_id,
-    //   p_id: this.p_id,
-    //   q_id: this.q_id,
-    //   c_id: this.c_id
-    // };
-    //
-    // setTimeout(function() {
-    //   this._route.question(
-    //     QuestionPage,
-    //     opt_page
-    //   );
-    // }, 2000);
+    if (a_id === 1) {
+      opt = {
+        _id: this._id+1,
+        q_type: this.q_type,
+        q_id: this.q_id,
+        init_sound: choice
+      };
+      setTimeout(function(_route) {
+        _route.result(QuestionPage, opt)
+      } , 2000, this._route);
+    }
 
-    // let opt = {
-    //   r_id: a_id,
-    //   next_question: this.q_id
-    // };
-    // this._route.result(
-    //   ResultPage,
-    //   opt
-    // );
   }
 
   public button_push_root(): void {

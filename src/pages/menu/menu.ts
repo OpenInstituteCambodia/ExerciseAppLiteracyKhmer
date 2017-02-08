@@ -37,6 +37,9 @@ export class MenuPage {
   public question(_id: number, q_type: number, q_id: string, init_sound: number) {
     let opt = {
       _id: _id,
+      q_type: q_type,
+      q_id: q_id,
+      init_sound: init_sound
     };
     this._route.question(
       QuestionPage,
