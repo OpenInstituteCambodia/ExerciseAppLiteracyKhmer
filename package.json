@@ -46,13 +46,15 @@
     "typescript": "2.0.9"
   },
   "cordovaPlugins": [
+    "cordova-plugin-crosswalk-webview",
     "cordova-plugin-whitelist",
     "cordova-plugin-console",
     "cordova-plugin-splashscreen",
     "cordova-plugin-device",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-media"
+    "cordova-plugin-media",
+    "cordova-plugin-sqlite-2"
   ],
   "cordovaPlatforms": [
     {

@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { MenuPage } from '../pages/menu/menu';
 
-import { ivrController } from './ivrController';
-import { HomePage } from '../pages/home/home';
+/*
+  NOTHING TO EDIT HERE !!!
+  GO AWAY!!!
+*/
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp  {
-  public rootPage: any  = HomePage;
-  ivrController = new ivrController();
+  public rootPage: any  = MenuPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
