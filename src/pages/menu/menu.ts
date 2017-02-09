@@ -5,7 +5,6 @@ import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
 import { QuestionPage } from '../question/question';
 
-import { QPage } from '../q/q';
 
 @Component({
   selector: 'page-menu',
@@ -13,7 +12,6 @@ import { QPage } from '../q/q';
   providers: [ xelaController, xelaRoute, xelaToolbar ]
 })
 export class MenuPage {
-  public pushQ = QPage;
   constructor(
     private _xela: xelaController,
     private _route: xelaRoute,
@@ -60,7 +58,7 @@ export class MenuPage {
 
   public toPage(_id) {
     this._route.result(
-      QPage, {
+      QuestionPage, {
         _id: _id
       }
     );

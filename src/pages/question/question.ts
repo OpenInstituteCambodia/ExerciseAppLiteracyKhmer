@@ -1,257 +1,191 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/form';
-import { NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-import { xelaController } from '../../app/xelaController';
-import { xelaRoute } from '../../app/xelaModule/xelaRoute';
-import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
+/*
+  Generated class for the Q page.
 
-import { ResultPage } from '../result/result';
-
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
 @Component({
   selector: 'page-question',
-  templateUrl: 'question.html',
-  providers: [ xelaController, xelaRoute, xelaToolbar ]
+  templateUrl: 'question.html'
 })
 export class QuestionPage {
-  public _id: number;
-  q_type: any;
-  q_id: any;
-  init_sound: any;
+  public id;
+  public question_id;
+  public question_type;
+  public question_content;
+  public choice_1;
+  public choice_1_audio;
+  public choice_2;
+  public choice_2_audio;
+  public choice_3;
+  public choice_3_audio;
+  public choice_4;
+  public choice_4_audio;
+  public correct_answer;
+  public next_question;
+  public menu_id;
 
-  public showCorrect: boolean = false;
-
-  constructor(
-    private _xela: xelaController,
-    public _route: xelaRoute,
-    private _toolbar: xelaToolbar,
-    private _param: NavParams
-  ) {
-    this._id = this._param.get("_id");
-    this.q_type = this._param.get("q_type");
-    this.q_id = this._param.get("q_id");
-    this.init_sound = this._param.get("init_sound");
-
-    console.log("Getting Data From HTML",this.showCorrect);
-    if(this._id == 7) {
-      this._route.popToRoot();
-    }
-  }
-
-  ionViewDidEnter() {
-    let opt;
-
-    if (this._id == 1) {
-      opt = {
-        _id: 1,
-        q_type: 1,
-        q_id: "L3P36",
-        init_sound: 3
-      };
-    }else if (this._id == 2) {
-      opt = {
-        _id: 2,
-        q_type: 2,
-        q_id: "L3P36",
-        init_sound: 5
-      };
-    }else if (this._id == 3) {
-      opt = {
-        _id: 3,
-        q_type: 3,
-        q_id: "L3P36",
-        init_sound: 11
-      };
-    }else if (this._id == 4) {
-      opt = {
-        _id: 4,
-        q_type: 1,
-        q_id: "L3P36",
-        init_sound: 12
-      };
-    }else if (this._id == 5) {
-      opt = {
-        _id: 5,
-        q_type: 2,
-        q_id: "L3P36",
-        init_sound: 13
-      };
-    }else if (this._id == 6) {
-      opt = {
-        _id: 6,
-        q_type: 3,
-        q_id: "L3P36",
-        init_sound: 1
-      };
-    }
-
-    // console.log("QuestoinPage: let opt = ", opt);
-    this._xela.play_audio(opt);
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this._question(this.navParams.get("_id")-1);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad QuestionPage');
+    console.log('ionViewDidLoad QPage');
   }
 
-  ionViewWillLeave() {
-    this._xela.stop_audio();
+  private _question(_id): void {
+    let questions: Array<any> = [
+      {
+        id: 1,
+        question_id: "L3P36Q1",
+        question_type: 1,
+        question_content: "assets/img/P36/L3.3P36.jpg",
+        choice_1: "ផែ",
+        choice_1_audio: "L3P36_1.mp3",
+        choice_2: "ផៃ",
+        choice_2_audio: "L3P36_2.mp3",
+        choice_3: "ផេះ",
+        choice_3_audio: "L3P36_3.mp3",
+        choice_4: "ថែ",
+        choice_4_audio: "L3P36_4.mp3",
+        correct_answer: 3,
+        next_question: "L3P36Q2",
+        menu_id: 1,
+      },
+      {
+        id: 2,
+        question_id: "L3P36Q2",
+        question_type: 2,
+        question_content: "L3P36_5.mp3",
+        choice_1: "ដំបៅ",
+        choice_1_audio: "L3P36_6.mp3",
+        choice_2: "បបរ",
+        choice_2_audio: "L3P36_7.mp3",
+        choice_3: "សរសរ",
+        choice_3_audio: "L3P36_8.mp3",
+        choice_4: "ថៅកែ",
+        choice_4_audio: "L3P36_5.mp3",
+        correct_answer: 4,
+        next_question: "L3P36Q3",
+        menu_id: 1,
+      },
+      {
+        id: 3,
+        question_id: "L3P36Q3",
+        question_type: 3,
+        question_content: "សរសេរ",
+        choice_1: "assets/img/P36/L3.1P36.jpg",
+        choice_1_audio: "L3P36_9.mp3",
+        choice_2: "assets/img/P36/L3.3P36.jpg",
+        choice_2_audio: "L3P36_3.mp3",
+        choice_3: "assets/img/P36/L3.4P36.jpg",
+        choice_3_audio: "L3P36_11.mp3",
+        choice_4: "assets/img/P36/L3.2P36.jpg",
+        choice_4_audio: "L3P36_12.mp3",
+        correct_answer: 3,
+        next_question: "L3P36Q4",
+        menu_id: 1,
+      },
+      {
+        id: 4,
+        question_id: "L3P36Q4",
+        question_type: 1,
+        question_content: "assets/img/P36/L3.2P36.jpg",
+        choice_1: "បបរគ្រឿង",
+        choice_1_audio: "L3P36_12.mp3",
+        choice_2: "សរសើរ",
+        choice_2_audio: "L3P36_13.mp3",
+        choice_3: "បី",
+        choice_3_audio: "L3P36_14.mp3",
+        choice_4: "ដំបៅ",
+        choice_4_audio: "L3P36_6.mp3",
+        correct_answer: 1,
+        next_question: "L3P36Q5",
+        menu_id: 1,
+      },
+      {
+        id: 5,
+        question_id: "L3P36Q5",
+        question_type: 2,
+        question_content: "L3P36_13.mp3",
+        choice_1: "ថែ",
+        choice_1_audio: "L3P36_4.mp3",
+        choice_2: "សរសើរ",
+        choice_2_audio: "L3P36_13.mp3",
+        choice_3: "ថៅកែ",
+        choice_3_audio: "L3P36_5.mp3",
+        choice_4: "សសរ",
+        choice_4_audio: "L3P36_8.mp3",
+        correct_answer: 2,
+        next_question: "L3P36Q6",
+        menu_id: 1,
+      },
+      {
+        id: 6,
+        question_id: "L3P36Q6",
+        question_type: 3,
+        question_content: "ថូ",
+        choice_1: "assets/img/P36/L3.1P36.jpg",
+        choice_1_audio: "L3P36_9.mp3",
+        choice_2: "assets/img/P36/L3.3P36.jpg",
+        choice_2_audio: "L3P36_12.mp3",
+        choice_3: "assets/img/P36/L3.3P36.jpg",
+        choice_3_audio: "L3P36_3.mp3",
+        choice_4: "assets/img/P36/L3.4P36.jpg",
+        choice_4_audio: "L3P36_8.mp3",
+        correct_answer: 1,
+        next_question: "RootPage",
+        menu_id: 1,
+      },
+    ];
+
+    console.log(questions[_id]);
+    this.id = questions[_id]["id"];
+    this.question_id = questions[_id]["question_id"];
+    this.question_type = questions[_id]["question_type"];
+    this.question_content = questions[_id]["question_content"];
+    this.choice_1 = questions[_id]["choice_1"];
+    this.choice_1_audio = questions[_id]["choice_1_audio"];
+    this.choice_2 = questions[_id]["choice_2"];
+    this.choice_2_audio = questions[_id]["choice_2_audio"];
+    this.choice_3 = questions[_id]["choice_3"];
+    this.choice_3_audio = questions[_id]["choice_3_audio"];
+    this.choice_4 = questions[_id]["choice_4"];
+    this.choice_4_audio = questions[_id]["choice_4_audio"];
+    this.correct_answer = questions[_id]["correct_answer"];
+    this.next_question = questions[_id]["next_question"];
+    this.menu_id = questions[_id]["menu_id"];
   }
 
-  public answer(a_id: number, choice: number): void {
-    this._xela.stop_audio();
-
-    let result;
-    if (a_id === 1) {
-      result = "Yes";
-    }else if(a_id === 0) {
-      result = "No";
+  public answer(number): void {
+    if(number == this.correct_answer){
+      console.log("Answer Is Correct!");
+    }else {
+      console.log("Answer Is Incorrect!");
     }
-
-    let opt;
-
-    if (this._id == 1) {
-      opt = {
-        _id: 1,
-        q_type: 1,
-        q_id: "L3P36",
-        init_sound: choice
-      };
-    }else if (this._id == 2) {
-      opt = {
-        _id: 2,
-        q_type: 2,
-        q_id: "L3P36",
-        init_sound: choice
-      };
-    }else if (this._id == 3) {
-      opt = {
-        _id: 3,
-        q_type: 3,
-        q_id: "L3P36",
-        init_sound: choice
-      };
-    }else if (this._id == 4) {
-      opt = {
-        _id: 4,
-        q_type: 1,
-        q_id: "L3P36",
-        init_sound: choice
-      };
-    }else if (this._id == 5) {
-      opt = {
-        _id: 5,
-        q_type: 2,
-        q_id: "L3P36",
-        init_sound: choice
-      };
-    }else if (this._id == 6) {
-      opt = {
-        _id: 6,
-        q_type: 3,
-        q_id: "L3P36",
-        init_sound: choice
-      };
-    }
-
-    console.log("xelaController: validate_answer(): The result is -> ", result);
-
-    this._xela.play_result(opt, result);
-
-    if (a_id === 1) {
-      opt = {
-        _id: this._id+1,
-        q_type: this.q_type,
-        q_id: this.q_id,
-        init_sound: choice
-      };
-      // if (opt["_id"] == 7) {
-      //   setTimeout(function(_route) {
-      //     _route.popToRoot();
-      //   } , 2000, this._route);
-      // }else {
-        // setTimeout(function(_route) {
-        //   _route.result(QuestionPage, opt)
-        // } , 2000, this._route);
-        this.showCorrect = true;
-      // }
-    }
-
-  }
-
-  public go_to_next(): void {
-    let opt = {
-      _id: this._id+1,
-    };
-
-      if (opt["_id"] == 7) {
-        this._route.popToRoot();
-      }else {
-        this._xela.stop_audio();
-        this._route.result(QuestionPage, opt);
-      }
-  }
-
-  public button_push_root(): void {
-    this._route.popToRoot();
-  }
-
-  public button_replay_question(): void {
-    let opt;
-
-    if (this._id == 1) {
-      opt = {
-        _id: 1,
-        q_type: 1,
-        q_id: "L3P36",
-        init_sound: 3
-      };
-    }else if (this._id == 2) {
-      opt = {
-        _id: 2,
-        q_type: 2,
-        q_id: "L3P36",
-        init_sound: 5
-      };
-    }else if (this._id == 3) {
-      opt = {
-        _id: 3,
-        q_type: 3,
-        q_id: "L3P36",
-        init_sound: 11
-      };
-    }else if (this._id == 4) {
-      opt = {
-        _id: 4,
-        q_type: 1,
-        q_id: "L3P36",
-        init_sound: 12
-      };
-    }else if (this._id == 5) {
-      opt = {
-        _id: 5,
-        q_type: 2,
-        q_id: "L3P36",
-        init_sound: 13
-      };
-    }else if (this._id == 6) {
-      opt = {
-        _id: 6,
-        q_type: 3,
-        q_id: "L3P36",
-        init_sound: 1
-      };
-    }
-
-    this._xela.replay_audio(opt);
-  }
-
-  set visibleNext(val) {
-    this.showCorrect = val;
-  }
-
-  public button_exit_application(): void {
-    console.log("exit app");
-    this._toolbar.exit();
-  }
+  };
 
 }
+
+// let questions: Array<any> = [
+//   {
+//     id: 1,
+//     question_id: "L3P36Q1",
+//     question_type: 1,
+//     question_content: "assets/img/P36/L3.3P36.jpg",
+//     choice_1: "ផែ",
+//     choice_1_audio: "L3P36_1.mp3",
+//     choice_2: "ផៃ",
+//     choice_2_audio: "L3P36_2.mp3",
+//     choice_3: "ផេះ",
+//     choice_3_audio: "L3P36_3.mp3",
+//     choice_4: "ថែ",
+//     choice_4_audio: "L3P36_4.mp3",
+//     correct_answer: 3,
+//     next_question: "L3P36Q2",
+//     menu_id: 1,
+//   },
+// ];

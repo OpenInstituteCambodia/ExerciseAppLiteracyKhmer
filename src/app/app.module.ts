@@ -4,8 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { xelaController } from './xelaController';
 import { MyApp } from './app.component';
 import { MenuPage } from '../pages/menu/menu';
+import { QuestionPage } from '../pages/question/question';
 
-import { QPage } from '../pages/q/q';
 
 /*
   NOTHING TO EDIT HERE !!!
@@ -16,7 +16,7 @@ import { QPage } from '../pages/q/q';
   declarations: [
     MyApp,
     MenuPage,
-    QPage
+    QuestionPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,7 +25,7 @@ import { QPage } from '../pages/q/q';
   entryComponents: [
     MyApp,
     MenuPage,
-    QPage
+    QuestionPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, xelaController]
 })
