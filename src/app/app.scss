@@ -38,6 +38,14 @@ $eyeCandy3DHighligh: #4C8CF5;
 [colorized] {
   .toolbar-background-md {
     background-color: #FF1744;
+
+  }
+  .toolbar-content {
+    [ion-button] {
+      ion-icon {
+        color: #fff !important;
+      }
+    }
   }
 }
 
@@ -165,7 +173,7 @@ $eyeCandy3DHighligh: #4C8CF5;
 
 
   [ion-button] {
-    color: #fff !important;
+    // color: #fff !important;
     font-size: 1.8em;
     padding: 0 10%;
   }

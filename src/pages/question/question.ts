@@ -107,12 +107,51 @@ export class QuestionPage {
       result = "No";
     }
 
-    let opt = {
-      _id: this._id,
-      q_type: this.q_type,
-      q_id: this.q_id,
-      init_sound: choice
-    };
+    let opt;
+
+    if (this._id == 1) {
+      opt = {
+        _id: 1,
+        q_type: 1,
+        q_id: "L3P36",
+        init_sound: choice
+      };
+    }else if (this._id == 2) {
+      opt = {
+        _id: 2,
+        q_type: 2,
+        q_id: "L3P36",
+        init_sound: choice
+      };
+    }else if (this._id == 3) {
+      opt = {
+        _id: 3,
+        q_type: 3,
+        q_id: "L3P36",
+        init_sound: choice
+      };
+    }else if (this._id == 4) {
+      opt = {
+        _id: 4,
+        q_type: 1,
+        q_id: "L3P36",
+        init_sound: choice
+      };
+    }else if (this._id == 5) {
+      opt = {
+        _id: 5,
+        q_type: 2,
+        q_id: "L3P36",
+        init_sound: choice
+      };
+    }else if (this._id == 6) {
+      opt = {
+        _id: 6,
+        q_type: 3,
+        q_id: "L3P36",
+        init_sound: choice
+      };
+    }
 
     console.log("xelaController: validate_answer(): The result is -> ", result);
 
@@ -147,6 +186,7 @@ export class QuestionPage {
       if (opt["_id"] == 7) {
         this._route.popToRoot();
       }else {
+        this._xela.stop_audio();
         this._route.result(QuestionPage, opt);
       }
   }
