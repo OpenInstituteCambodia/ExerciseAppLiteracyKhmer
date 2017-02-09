@@ -77,13 +77,13 @@ export class QPage {
         question_id: "L3P36Q3",
         question_type: 3,
         question_content: "សរសេរ",
-        choice_1: "L3.1P36.jpg",
+        choice_1: "assets/img/P36/L3.1P36.jpg",
         choice_1_audio: "L3P36_9.mp3",
-        choice_2: "L3.3P36.jpg",
+        choice_2: "assets/img/P36/L3.3P36.jpg",
         choice_2_audio: "L3P36_3.mp3",
-        choice_3: "L3.4P36.jpg",
+        choice_3: "assets/img/P36/L3.4P36.jpg",
         choice_3_audio: "L3P36_11.mp3",
-        choice_4: "L3.2P36.jpg",
+        choice_4: "assets/img/P36/L3.2P36.jpg",
         choice_4_audio: "L3P36_12.mp3",
         correct_answer: 3,
         next_question: "L3P36Q4",
@@ -104,6 +104,40 @@ export class QPage {
         choice_4_audio: "L3P36_6.mp3",
         correct_answer: 1,
         next_question: "L3P36Q5",
+        menu_id: 1,
+      },
+      {
+        id: 5,
+        question_id: "L3P36Q5",
+        question_type: 2,
+        question_content: "L3P36_13.mp3",
+        choice_1: "ថែ",
+        choice_1_audio: "L3P36_4.mp3",
+        choice_2: "សរសើរ",
+        choice_2_audio: "L3P36_13.mp3",
+        choice_3: "ថៅកែ",
+        choice_3_audio: "L3P36_5.mp3",
+        choice_4: "សសរ",
+        choice_4_audio: "L3P36_8.mp3",
+        correct_answer: 2,
+        next_question: "L3P36Q6",
+        menu_id: 1,
+      },
+      {
+        id: 6,
+        question_id: "L3P36Q6",
+        question_type: 3,
+        question_content: "ថូ",
+        choice_1: "assets/img/P36/L3.1P36.jpg",
+        choice_1_audio: "L3P36_9.mp3",
+        choice_2: "assets/img/P36/L3.3P36.jpg",
+        choice_2_audio: "L3P36_12.mp3",
+        choice_3: "assets/img/P36/L3.3P36.jpg",
+        choice_3_audio: "L3P36_3.mp3",
+        choice_4: "assets/img/P36/L3.4P36.jpg",
+        choice_4_audio: "L3P36_8.mp3",
+        correct_answer: 1,
+        next_question: "RootPage",
         menu_id: 1,
       },
     ];
@@ -129,6 +163,8 @@ export class QPage {
   public answer(number): void {
     if(number == this.correct_answer){
       console.log("Answer Is Correct!");
+    }else {
+      console.log("Answer Is Incorrect!");
     }
   };
 

@@ -27,7 +27,7 @@
   </ion-card>
 
 
-  <ion-grid sticky-bottom>
+  <ion-grid sticky-bottom *ngIf="question_type != 3">
     <ion-row wrap>
         <ion-col width-50>
           <button ion-button block color-1 (click)="answer(1)">{{ choice_1 }}</button>
@@ -40,6 +40,31 @@
         </ion-col>
         <ion-col width-50>
           <button ion-button block color-4 (click)="answer(4)">{{ choice_4 }}</button>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid sticky-bottom *ngIf="question_type == 3">
+    <ion-row wrap>
+        <ion-col width-50>
+          <ion-card *ngIf="question_type == 3" sticky-center m3 (click)="answer(1)">
+            <img [src]="choice_1"/>
+          </ion-card>
+        </ion-col>
+        <ion-col width-50>
+          <ion-card *ngIf="question_type == 3" sticky-center m3 (click)="answer(2)">
+            <img [src]="choice_2"/>
+          </ion-card>
+        </ion-col>
+        <ion-col width-50>
+          <ion-card *ngIf="question_type == 3" sticky-center m3 (click)="answer(3)">
+            <img [src]="choice_3"/>
+          </ion-card>
+        </ion-col>
+        <ion-col width-50>
+          <ion-card *ngIf="question_type == 3" sticky-center m3 (click)="answer(4)">
+            <img [src]="choice_4"/>
+          </ion-card>
         </ion-col>
     </ion-row>
   </ion-grid>
