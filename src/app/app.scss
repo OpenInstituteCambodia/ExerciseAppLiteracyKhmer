@@ -35,10 +35,18 @@ $eyeCandy3DHighligh: #4C8CF5;
   }
 }
 
+[colorized] {
+  .toolbar-background-md {
+    background-color: #FF1744;
+  }
+}
+
 .question {
+  background-color: #D32F2F;
   [question] {
     height: 35vh;
     position: relative;
+    color: #fff !important;
 
     &[single] {
       .question {
@@ -82,7 +90,7 @@ $eyeCandy3DHighligh: #4C8CF5;
 
   [sbtn-action] {
     position: absolute;
-    bottom: 2px;
+    bottom: 5px;
     width: 97.5%;
 
     &[single] {
@@ -157,6 +165,7 @@ $eyeCandy3DHighligh: #4C8CF5;
 
 
   [ion-button] {
+    color: #fff !important;
     font-size: 1.8em;
     padding: 0 10%;
   }
@@ -175,7 +184,7 @@ $eyeCandy3DHighligh: #4C8CF5;
   position: absolute !important;
   top: 50% !important;
   left: 0 !important;
-  transform: translate(0, -100%);
+  transform: translate(0, -103%);
 
   .question {
     position: absolute;
