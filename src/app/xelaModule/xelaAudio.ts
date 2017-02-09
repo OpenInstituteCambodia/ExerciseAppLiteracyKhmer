@@ -37,8 +37,14 @@ export class xelaAudio {
   }
 
   public play(_audio: any): boolean {
-    if (_audio === '') { // Do Nothing if No File is provided
+    if (_audio === '' || typeof _audio === 'undefined' ) { // Do Nothing if No File is provided
       console.log("xelaController: xelaAudio: play() -> NO FILENAME PROVIDED");
+      return false;
+    }
+    // Inspecting Platform for linking asset file
+    if (this._platform !== 'Android') {
+      console.log("xelaController: xelaAudio: play() -> PLATFORM NOT SUPPORTED");
+      console.log("xelaController: xelaAudio: playDebug() -> ", _audio);
       return false;
     }
 
@@ -80,6 +86,13 @@ export class xelaAudio {
       console.log("xelaController: xelaAudio: play() -> NO FILENAME PROVIDED");
       return false;
     }
+    // Inspecting Platform for linking asset file
+    if (this._platform !== 'Android') {
+      console.log("xelaController: xelaAudio: play() -> PLATFORM NOT SUPPORTED");
+      console.log("xelaController: xelaAudio: playDebug() -> ", _audio);
+      return false;
+    }
+
 
     console.log("xelaController: xelaAudio: playDebug() -> Question Type is M2", _audio);
 
