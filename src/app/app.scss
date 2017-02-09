@@ -54,7 +54,7 @@ $eyeCandy3DHighligh: #4C8CF5;
   [question] {
     height: 35vh;
     position: relative;
-    color: #fff !important;
+    color: #f05 !important;
 
     &[single] {
       .question {
@@ -208,7 +208,7 @@ $eyeCandy3DHighligh: #4C8CF5;
   bottom: 5px;
   height: 240px;
   background-color: #00E676;
-  animation: fadeIn 2s;
+  animation: fadeIn 1s;
 
   ion-icon {
     font-size: 2.5em;
