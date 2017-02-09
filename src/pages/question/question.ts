@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { xelaRoute } from '../../app/xelaModule/xelaRoute';
+import { xelaAudio } from '../../app/xelaModule/xelaAudio';
+
 /*
   Generated class for the Q page.
 
@@ -9,7 +12,8 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
   selector: 'page-question',
-  templateUrl: 'question.html'
+  templateUrl: 'question.html',
+  providers:  [ xelaRoute, xelaAudio ]
 })
 export class QuestionPage {
   public id;
@@ -28,7 +32,7 @@ export class QuestionPage {
   public next_question;
   public menu_id;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _route: xelaRoute, public _audioPlayer: xelaAudio) {
     this._question(this.navParams.get("_id")-1);
   }
 
@@ -142,7 +146,7 @@ export class QuestionPage {
       },
     ];
 
-    console.log(questions[_id]);
+    console.log("xelaController: QuestionPage: Displaying Question -> ", questions[_id]);
     this.id = questions[_id]["id"];
     this.question_id = questions[_id]["question_id"];
     this.question_type = questions[_id]["question_type"];
@@ -158,6 +162,8 @@ export class QuestionPage {
     this.correct_answer = questions[_id]["correct_answer"];
     this.next_question = questions[_id]["next_question"];
     this.menu_id = questions[_id]["menu_id"];
+
+    this._audioPlayer.play('/android_asset/www/assets/audio/lessons/'+this.choice_1_audio);
   }
 
   public answer(number): void {

@@ -22,7 +22,16 @@ export class xelaAudio {
     console.log("xelaController: xelaAudio: Active!");
   }
 
-
+  public play(_file) {
+    const onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
+    this._media_player = new MediaPlugin( _file, onStatusUpdate );
+    this._media_player.init.then((suc) => {
+      console.log("xelaController: xelaAudio: _media_player: Init -> ", suc);
+    }, (err) => {
+      console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _file + ", Message: " + err.message);
+    });
+    this._media_player.play();
+  }
 
 }
 
