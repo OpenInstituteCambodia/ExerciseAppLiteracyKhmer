@@ -195,6 +195,17 @@ $eyeCandy3DHighligh: #4C8CF5;
   }
 }
 
+[button-next-color] {
+  position: absolute;
+  bottom: 5px;
+  height: 240px;
+  background-color: #00E676;
+
+  ion-icon {
+    font-size: 2.5em;
+  }
+}
+
 @each $color in $eyeCandy {
   $i: index($eyeCandy, $color);
   [sbtn-color-#{$i}] {
