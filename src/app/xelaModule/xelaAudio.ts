@@ -51,14 +51,19 @@ export class xelaAudio {
       this._media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _M + ", Message: " + err.message); });
       this._media_player.play();
 
-      setTimeout(function(){
+      setTimeout(function(_audio, onStatusUpdate, _media_player){
         let _M = "/android_asset/www/assets/audio/lessons/"+_audio["q_id"]+"_"+_audio["init_sound"]+".mp3";
 
-        const onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
-        this._media_player = new MediaPlugin( _M, onStatusUpdate );
-        this._media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _M + ", Message: " + err.message); });
-        this._media_player.play();
-      }, 2500);
+        onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
+        _media_player = new MediaPlugin( _M, onStatusUpdate );
+        _media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _M + ", Message: " + err.message); });
+        _media_player.play();
+      },
+        2500,
+        _audio,
+        onStatusUpdate,
+        this._media_player
+      );
 
     } else {
       const onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
@@ -84,13 +89,18 @@ export class xelaAudio {
     this._media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _M + ", Message: " + err.message); });
     this._media_player.play();
 
-    setTimeout(function(){
+    setTimeout(function(onStatusUpdate, _media_player, _result){
       let _M = "/android_asset/www/assets/audio/general/"+_result+".mp3";
-      const onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
-      this._media_player = new MediaPlugin( _M, onStatusUpdate );
-      this._media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _M + ", Message: " + err.message); });
-      this._media_player.play();
-    }, 1200);
+      onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
+      _media_player = new MediaPlugin( _M, onStatusUpdate );
+      _media_player.init.then((suc) => { console.log("xelaController: xelaAudio: _media_player: Init -> ", suc); }, (err) => { console.log("xelaController: xelaAudio: _media_player: Init -> Somthing went wrong! Error code: " + err.code + ", Filename: " + _M + ", Message: " + err.message); });
+      _media_player.play();
+    },
+      1200,
+      onStatusUpdate,
+      this._media_player,
+      _result
+    );
 
 
     return true;

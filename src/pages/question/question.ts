@@ -122,9 +122,15 @@ export class QuestionPage {
         q_id: this.q_id,
         init_sound: choice
       };
-      setTimeout(function(_route) {
-        _route.result(QuestionPage, opt)
-      } , 2000, this._route);
+      if (opt["_id"] == 7) {
+        setTimeout(function(_route) {
+          _route.popToRoot();
+        } , 2000, this._route);
+      }else {
+        setTimeout(function(_route) {
+          _route.result(QuestionPage, opt)
+        } , 2000, this._route);
+      }
     }
 
   }
