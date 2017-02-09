@@ -126,6 +126,12 @@ export class QPage {
     this.menu_id = questions[_id]["menu_id"];
   }
 
+  public answer(number): void {
+    if(number == this.correct_answer){
+      console.log("Answer Is Correct!");
+    }
+  };
+
 }
 
 // let questions: Array<any> = [
