@@ -208,9 +208,19 @@ $eyeCandy3DHighligh: #4C8CF5;
   bottom: 5px;
   height: 240px;
   background-color: #00E676;
+  animation: fadeIn 2s;
 
   ion-icon {
     font-size: 2.5em;
+  }
+}
+
+@keyframes fadeIn {
+  0%,30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

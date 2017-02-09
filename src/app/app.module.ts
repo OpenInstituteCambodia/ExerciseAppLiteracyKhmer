@@ -7,6 +7,8 @@ import { MenuPage } from '../pages/menu/menu';
 import { QuestionPage } from '../pages/question/question';
 import { ResultPage } from '../pages/result/result';
 
+import { QPage } from '../pages/q/q';
+
 /*
   NOTHING TO EDIT HERE !!!
   GO AWAY!!!
@@ -17,7 +19,8 @@ import { ResultPage } from '../pages/result/result';
     MyApp,
     MenuPage,
     QuestionPage,
-    ResultPage
+    ResultPage,
+    QPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -27,7 +30,8 @@ import { ResultPage } from '../pages/result/result';
     MyApp,
     MenuPage,
     QuestionPage,
-    ResultPage
+    ResultPage,
+    QPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, xelaController]
 })

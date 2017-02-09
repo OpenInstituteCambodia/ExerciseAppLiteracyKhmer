@@ -245,6 +245,10 @@ export class QuestionPage {
     this._xela.replay_audio(opt);
   }
 
+  set visibleNext(val) {
+    this.showCorrect = val;
+  }
+
   public button_exit_application(): void {
     console.log("exit app");
     this._toolbar.exit();
