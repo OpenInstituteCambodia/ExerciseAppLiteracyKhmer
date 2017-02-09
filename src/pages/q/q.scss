@@ -1,0 +1,53 @@
+page-q {
+  [xela] {
+    ion-col {
+      padding: 0;
+      margin: 0;
+    }
+    [ion-button] {
+      padding: 55px 0;
+      font-size: 2.6em;
+      margin: 0;
+      border: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    [sticky-center] {
+        &[m] {
+          img {
+            position: absolute;
+            left: 2% !important;
+            width: 96% !important;
+            top: 50%;
+            transform: translateY(-110%);
+          }
+        }
+
+        &[m2] {
+          box-shadow: none;
+          text-align: center;
+
+          img {
+            height: 220px;
+            width: auto;
+            margin: 0 auto;
+          }
+        }
+
+    }
+    [sticky-bottom] {
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+    }
+  }
+}
+
+@each $color in $eyeCandy {
+  $i: index($eyeCandy, $color);
+  [color-#{$i}] {
+    background-color: $color;
+    color: #222;
+  }
+}

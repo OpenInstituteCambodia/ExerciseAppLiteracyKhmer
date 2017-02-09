@@ -1,0 +1,48 @@
+<!--
+  Generated template for the Q page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Question Page With Card</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding xela>
+
+  <ion-card sticky-center m>
+    <img *ngIf="question_type != 2" [src]="question_content" alt="">
+  </ion-card>
+  <ion-card sticky-center m2>
+    <img *ngIf="question_type == 2" src="assets/img/question.png" alt="">
+  </ion-card>
+
+  <ion-grid sticky-bottom>
+    <ion-row wrap>
+        <ion-col width-50>
+          <button ion-button block color-1>{{ choice_1 }}</button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block color-2>{{ choice_2 }}</button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block color-3>{{ choice_3 }}</button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block color-4>{{ choice_4 }}</button>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block navPop>Go Back</button>
+  </ion-toolbar>
+</ion-footer>
