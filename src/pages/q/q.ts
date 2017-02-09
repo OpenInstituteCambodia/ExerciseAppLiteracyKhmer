@@ -29,7 +29,7 @@ export class QPage {
   public menu_id;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this._question(this.navParams.get("_id"));
+    this._question(this.navParams.get("_id")-1);
   }
 
   ionViewDidLoad() {
@@ -70,6 +70,40 @@ export class QPage {
         choice_4_audio: "L3P36_5.mp3",
         correct_answer: 4,
         next_question: "L3P36Q3",
+        menu_id: 1,
+      },
+      {
+        id: 3,
+        question_id: "L3P36Q3",
+        question_type: 3,
+        question_content: "សរសេរ",
+        choice_1: "L3.1P36.jpg",
+        choice_1_audio: "L3P36_9.mp3",
+        choice_2: "L3.3P36.jpg",
+        choice_2_audio: "L3P36_3.mp3",
+        choice_3: "L3.4P36.jpg",
+        choice_3_audio: "L3P36_11.mp3",
+        choice_4: "L3.2P36.jpg",
+        choice_4_audio: "L3P36_12.mp3",
+        correct_answer: 3,
+        next_question: "L3P36Q4",
+        menu_id: 1,
+      },
+      {
+        id: 4,
+        question_id: "L3P36Q4",
+        question_type: 1,
+        question_content: "assets/img/P36/L3.2P36.jpg",
+        choice_1: "បបរគ្រឿង",
+        choice_1_audio: "L3P36_12.mp3",
+        choice_2: "សរសើរ",
+        choice_2_audio: "L3P36_13.mp3",
+        choice_3: "បី",
+        choice_3_audio: "L3P36_14.mp3",
+        choice_4: "ដំបៅ",
+        choice_4_audio: "L3P36_6.mp3",
+        correct_answer: 1,
+        next_question: "L3P36Q5",
         menu_id: 1,
       },
     ];

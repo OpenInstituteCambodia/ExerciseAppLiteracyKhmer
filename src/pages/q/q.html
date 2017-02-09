@@ -15,12 +15,17 @@
 
 <ion-content padding xela>
 
-  <ion-card sticky-center m>
-    <img *ngIf="question_type != 2" [src]="question_content" alt="">
+  <ion-card *ngIf="question_type == 1" sticky-center m>
+    <img [src]="question_content" alt="">
   </ion-card>
-  <ion-card sticky-center m2>
-    <img *ngIf="question_type == 2" src="assets/img/question.png" alt="">
+  <ion-card *ngIf="question_type == 2" sticky-center m2>
+    <img src="assets/img/question.png" alt="">
   </ion-card>
+  <ion-card *ngIf="question_type == 3" sticky-center m1>
+    <img src="assets/img/white.jpg"/>
+    <div class="card-title">{{ question_content }}</div>
+  </ion-card>
+
 
   <ion-grid sticky-bottom>
     <ion-row wrap>
