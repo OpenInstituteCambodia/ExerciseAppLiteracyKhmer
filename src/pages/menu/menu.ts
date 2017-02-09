@@ -19,7 +19,13 @@ export class MenuPage {
 
   }
 
-
+  public question(_id) {
+    this._route.question(
+      QuestionPage, {
+        _id: _id
+      }
+    );
+  }
 
 }
 
