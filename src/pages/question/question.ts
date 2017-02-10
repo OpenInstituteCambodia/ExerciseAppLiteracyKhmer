@@ -35,6 +35,10 @@ export class QuestionPage {
   public menu_id;
 
   public enable_answer: boolean = false;
+  public enable_choice1: boolean = true;
+  public enable_choice2: boolean = true;
+  public enable_choice3: boolean = true;
+  public enable_choice4: boolean = true;
 
   constructor(private _toolbar: xelaToolbar, public navCtrl: NavController, public navParams: NavParams, public _route: xelaRoute, public _audioPlayer: xelaAudio) {
     this._question(this.navParams.get("_id")-1);
@@ -209,6 +213,8 @@ export class QuestionPage {
       return false;
     }
 
+    this._choice(options);
+
     this.enable_answer = false;
 
     let question = {
@@ -281,6 +287,26 @@ export class QuestionPage {
     };
 
     this._play_question(question);
+  }
+
+  private _choice(choice): void {
+    if (choice == 1) {
+      this.enable_choice2 = false;
+      this.enable_choice3 = false;
+      this.enable_choice4 = false;
+    }else if(choice == 2) {
+      this.enable_choice1 = false;
+      this.enable_choice3 = false;
+      this.enable_choice4 = false;
+    }else if(choice == 3) {
+      this.enable_choice1 = false;
+      this.enable_choice2 = false;
+      this.enable_choice4 = false;
+    }else if(choice == 4) {
+      this.enable_choice1 = false;
+      this.enable_choice2 = false;
+      this.enable_choice3 = false;
+    }
   }
 
   public popToRoot() {
