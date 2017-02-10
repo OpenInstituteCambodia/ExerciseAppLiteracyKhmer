@@ -208,6 +208,8 @@ export class QuestionPage {
       return false;
     }
 
+    this.enable_answer = false;
+
     let question = {
       id: this.id,
       question_id: this.question_id,
