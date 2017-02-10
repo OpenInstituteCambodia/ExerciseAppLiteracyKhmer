@@ -284,6 +284,9 @@ export class QuestionPage {
   }
 
   public popToRoot() {
+    if (this.enable_answer == false) {
+      return false;
+    }
     this.unload(0);
     this._route.popToRoot();
   }

@@ -1,228 +1,97 @@
-// http://ionicframework.com/docs/v2/theming/
-
-
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
-
 // Variable
 $eyeCandy: #19A15F #4C8CF5 #DE5347 #FFCE43;
 $eyeCandy3DHighligh: #4C8CF5;
 
-// Starting CSS
-
-.back-button {
-  display: none !important;
-}
-
-
-
-.main {
+[xela] {
+  ion-col {
+    padding: 0;
+    margin: 0;
+  }
   [ion-button] {
-    padding: 50px 0;
-    color: #222;
-    font-size: 4em;
+    padding: 58px 0;
+    font-size: 3em;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
   }
-}
 
-[colorized] {
-  .toolbar-background-md {
-    background-color: #f1e58e;
-
-  }
-  .toolbar-content {
-    [ion-button] {
-      ion-icon {
-        color: #111 !important;
+  [sticky-center] {
+      &[m] {
+        img {
+          position: absolute;
+          left: 2% !important;
+          width: 96% !important;
+          top: 10%;
+          transform: translateY(-5%);
+        }
       }
-    }
-  }
-}
 
-.question {
-  background-color: #f1e58e;
-  [question] {
-    height: 35vh;
-    position: relative;
-    color: #f05 !important;
+      &[m1] {
+        ion-card {
+          position: relative;
+          text-align: center;
+        }
+        .card-title {
+          position: absolute;
+          top: 12%;
+          font-size: 4em;
+          width: 100%;
+          font-weight: bold;
+          text-align: center;
+          color: #000;
+          left: 0;
+        }
+      }
 
-    &[single] {
-      .question {
-        box-sizing: border-box;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+      &[m2] {
+        box-shadow: none;
         text-align: center;
 
-        h1 {
-          font-size: 5.5em;
+        img {
+          height: 220px;
+          width: auto;
+          margin: 0 auto;
         }
       }
-    } // [single]
 
-    &[paragh] {
-      .question {
-
-        h1 {
-          font-size: 3.2em;
-        }
-      }
-    } // [paragh]
-
-    &[img] {
-      .img {
-        height: 100%;
-        width: auto;
-
-        background-repeat: no-repeat !important;
-        background-size: contain !important;
-        // background-size: cover !important;
-        background-position-x: 50% !important;
-        background-position-y: 50% !important;
-
-      }
-    } // [img]
-
-  } // [question]
-
-  [sbtn-action] {
+  }
+  [sticky-bottom] {
     position: absolute;
+    left: 0;
     bottom: 5px;
-    width: 97.5%;
+  }
 
-    &[single] {
-      [ion-button] {
-        padding: 1.2em 0 !important;
-        font-size: 3.2em;
-      }
-    } // [single]
-    &[single-2] {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      text-align: center;
-      width: 100%;
-
-      [ion-button] {
-        padding: 1em 0 !important;
+  ion-card {
+    &[m3] {
+      img {
+        height: 115px;
+        // height: 120px;
+        width: auto !important;
+        margin: 0 auto !important;
       }
     }
+  }
+}
 
-    &[no-padding] {
-      ion-row,
-      ion-col {
-        padding: 0;
-      }
 
-      [ion-button] {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 1.35em 0 !important;
-        border-radius: 0;
-        border: 0;
-        box-shadow: none;
-      }
-
-    } // [no-padding]
-
-    &[img] {
-      [ion-button] {
-        // padding: 50px 0 !important;
-        // padding: 1em 0 !important;
-        padding: 1.2em 0 !important;
-        font-size: 3.2em;
-        background-size: contain !important;
-        // background-size: cover !important;
-        background-repeat: no-repeat !important;
-        background-position-x: 50% !important;
-        background-position-y: 50% !important;
-
-        @each $color in $eyeCandy {
-          $i: index($eyeCandy, $color);
-          &[sbtn-color-#{$i}] {
-            border: 10px solid $color;
-            // color: #222;
-          }
-        }
-      }
-    }
-
-  } // sbtn-action
-} // .question
-
-[sbtn-question] {
+ion-toolbar {
   text-align: center;
-
-  &[home-footer] {
-    .toolbar {
-      padding-left: 50px;
-      padding-right: 50px;
+  [ion-button] {
+    ion-icon {
+      font-size: 2.2em;
     }
   }
+}
 
-
-  [ion-button] {
-    // color: #fff !important;
-    font-size: 1.8em;
-    padding: 0 10%;
+@each $color in $eyeCandy {
+  $i: index($eyeCandy, $color);
+  [color-#{$i}] {
+    background-color: $color;
+    color: #222;
   }
 }
 
-.toolbar-title {
-  text-align: center !important;
-  color: #387ef5;
-}
-
-[answer-head] {
-  font-size: 4rem;
-}
-
-[content-middle] {
-  position: absolute !important;
-  top: 50% !important;
-  left: 0 !important;
-  transform: translate(0, -103%);
-
-  .question {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-  }
-}
-
-[button-next-color] {
-  position: absolute;
-  bottom: 5px;
-  height: 240px;
-  background-color: #00E676;
-  animation: fadeIn 1s;
-
-  ion-icon {
-    font-size: 2.5em;
-  }
-}
-
-@keyframes fadeIn {
-  0%,30% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 @each $color in $eyeCandy {
   $i: index($eyeCandy, $color);
