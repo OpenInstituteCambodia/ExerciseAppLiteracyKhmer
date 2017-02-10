@@ -163,7 +163,11 @@ export class QuestionPage {
     this.next_question = questions[_id]["next_question"];
     this.menu_id = questions[_id]["menu_id"];
 
-    this._audioPlayer.play('/android_asset/www/assets/audio/lessons/'+this.choice_1_audio);
+    this._play_question(questions[_id]);
+  }
+
+  private _play_question(content: any) {
+    
   }
 
   public answer(number): void {
