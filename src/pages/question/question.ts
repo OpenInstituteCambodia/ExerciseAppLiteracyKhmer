@@ -4,9 +4,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 import { xelaAudio } from '../../app/xelaModule/xelaAudio';
 
-import * as fs from 'fs'
-import * as mm from 'music-metadata'
-import * as util from 'util'
 
 /*
   Generated class for the Q page.
