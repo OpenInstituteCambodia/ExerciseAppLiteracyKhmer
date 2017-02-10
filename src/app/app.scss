@@ -2,6 +2,13 @@
 $eyeCandy: #19A15F #4C8CF5 #DE5347 #FFCE43;
 $eyeCandy3DHighligh: #4C8CF5;
 
+[xela-app] {
+  [ion-button] {
+    font-size: 3em;
+    padding: 50px 20px;
+  }
+} // [xela-app]
+
 [xela] {
   ion-col {
     padding: 0;
@@ -72,7 +79,7 @@ $eyeCandy3DHighligh: #4C8CF5;
       }
     }
   }
-}
+} // [xela]
 
 
 ion-toolbar {
@@ -80,6 +87,12 @@ ion-toolbar {
   [ion-button] {
     ion-icon {
       font-size: 2.2em;
+    }
+    &:first-child {
+      margin-right: 60px;
+    }
+    &:last-child {
+      margin-left: 60px;
     }
   }
 }
