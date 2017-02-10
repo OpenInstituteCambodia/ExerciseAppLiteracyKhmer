@@ -15,6 +15,7 @@
 
 <ion-content padding xela>
 
+  <!-- QUESTION -->
   <!-- If Type is M1 -->
     <ion-card *ngIf="question_type == 1" sticky-center m>
       <img [src]="question_content" alt="">
@@ -32,7 +33,7 @@
     </ion-card>
   <!-- END If Type is M3 -->
 
-
+  <!-- ANSWER -->
   <!-- If Type is M1 and M2 -->
     <ion-grid sticky-bottom *ngIf="question_type != 3">
       <ion-row wrap>

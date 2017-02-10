@@ -33,6 +33,8 @@ export class QuestionPage {
   public next_question;
   public menu_id;
 
+  public enable_answer: boolean = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public _route: xelaRoute, public _audioPlayer: xelaAudio) {
     this._question(this.navParams.get("_id")-1);
   }
@@ -179,17 +181,16 @@ export class QuestionPage {
         u_id: 'Media1',
         path: 'assets/audio/general/M'+this.question_type+'.mp3'
       };
-
       this._audioPlayer.play(opt);
 
-      setTimeout(function(_audioPlayer) {
+      setTimeout(() => {
         opt = {
           u_id: 'Media2',
           path: 'assets/audio/lessons/'+options["choice_"+options["correct_answer"]+"_audio"]
         };
-        _audioPlayer.play(opt);
-
-      }, 2500, this._audioPlayer);
+        this._audioPlayer.play(opt);
+      }, 2500);
+      this.unload(4000);
       return true;
     }
 
@@ -202,7 +203,10 @@ export class QuestionPage {
     return true;
   }
 
-  public answer(options): void {
+  public answer(options): boolean {
+    if (this.enable_answer == false) {
+      return false;
+    }
 
     let question = {
       id: this.id,
@@ -230,24 +234,22 @@ export class QuestionPage {
 
     if(options == this.correct_answer){
       console.log("Answer Is Correct!");
-      setTimeout(function(_audioPlayer) {
-        opt = {
-          u_id: 'Media1',
-          path: 'assets/audio/general/Yes.mp3'
-        };
-        _audioPlayer.play(opt);
-      }, 1200, this._audioPlayer);
+      opt = {
+        u_id: 'Media1',
+        path: 'assets/audio/general/Yes.mp3'
+      };
     }else {
       console.log("Answer Is Incorrect!");
-      setTimeout(function(_audioPlayer) {
-        opt = {
-          u_id: 'Media1',
-          path: 'assets/audio/general/No.mp3'
-        };
-        _audioPlayer.play(opt);
-      }, 1200, this._audioPlayer);
+      opt = {
+        u_id: 'Media1',
+        path: 'assets/audio/general/No.mp3'
+      };
     }
+    setTimeout(() => {
+      this._audioPlayer.play(opt);
+    }, 1200);
     this.unload(2500);
+    return true;
   };
 
   public popToRoot() {
@@ -256,10 +258,11 @@ export class QuestionPage {
   }
 
   public unload(delay): void {
-    setTimeout(function(_audioPlayer){
-      _audioPlayer.unload("Media1");
-      _audioPlayer.unload("Media2");
-    }, delay, this._audioPlayer);
+    setTimeout(() => {
+      this._audioPlayer.unload("Media1");
+      this._audioPlayer.unload("Media2");
+      this.enable_answer = true;
+    }, delay);
   }
 
 }
