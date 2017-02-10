@@ -170,20 +170,9 @@ export class QuestionPage {
     this._play_question(questions[_id]);
   }
 
-  private _play_question(options: any) {
+  private _play_question(options: any): boolean {
     let opt;
-
-    if (this.question_type != 2) {
-      opt = {
-        u_id: 'QuestionType',
-        path: 'assets/audio/general/M'+this.question_type+".mp3"
-      };
-
-      this._audioPlayer.play(opt);
-      setTimeout(function(_audioPlayer) {
-        _audioPlayer.unload("QuestionType");
-      }, 3000, this._audioPlayer);
-    }else {
+    if (this.question_type == 2) {
       opt = {
         u_id: 'QuestionType',
         path: 'assets/audio/general/M'+this.question_type+".mp3"
@@ -197,10 +186,15 @@ export class QuestionPage {
         };
         _audioPlayer.play(opt);
       }, 2500, this._audioPlayer);
+      return true;
     }
 
-
-
+    opt = {
+      u_id: 'QuestionType',
+      path: 'assets/audio/general/M'+this.question_type+".mp3"
+    };
+    this._audioPlayer.play(opt);
+    return true;
   }
 
   public answer(number): void {
