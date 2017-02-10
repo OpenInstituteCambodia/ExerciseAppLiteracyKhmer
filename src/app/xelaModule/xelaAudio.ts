@@ -23,33 +23,35 @@ export class xelaAudio {
   public play(options: any): void {
     NativeAudio.preloadSimple(options["u_id"], options["path"]).then(
       function(suc){
-        this._play(options["u_id"]);
+        NativeAudio.play(options["u_id"]).then(
+          function(suc){
+            console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Playing: ", suc);
+          },
+          function(err){
+            console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Something went wrong, Error: ", err);
+          }
+        );
       },
       function(err){
         console.log("xelaController: xelaAudio: play() -> preloadSimple() -> Something went wrong, Error: ", err);
       }
     );
   }
-
 
   public playAdvance(options: any): void {
     NativeAudio.preloadComplex(options["u_id"], options["path"], 1, 1, options["delay"]).then(
       function(suc){
-        this._play(options["u_id"]);
+        NativeAudio.play(options["u_id"]).then(
+          function(suc){
+            console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Playing: ", suc);
+          },
+          function(err){
+            console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Something went wrong, Error: ", err);
+          }
+        );
       },
       function(err){
         console.log("xelaController: xelaAudio: play() -> preloadSimple() -> Something went wrong, Error: ", err);
-      }
-    );
-  }
-
-  private _play(options){
-    NativeAudio.play(options).then(
-      function(suc){
-        console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Playing: ", suc);
-      },
-      function(err){
-        console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Something went wrong, Error: ", err);
       }
     );
   }
