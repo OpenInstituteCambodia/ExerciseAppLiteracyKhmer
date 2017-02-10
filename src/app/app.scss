@@ -69,12 +69,13 @@ $eyeCandy3DHighligh: #4C8CF5;
     bottom: 5px;
 
     [width-50] {
-      transition: 1s;
+      // transition: 1s;
     }
 
     [width-100] {
       [ion-button] {
-        padding: 110px 0;
+        font-size: 6em;
+        padding: 115px 0;
         transition: 1s;
       }
     }

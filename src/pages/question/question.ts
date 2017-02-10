@@ -37,6 +37,8 @@ export class QuestionPage {
   public enable_answer: boolean = false;
   public expandChoice = null;
   public colapseChoice = true;
+  public enable_next_button = false;
+
   public enable_choice1: boolean = true;
   public enable_choice2: boolean = true;
   public enable_choice3: boolean = true;
@@ -260,6 +262,15 @@ export class QuestionPage {
       this._audioPlayer.play(opt);
     }, 1200);
     this.unload(2500);
+    setTimeout(() => {
+      if(options == this.correct_answer){
+        this._choice(0);
+        this.enable_next_button = true;
+      }else{
+        this._choice(99);
+        this.enable_next_button = false;
+      }
+    }, 3000);
     return true;
   };
 
@@ -291,7 +302,7 @@ export class QuestionPage {
     this._play_question(question);
   }
 
-  private _choice(choice): void {
+  private _choice(choice) {
     if (choice == 1) {
       this.enable_choice2 = false;
       this.enable_choice3 = false;
@@ -308,9 +319,32 @@ export class QuestionPage {
       this.enable_choice1 = false;
       this.enable_choice2 = false;
       this.enable_choice3 = false;
+    }else if(choice == 0) {
+      this.enable_choice1 = false;
+      this.enable_choice2 = false;
+      this.enable_choice3 = false;
+      this.enable_choice4 = false;
+      this.expandChoice = null;
+      return true;
+    }else if(choice == 99) {
+      this.enable_choice1 = true;
+      this.enable_choice2 = true;
+      this.enable_choice3 = true;
+      this.enable_choice4 = true;
+      this.expandChoice = null;
+      this.colapseChoice = true;
+      return true;
     }
     this.expandChoice = true;
     this.colapseChoice = null;
+  }
+
+  public question_next(_id) {
+    this._route.question(
+      QuestionPage, {
+        _id: _id
+      }
+    );
   }
 
   public popToRoot() {

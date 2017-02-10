@@ -49,6 +49,13 @@
           <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice4">
             <button ion-button block color-4 (click)="answer(4)">{{ choice_4 }}</button>
           </ion-col>
+
+          <!-- Next Question -->
+          <ion-col width-100 *ngIf="enable_next_button" (click)="question_next(id+1)">
+            <button ion-button block color-4>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+          </ion-col>
       </ion-row>
     </ion-grid>
   <!-- END If Type is M1 and M2 -->
