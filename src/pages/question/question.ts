@@ -254,6 +254,34 @@ export class QuestionPage {
     return true;
   };
 
+  public replay() {
+    if (this.enable_answer == false) {
+      return false;
+    }
+
+    this.enable_answer = false;
+
+    let question = {
+      id: this.id,
+      question_id: this.question_id,
+      question_type: this.question_type,
+      question_content: this.question_content,
+      choice_1: this.choice_1,
+      choice_1_audio: this.choice_1_audio,
+      choice_2: this.choice_2,
+      choice_2_audio: this.choice_2_audio,
+      choice_3: this.choice_3,
+      choice_3_audio: this.choice_3_audio,
+      choice_4: this.choice_4,
+      choice_4_audio: this.choice_4_audio,
+      correct_answer: this.correct_answer,
+      next_question: this.next_question,
+      menu_id: this.menu_id,
+    };
+
+    this._play_question(question);
+  }
+
   public popToRoot() {
     this.unload(0);
     this._route.popToRoot();
