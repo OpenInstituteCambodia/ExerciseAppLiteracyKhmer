@@ -37,16 +37,16 @@
   <!-- If Type is M1 and M2 -->
     <ion-grid sticky-bottom *ngIf="question_type != 3">
       <ion-row wrap>
-          <ion-col width-50>
+          <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice1">
             <button ion-button block color-1 (click)="answer(1)">{{ choice_1 }}</button>
           </ion-col>
-          <ion-col width-50>
+          <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice2">
             <button ion-button block color-2 (click)="answer(2)">{{ choice_2 }}</button>
           </ion-col>
-          <ion-col width-50>
+          <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice3">
             <button ion-button block color-3 (click)="answer(3)">{{ choice_3 }}</button>
           </ion-col>
-          <ion-col width-50>
+          <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice4">
             <button ion-button block color-4 (click)="answer(4)">{{ choice_4 }}</button>
           </ion-col>
       </ion-row>

@@ -35,6 +35,8 @@ export class QuestionPage {
   public menu_id;
 
   public enable_answer: boolean = false;
+  public expandChoice = null;
+  public colapseChoice = true;
   public enable_choice1: boolean = true;
   public enable_choice2: boolean = true;
   public enable_choice3: boolean = true;
@@ -307,6 +309,8 @@ export class QuestionPage {
       this.enable_choice2 = false;
       this.enable_choice3 = false;
     }
+    this.expandChoice = true;
+    this.colapseChoice = null;
   }
 
   public popToRoot() {

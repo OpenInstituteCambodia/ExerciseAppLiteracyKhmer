@@ -67,6 +67,17 @@ $eyeCandy3DHighligh: #4C8CF5;
     position: absolute;
     left: 0;
     bottom: 5px;
+
+    [width-50] {
+      transition: 1s;
+    }
+
+    [width-100] {
+      [ion-button] {
+        padding: 110px 0;
+        transition: 1s;
+      }
+    }
   }
 
   ion-card {
