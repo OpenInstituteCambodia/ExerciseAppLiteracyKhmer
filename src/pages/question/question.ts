@@ -194,6 +194,7 @@ export class QuestionPage {
       path: 'assets/audio/general/M'+this.question_type+'.mp3'
     };
     this._audioPlayer.play(opt);
+    this.unload(2500);
     return true;
   }
 
@@ -231,7 +232,7 @@ export class QuestionPage {
           path: 'assets/audio/general/Yes.mp3'
         };
         _audioPlayer.play(opt);
-      }, 1500, this._audioPlayer);
+      }, 1200, this._audioPlayer);
     }else {
       console.log("Answer Is Incorrect!");
       setTimeout(function(_audioPlayer) {
@@ -240,19 +241,21 @@ export class QuestionPage {
           path: 'assets/audio/general/No.mp3'
         };
         _audioPlayer.play(opt);
-      }, 1500, this._audioPlayer);
+      }, 1200, this._audioPlayer);
     }
-
+    this.unload(2500);
   };
 
   public popToRoot() {
-    this.unload();
+    this.unload(0);
     this._route.popToRoot();
   }
 
-  public unload(): void {
-    this._audioPlayer.unload("Media1");
-    this._audioPlayer.unload("Media2");
+  public unload(delay): void {
+    setTimeout(function(_audioPlayer){
+      _audioPlayer.unload("Media1");
+      _audioPlayer.unload("Media2");
+    }, delay, this._audioPlayer);
   }
 
 }
