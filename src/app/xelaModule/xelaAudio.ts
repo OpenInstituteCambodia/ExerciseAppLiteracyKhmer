@@ -38,6 +38,24 @@ export class xelaAudio {
     );
   }
 
+  public playAdvance(options: any): void {
+    NativeAudio.preloadComplex(options["u_id"], options["path"], 1, 1, options["delay"]).then(
+      function(suc){
+        NativeAudio.play(options["u_id"]).then(
+          function(suc){
+            console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Playing: ", suc);
+          },
+          function(err){
+            console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Something went wrong, Error: ", err);
+          }
+        );
+      },
+      function(err){
+        console.log("xelaController: xelaAudio: play() -> preloadSimple() -> Something went wrong, Error: ", err);
+      }
+    );
+  }
+
   public unload(options: any): void {
     NativeAudio.unload(options).then(
       function(suc){

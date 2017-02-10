@@ -174,14 +174,14 @@ export class QuestionPage {
     let opt;
     if (this.question_type == 2) {
       opt = {
-        u_id: 'QuestionType',
-        path: 'assets/audio/general/M'+this.question_type+".mp3"
+        u_id: 'Media1',
+        path: 'assets/audio/general/M'+this.question_type+'.mp3'
       };
 
       this._audioPlayer.play(opt);
       setTimeout(function(_audioPlayer) {
         opt = {
-          u_id: 'QuestionContent',
+          u_id: 'Media2',
           path: 'assets/audio/lessons/'+options["choice_"+options["correct_answer"]+"_audio"]
         };
         _audioPlayer.play(opt);
@@ -190,25 +190,69 @@ export class QuestionPage {
     }
 
     opt = {
-      u_id: 'QuestionType',
-      path: 'assets/audio/general/M'+this.question_type+".mp3"
+      u_id: 'Media1',
+      path: 'assets/audio/general/M'+this.question_type+'.mp3'
     };
     this._audioPlayer.play(opt);
     return true;
   }
 
-  public answer(number): void {
-    if(number == this.correct_answer){
+  public answer(options): void {
+
+    let question = {
+      id: this.id,
+      question_id: this.question_id,
+      question_type: this.question_type,
+      question_content: this.question_content,
+      choice_1: this.choice_1,
+      choice_1_audio: this.choice_1_audio,
+      choice_2: this.choice_2,
+      choice_2_audio: this.choice_2_audio,
+      choice_3: this.choice_3,
+      choice_3_audio: this.choice_3_audio,
+      choice_4: this.choice_4,
+      choice_4_audio: this.choice_4_audio,
+      correct_answer: this.correct_answer,
+      next_question: this.next_question,
+      menu_id: this.menu_id,
+    }
+
+    let opt = {
+      u_id: 'Media2',
+      path: 'assets/audio/lessons/'+question["choice_"+options+"_audio"]
+    };
+    this._audioPlayer.play(opt);
+
+    if(options == this.correct_answer){
       console.log("Answer Is Correct!");
+      setTimeout(function(_audioPlayer) {
+        opt = {
+          u_id: 'Media1',
+          path: 'assets/audio/general/Yes.mp3'
+        };
+        _audioPlayer.play(opt);
+      }, 1500, this._audioPlayer);
     }else {
       console.log("Answer Is Incorrect!");
+      setTimeout(function(_audioPlayer) {
+        opt = {
+          u_id: 'Media1',
+          path: 'assets/audio/general/No.mp3'
+        };
+        _audioPlayer.play(opt);
+      }, 1500, this._audioPlayer);
     }
+
   };
 
   public popToRoot() {
-    this._audioPlayer.unload("QuestionType");
-    this._audioPlayer.unload("QuestionContent");
+    this.unload();
     this._route.popToRoot();
+  }
+
+  public unload(): void {
+    this._audioPlayer.unload("Media1");
+    this._audioPlayer.unload("Media2");
   }
 
 }
