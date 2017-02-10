@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 import { xelaAudio } from '../../app/xelaModule/xelaAudio';
+import * as mediaInfo from 'mp3-duration';
 
 /*
   Generated class for the Q page.
@@ -171,6 +172,7 @@ export class QuestionPage {
   }
 
   private _play_question(options: any): boolean {
+
     let opt;
     if (this.question_type == 2) {
       opt = {
@@ -179,12 +181,16 @@ export class QuestionPage {
       };
 
       this._audioPlayer.play(opt);
+
       setTimeout(function(_audioPlayer) {
         opt = {
           u_id: 'Media2',
           path: 'assets/audio/lessons/'+options["choice_"+options["correct_answer"]+"_audio"]
         };
         _audioPlayer.play(opt);
+        mediaInfo("/android_asset/www/"+opt["path"], function(err, duration){
+          console.log("Duration: "+duration+"s "+opt["path"], err);
+        });
       }, 2500, this._audioPlayer);
       return true;
     }
@@ -194,7 +200,7 @@ export class QuestionPage {
       path: 'assets/audio/general/M'+this.question_type+'.mp3'
     };
     this._audioPlayer.play(opt);
-    this.unload(2500);
+    this.unload(3200);
     return true;
   }
 
