@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 import { xelaAudio } from '../../app/xelaModule/xelaAudio';
+import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
 
 
 /*
@@ -14,7 +15,7 @@ import { xelaAudio } from '../../app/xelaModule/xelaAudio';
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
-  providers:  [ xelaRoute, xelaAudio ]
+  providers:  [ xelaRoute, xelaAudio, xelaToolbar ]
 })
 export class QuestionPage {
   public id;
@@ -35,7 +36,7 @@ export class QuestionPage {
 
   public enable_answer: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _route: xelaRoute, public _audioPlayer: xelaAudio) {
+  constructor(private _toolbar: xelaToolbar, public navCtrl: NavController, public navParams: NavParams, public _route: xelaRoute, public _audioPlayer: xelaAudio) {
     this._question(this.navParams.get("_id")-1);
   }
 
@@ -285,6 +286,10 @@ export class QuestionPage {
   public popToRoot() {
     this.unload(0);
     this._route.popToRoot();
+  }
+
+  public exit() {
+    this._toolbar.exit();
   }
 
   public unload(delay): void {
