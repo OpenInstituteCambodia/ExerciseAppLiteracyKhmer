@@ -340,6 +340,10 @@ export class QuestionPage {
   }
 
   public question_next(_id) {
+    if (_id === 7) {
+      this.popToRoot();
+      return true;
+    }
     this._route.question(
       QuestionPage, {
         _id: _id
