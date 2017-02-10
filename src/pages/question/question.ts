@@ -3,7 +3,10 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 import { xelaAudio } from '../../app/xelaModule/xelaAudio';
-import * as mediaInfo from 'mp3-duration';
+
+import * as fs from 'fs'
+import * as mm from 'music-metadata'
+import * as util from 'util'
 
 /*
   Generated class for the Q page.
@@ -188,9 +191,7 @@ export class QuestionPage {
           path: 'assets/audio/lessons/'+options["choice_"+options["correct_answer"]+"_audio"]
         };
         _audioPlayer.play(opt);
-        mediaInfo("/android_asset/www/"+opt["path"], function(err, duration){
-          console.log("Duration: "+duration+"s "+opt["path"], err);
-        });
+
       }, 2500, this._audioPlayer);
       return true;
     }
