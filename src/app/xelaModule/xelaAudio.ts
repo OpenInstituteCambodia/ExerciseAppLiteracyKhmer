@@ -22,7 +22,13 @@ export class xelaAudio {
     console.log("xelaController: xelaAudio: Active!");
   }
 
-  public play(_file) {
+  public play(_file: string): boolean {
+    // Inspecting Platform for linking asset file
+    if (this._platform !== 'Android') {
+      console.log("xelaController: xelaAudio: play() -> PLATFORM NOT SUPPORTED");
+      console.log("xelaController: xelaAudio: playDebug() -> ", _file);
+      return false;
+    }
     const onStatusUpdate = (status) => console.log("xelaController: xelaAudio: play(): onStatusUpdate" , status);
     this._media_player = new MediaPlugin( _file, onStatusUpdate );
     this._media_player.init.then((suc) => {
