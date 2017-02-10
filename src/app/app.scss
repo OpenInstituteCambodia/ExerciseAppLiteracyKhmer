@@ -116,6 +116,10 @@ ion-toolbar {
   }
 }
 
+.back-button {
+  display: none !important;
+}
+
 @each $color in $eyeCandy {
   $i: index($eyeCandy, $color);
   [color-#{$i}] {
