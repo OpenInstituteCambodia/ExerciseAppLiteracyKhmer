@@ -28,5 +28,8 @@ export class xelaRoute {
     this.navCtrl.push( page, option );
   }
 
+  public popToRoot() {
+    this.navCtrl.popToRoot();
+  }
 
 }

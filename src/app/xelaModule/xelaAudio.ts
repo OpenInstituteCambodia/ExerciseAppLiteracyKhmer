@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Device, MediaPlugin } from 'ionic-native';
+import { Device, NativeAudio } from 'ionic-native';
 
 /*
   name: "xelaAudio"
@@ -16,5 +16,37 @@ import { Device, MediaPlugin } from 'ionic-native';
 @Injectable()
 export class xelaAudio {
 
+  constructor() {
 
+  }
+
+  public play(options: any): void {
+    NativeAudio.preloadSimple(options["u_id"], options["path"]).then(
+      function(suc){
+        NativeAudio.play(options["u_id"]).then(
+          function(suc){
+            console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Playing: ", suc);
+          },
+          function(err){
+            console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Something went wrong, Error: ", err);
+          }
+        );
+      },
+      function(err){
+        console.log("xelaController: xelaAudio: play() -> preloadSimple() -> Something went wrong, Error: ", err);
+      }
+    );
+  }
+
+  public unload(options: any): void {
+    NativeAudio.unload(options).then(
+      function(suc){
+        console.log("xelaController: xelaAudio: unload() -> NativeAudio.unload() Success -> " + options, suc);
+      },
+      function(err){
+        console.log("xelaController: xelaAudio: unload() -> NativeAudio.unload() Something went wrong, Error -> " + options, err);
+
+      }
+    );
+  }
 }

@@ -40,6 +40,10 @@ export class QuestionPage {
     console.log('ionViewDidLoad QPage');
   }
 
+  viewWillLeave() {
+
+  }
+
   private _question(_id): void {
     let questions: Array<any> = [
       {
@@ -166,8 +170,37 @@ export class QuestionPage {
     this._play_question(questions[_id]);
   }
 
-  private _play_question(content: any) {
-    
+  private _play_question(options: any) {
+    let opt;
+
+    if (this.question_type != 2) {
+      opt = {
+        u_id: 'QuestionType',
+        path: 'assets/audio/general/M'+this.question_type+".mp3"
+      };
+
+      this._audioPlayer.play(opt);
+      setTimeout(function(_audioPlayer) {
+        _audioPlayer.unload("QuestionType");
+      }, 3000, this._audioPlayer);
+    }else {
+      opt = {
+        u_id: 'QuestionType',
+        path: 'assets/audio/general/M'+this.question_type+".mp3"
+      };
+
+      this._audioPlayer.play(opt);
+      setTimeout(function(_audioPlayer) {
+        opt = {
+          u_id: 'QuestionContent',
+          path: 'assets/audio/lessons/'+options["choice_"+options["correct_answer"]+"_audio"]
+        };
+        _audioPlayer.play(opt);
+      }, 2500, this._audioPlayer);
+    }
+
+
+
   }
 
   public answer(number): void {
@@ -177,6 +210,12 @@ export class QuestionPage {
       console.log("Answer Is Incorrect!");
     }
   };
+
+  public popToRoot() {
+    this._audioPlayer.unload("QuestionType");
+    this._audioPlayer.unload("QuestionContent");
+    this._route.popToRoot();
+  }
 
 }
 
