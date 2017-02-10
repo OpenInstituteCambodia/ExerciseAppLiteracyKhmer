@@ -27,4 +27,8 @@ export class MenuPage {
     );
   }
 
+  public exit() {
+    this._toolbar.exit();
+  }
+
 }
