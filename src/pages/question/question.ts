@@ -35,14 +35,14 @@ export class QuestionPage {
   public menu_id;
 
   public enable_answer: boolean = false;
-  public expandChoice = null;
-  public colapseChoice = true;
+  public isWidth100 = null;
+  public isWidth50 = true;
   public enable_next_button = false;
 
-  public enable_choice1: boolean = true;
-  public enable_choice2: boolean = true;
-  public enable_choice3: boolean = true;
-  public enable_choice4: boolean = true;
+  public isChoice1: boolean = true;
+  public isChoice2: boolean = true;
+  public isChoice3: boolean = true;
+  public isChoice4: boolean = true;
 
   constructor(private _toolbar: xelaToolbar, public navCtrl: NavController, public navParams: NavParams, public _route: xelaRoute, public _audioPlayer: xelaAudio) {
     this._question(this.navParams.get("_id")-1);
@@ -217,7 +217,7 @@ export class QuestionPage {
       return false;
     }
 
-    this._choice(options);
+    this._render(options);
 
     this.enable_answer = false;
 
@@ -264,10 +264,10 @@ export class QuestionPage {
     this.unload(2500);
     setTimeout(() => {
       if(options == this.correct_answer){
-        this._choice(0);
+        // this._render(0);
         this.enable_next_button = true;
       }else{
-        this._choice(99);
+        // this._render(99);
         this.enable_next_button = false;
       }
     }, 3000);
@@ -302,41 +302,41 @@ export class QuestionPage {
     this._play_question(question);
   }
 
-  private _choice(choice) {
+  private _render(choice) {
     if (choice == 1) {
-      this.enable_choice2 = false;
-      this.enable_choice3 = false;
-      this.enable_choice4 = false;
+      this.isChoice2 = false;
+      this.isChoice3 = false;
+      this.isChoice4 = false;
     }else if(choice == 2) {
-      this.enable_choice1 = false;
-      this.enable_choice3 = false;
-      this.enable_choice4 = false;
+      this.isChoice1 = false;
+      this.isChoice3 = false;
+      this.isChoice4 = false;
     }else if(choice == 3) {
-      this.enable_choice1 = false;
-      this.enable_choice2 = false;
-      this.enable_choice4 = false;
+      this.isChoice1 = false;
+      this.isChoice2 = false;
+      this.isChoice4 = false;
     }else if(choice == 4) {
-      this.enable_choice1 = false;
-      this.enable_choice2 = false;
-      this.enable_choice3 = false;
+      this.isChoice1 = false;
+      this.isChoice2 = false;
+      this.isChoice3 = false;
     }else if(choice == 0) {
-      this.enable_choice1 = false;
-      this.enable_choice2 = false;
-      this.enable_choice3 = false;
-      this.enable_choice4 = false;
-      this.expandChoice = null;
+      this.isChoice1 = false;
+      this.isChoice2 = false;
+      this.isChoice3 = false;
+      this.isChoice4 = false;
+      this.isWidth100 = null;
       return true;
     }else if(choice == 99) {
-      this.enable_choice1 = true;
-      this.enable_choice2 = true;
-      this.enable_choice3 = true;
-      this.enable_choice4 = true;
-      this.expandChoice = null;
-      this.colapseChoice = true;
+      this.isChoice1 = true;
+      this.isChoice2 = true;
+      this.isChoice3 = true;
+      this.isChoice4 = true;
+      this.isWidth100 = null;
+      this.isWidth50 = true;
       return true;
     }
-    this.expandChoice = true;
-    this.colapseChoice = null;
+    this.isWidth100 = true;
+    this.isWidth50 = null;
   }
 
   public question_next(_id) {
@@ -349,6 +349,10 @@ export class QuestionPage {
         _id: _id
       }
     );
+  }
+
+  private _resetQuestion():void {
+
   }
 
   public popToRoot() {

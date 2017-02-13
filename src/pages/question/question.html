@@ -37,25 +37,26 @@
   <!-- If Type is M1 and M2 -->
     <ion-grid sticky-bottom *ngIf="question_type != 3">
       <ion-row wrap>
-          <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice1">
-            <button ion-button block color-1 (click)="answer(1)">{{ choice_1 }}</button>
-          </ion-col>
-          <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice2">
-            <button ion-button block color-2 (click)="answer(2)">{{ choice_2 }}</button>
-          </ion-col>
-          <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice3">
-            <button ion-button block color-3 (click)="answer(3)">{{ choice_3 }}</button>
-          </ion-col>
-          <ion-col [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice4">
-            <button ion-button block color-4 (click)="answer(4)">{{ choice_4 }}</button>
-          </ion-col>
+        <!-- Next Question -->
+        <ion-col width-100 *ngIf="enable_next_button" (click)="question_next(id+1)">
+          <button ion-button block color-4 >
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </ion-col>
 
-          <!-- Next Question -->
-          <ion-col width-100 *ngIf="enable_next_button" (click)="question_next(id+1)">
-            <button ion-button block color-4>
-              <ion-icon name="arrow-forward"></ion-icon>
-            </button>
-          </ion-col>
+        <ion-col [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice1">
+          <button ion-button block color-1 (click)="answer(1)">{{ choice_1 }}</button>
+        </ion-col>
+        <ion-col [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice2">
+          <button ion-button block color-2 (click)="answer(2)">{{ choice_2 }}</button>
+        </ion-col>
+        <ion-col [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice3">
+          <button ion-button block color-3 (click)="answer(3)">{{ choice_3 }}</button>
+        </ion-col>
+        <ion-col [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice4">
+          <button ion-button block color-4 (click)="answer(4)">{{ choice_4 }}</button>
+        </ion-col>
+
       </ion-row>
     </ion-grid>
   <!-- END If Type is M1 and M2 -->
@@ -63,22 +64,22 @@
   <!-- If Type is M3 -->
     <ion-grid sticky-bottom *ngIf="question_type == 3">
       <ion-row wrap>
-          <ion-col width-50 color-1 [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice1">
+          <ion-col width-50 color-1 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice1">
             <ion-card sticky-center m3 (click)="answer(1)">
               <img [src]="choice_1"/>
             </ion-card>
           </ion-col>
-          <ion-col width-50 color-2 [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice2">
+          <ion-col width-50 color-2 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice2">
             <ion-card sticky-center m3 (click)="answer(2)">
               <img [src]="choice_2"/>
             </ion-card>
           </ion-col>
-          <ion-col width-50 color-3 [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice3">
+          <ion-col width-50 color-3 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice3">
             <ion-card sticky-center m3 (click)="answer(3)">
               <img [src]="choice_3"/>
             </ion-card>
           </ion-col>
-          <ion-col width-50 color-4 [attr.width-50]="colapseChoice" [attr.width-100]="expandChoice" *ngIf="enable_choice4">
+          <ion-col width-50 color-4 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice4">
             <ion-card sticky-center m3 (click)="answer(4)">
               <img [src]="choice_4"/>
             </ion-card>
