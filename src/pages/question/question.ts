@@ -186,7 +186,7 @@ export class QuestionPage {
   }
 
   private _play_question(options: any): boolean {
-
+    this.isEnableAnswer = false;
     let opt;
     if (this.question_type == 2) {
       opt = {
