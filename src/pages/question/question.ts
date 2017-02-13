@@ -34,10 +34,13 @@ export class QuestionPage {
   public next_question;
   public menu_id;
 
-  public enable_answer: boolean = false;
-  public isWidth100 = null;
-  public isWidth50 = true;
-  public enable_next_button = false;
+  // Interface Rendering
+  public isWidth100: boolean = null;
+  public isWidth50: boolean = true;
+  public isWrap: boolean = true;
+  public isFlex: boolean = true;
+  public isEnableAnswer: boolean = false;
+  public isNextButton: boolean = false;
 
   public isChoice1: boolean = true;
   public isChoice2: boolean = true;
@@ -213,13 +216,13 @@ export class QuestionPage {
   }
 
   public answer(options): boolean {
-    if (this.enable_answer == false) {
+    if (this.isEnableAnswer == false) {
       return false;
     }
 
     this._render(options);
 
-    this.enable_answer = false;
+    this.isEnableAnswer = false;
 
     let question = {
       id: this.id,
@@ -264,22 +267,26 @@ export class QuestionPage {
     this.unload(2500);
     setTimeout(() => {
       if(options == this.correct_answer){
-        // this._render(0);
-        this.enable_next_button = true;
+        if (this.question_type == 3) {
+          this._render(0);
+        }
+        this.isNextButton = true;
       }else{
-        // this._render(99);
-        this.enable_next_button = false;
+        this._render(99);
+        this.isNextButton = false;
       }
     }, 3000);
     return true;
   };
 
   public replay() {
-    if (this.enable_answer == false) {
+    if (this.isEnableAnswer == false) {
       return false;
     }
 
-    this.enable_answer = false;
+    this._render(99);
+    this.isNextButton = false;
+    this.isEnableAnswer = false;
 
     let question = {
       id: this.id,
@@ -303,40 +310,52 @@ export class QuestionPage {
   }
 
   private _render(choice) {
+    // Is use for Enable / Disable Element on the HTML Page
+
     if (choice == 1) {
       this.isChoice2 = false;
       this.isChoice3 = false;
       this.isChoice4 = false;
+      console.log("_render(choice) -> ", choice);
     }else if(choice == 2) {
       this.isChoice1 = false;
       this.isChoice3 = false;
       this.isChoice4 = false;
+      console.log("_render(choice) -> ", choice);
     }else if(choice == 3) {
       this.isChoice1 = false;
       this.isChoice2 = false;
       this.isChoice4 = false;
+      console.log("_render(choice) -> ", choice);
     }else if(choice == 4) {
       this.isChoice1 = false;
       this.isChoice2 = false;
       this.isChoice3 = false;
+      console.log("_render(choice) -> ", choice);
     }else if(choice == 0) {
       this.isChoice1 = false;
       this.isChoice2 = false;
       this.isChoice3 = false;
       this.isChoice4 = false;
       this.isWidth100 = null;
+      console.log("_render(choice) -> ", choice);
       return true;
-    }else if(choice == 99) {
+    }else if(choice == 99) { // 99 = Reset
       this.isChoice1 = true;
       this.isChoice2 = true;
       this.isChoice3 = true;
       this.isChoice4 = true;
+      this.isWrap = true;
       this.isWidth100 = null;
       this.isWidth50 = true;
+      console.log("_render(choice) -> ", choice);
       return true;
     }
     this.isWidth100 = true;
     this.isWidth50 = null;
+    this.isWrap = null;
+    this.isFlex = null;
+    console.log("_render(choice) -> Ending", choice);
   }
 
   public question_next(_id) {
@@ -356,7 +375,7 @@ export class QuestionPage {
   }
 
   public popToRoot() {
-    if (this.enable_answer == false) {
+    if (this.isEnableAnswer == false) {
       return false;
     }
     this.unload(0);
@@ -371,7 +390,7 @@ export class QuestionPage {
     setTimeout(() => {
       this._audioPlayer.unload("Media1");
       this._audioPlayer.unload("Media2");
-      this.enable_answer = true;
+      this.isEnableAnswer = true;
     }, delay);
   }
 
