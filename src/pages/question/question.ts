@@ -202,7 +202,7 @@ export class QuestionPage {
         };
         this._audioPlayer.play(opt);
       }, 2500);
-      this.unload(4000);
+      this.releaseAudio(4000);
       return true;
     }
 
@@ -211,7 +211,7 @@ export class QuestionPage {
       path: 'assets/audio/general/M'+this.question_type+'.mp3'
     };
     this._audioPlayer.play(opt);
-    this.unload(3200);
+    this.releaseAudio(3200);
     return true;
   }
 
@@ -264,7 +264,7 @@ export class QuestionPage {
     setTimeout(() => {
       this._audioPlayer.play(opt);
     }, 1200);
-    this.unload(2500);
+    this.releaseAudio(2500);
     setTimeout(() => {
       if(options == this.correct_answer){
         if (this.question_type == 3) {
@@ -378,7 +378,7 @@ export class QuestionPage {
     if (this.isEnableAnswer == false) {
       return false;
     }
-    this.unload(0);
+    this.releaseAudio(0);
     this._route.popToRoot();
   }
 
@@ -386,7 +386,7 @@ export class QuestionPage {
     this._toolbar.exit();
   }
 
-  public unload(delay): void {
+  public releaseAudio(delay): void {
     setTimeout(() => {
       this._audioPlayer.unload("Media1");
       this._audioPlayer.unload("Media2");

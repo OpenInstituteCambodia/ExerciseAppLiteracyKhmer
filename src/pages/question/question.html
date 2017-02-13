@@ -47,13 +47,6 @@
       </ion-row>
 
       <ion-row [attr.wrap]="isWrap" M12>
-        <!-- Next Question -->
-        <!-- <ion-col width-100 *ngIf="isNextButton" (click)="question_next(id+1)">
-          <button ion-button block color-4 >
-            <ion-icon name="arrow-forward"></ion-icon>
-          </button>
-        </ion-col> -->
-
         <ion-col [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice1">
           <button ion-button block color-1 (click)="answer(1)">{{ choice_1 }}</button>
         </ion-col>
@@ -66,7 +59,6 @@
         <ion-col [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice4">
           <button ion-button block color-4 (click)="answer(4)">{{ choice_4 }}</button>
         </ion-col>
-
       </ion-row>
     </ion-grid>
   <!-- END If Type is M1 and M2 -->
