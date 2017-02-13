@@ -13,29 +13,29 @@
 </ion-header>
 
 
-<ion-content padding xela>
+<ion-content xela>
 
   <!-- QUESTION -->
   <!-- If Type is M1 -->
-    <ion-card *ngIf="question_type == 1" sticky-center m>
-      <img [src]="question_content" alt="">
+    <ion-card *ngIf="question_type == 1" sticky-center m [ngStyle]="{'background': 'url('+question_content+')'}">
+      <!-- <img [src]="question_content" alt=""> -->
     </ion-card>
   <!-- END If Type is M1 -->
   <!-- If Type is M2 -->
-    <ion-card *ngIf="question_type == 2" sticky-center m2>
-      <img src="assets/img/question.png" alt="">
+    <ion-card *ngIf="question_type == 2" sticky-center m2 style="background: url('assets/img/question.png')">
+      <!-- <img src="assets/img/question.png" alt=""> -->
     </ion-card>
   <!-- END If Type is M2 -->
   <!-- If Type is M3 -->
     <ion-card *ngIf="question_type == 3" sticky-center m1>
-      <img src="assets/img/white.jpg"/>
+      <!-- <img src="assets/img/white.jpg"/> -->
       <div class="card-title">{{ question_content }}</div>
     </ion-card>
   <!-- END If Type is M3 -->
 
   <!-- ANSWER -->
   <!-- If Type is M1 and M2 -->
-    <ion-grid sticky-bottom *ngIf="question_type != 3">
+    <ion-grid sticky-bottom [attr.is-correct]="isNextButton" *ngIf="question_type != 3">
 
       <!-- Next Question -->
       <ion-row [attr.wrap]="isWrap" *ngIf="isNextButton">
@@ -66,22 +66,22 @@
   <!-- If Type is M3 -->
     <ion-grid sticky-bottom *ngIf="question_type == 3">
       <ion-row wrap>
-          <ion-col width-50 color-1 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice1">
+          <ion-col color-1 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice1">
             <ion-card sticky-center m3 (click)="answer(1)">
               <img [src]="choice_1"/>
             </ion-card>
           </ion-col>
-          <ion-col width-50 color-2 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice2">
+          <ion-col color-2 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice2">
             <ion-card sticky-center m3 (click)="answer(2)">
               <img [src]="choice_2"/>
             </ion-card>
           </ion-col>
-          <ion-col width-50 color-3 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice3">
+          <ion-col color-3 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice3">
             <ion-card sticky-center m3 (click)="answer(3)">
               <img [src]="choice_3"/>
             </ion-card>
           </ion-col>
-          <ion-col width-50 color-4 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice4">
+          <ion-col color-4 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice4">
             <ion-card sticky-center m3 (click)="answer(4)">
               <img [src]="choice_4"/>
             </ion-card>
