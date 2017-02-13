@@ -45,19 +45,21 @@ $secondary_background_color: #42A5F5;
     &[m1] {
       min-height: 45%;
       background-color: indianred;
+      position: relative;
       ion-card {
-        position: relative;
         text-align: center;
+
       }
       .card-title {
         position: absolute;
-        top: 8%;
+        top: 50%;
         font-size: 6em;
         width: 100%;
         font-weight: bold;
         text-align: center;
         color: #000;
         left: 0;
+        transform: translateY(-50%);
       }
     }
 
@@ -95,6 +97,10 @@ $secondary_background_color: #42A5F5;
         padding: 33% 0;
         transition: 1s;
 
+        &[m3] {
+          padding: 37% 0;
+        }
+
         &[isNextButton] {
           font-size: 4em;
           padding: 13% 0;
@@ -108,7 +114,7 @@ $secondary_background_color: #42A5F5;
 
       ion-card {
         img {
-          height: 250px;
+          height: 240px;
           transition: 1s;
         }
       }
@@ -118,7 +124,7 @@ $secondary_background_color: #42A5F5;
   ion-card {
     &[m3] {
       img {
-        height: 115px;
+        height: 110px;
         // height: 120px;
         width: auto !important;
         margin: 0 auto !important;
