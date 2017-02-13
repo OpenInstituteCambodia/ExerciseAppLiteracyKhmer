@@ -216,7 +216,7 @@ export class QuestionPage {
   }
 
   public answer(options): boolean {
-    if (this.isEnableAnswer == false) {
+    if (this.isEnableAnswer == false || this.isNextButton == true) {
       return false;
     }
 
