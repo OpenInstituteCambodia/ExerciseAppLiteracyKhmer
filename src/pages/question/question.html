@@ -36,9 +36,9 @@
   <!-- ANSWER -->
   <!-- If Type is M1 and M2 -->
     <ion-grid sticky-bottom *ngIf="question_type != 3">
-      <ion-row wrap>
+      <ion-row [attr.wrap]="isWrap">
         <!-- Next Question -->
-        <ion-col width-100 *ngIf="enable_next_button" (click)="question_next(id+1)">
+        <ion-col width-100 *ngIf="isNextButton" (click)="question_next(id+1)">
           <button ion-button block color-4 >
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
@@ -86,7 +86,7 @@
           </ion-col>
 
           <!-- Next Question -->
-          <ion-col width-100 *ngIf="enable_next_button" (click)="question_next(id+1)">
+          <ion-col width-100 *ngIf="isNextButton" (click)="question_next(id+1)">
             <button ion-button block color-4>
               <ion-icon name="arrow-forward"></ion-icon>
             </button>
