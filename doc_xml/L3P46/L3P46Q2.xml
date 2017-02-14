@@ -1,0 +1,11 @@
+<question id=”L3P46Q2” style=”M2” >
+     <description>ចូរចុចពាក្យដែលអ្នកបានឮ</description>
+     < audio>M2.mp3</audio>
+     <image>question.jpg</image>
+     <choice id=”1” text=”ល្ហល្ហេវ” sound=”L3P46_5.mp3”></choice>
+     <choice id=”2” text=”ល្អាង” sound=”L3P46_3.mp3”></choice>
+     <choice id=”3” text=”ល្អ” sound=”L3P46_7.mp3”></choice>
+     <choice id=”4” text=”ល្បិចកល” sound=”L3P46_6.mp3”></choice>
+<correct>3</correct>
+<next>L3P46Q3</next>
+</question>

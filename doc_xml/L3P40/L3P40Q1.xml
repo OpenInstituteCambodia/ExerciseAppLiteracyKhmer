@@ -1,0 +1,12 @@
+<question id=”L3P40Q1” style=”M1” >
+     <description>ចូរជ្រើសរើសពាក្យឱ្យត្រូវនឹងរូបភាព</description>
+     < audio>M1.mp3</audio>
+     <image>L3.3P40.jpg</image>
+     <choice id=”1” text=”ពោត” sound=”L3P40_1.mp3”></choice>
+     <choice id=”2” text=”មៀន” sound=”L3P40_2.mp3”></choice>
+     <choice id=”3” text=”រៀន” sound=”L3P40_3.mp3”></choice>
+     <choice id=”4” text=”ចត” sound=”L3P40_4.mp3”></choice>
+<correct>2</correct>
+<next>L3P40Q2</next>
+</question>
+
