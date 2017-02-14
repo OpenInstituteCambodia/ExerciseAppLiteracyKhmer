@@ -175,6 +175,13 @@ ion-toolbar {
       }
     }
   }
+  [width-100] {
+    background-color: transparent;
+    transition: 3s background-color;
+    ion-card {
+      height: 145px;
+    }
+  }
 }
 
 .back-button {

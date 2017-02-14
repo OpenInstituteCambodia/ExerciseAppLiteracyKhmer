@@ -267,9 +267,9 @@ export class QuestionPage {
     this.releaseAudio(2500);
     setTimeout(() => {
       if(options == this.correct_answer){
-        if (this.question_type == 3) {
-          this._render(0);
-        }
+        // if (this.question_type == 3) {
+        //   this._render(0);
+        // }
         this.isNextButton = true;
       }else{
         this._render(99);
