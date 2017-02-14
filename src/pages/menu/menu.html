@@ -1,62 +1,57 @@
 <ion-header>
   <ion-navbar  align-title="right" >
     <ion-title  >
-
+      Exercise App Literacy Khmer
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="home main">
+<ion-content xela-app>
 
     <ion-grid>
-
-      <ion-row center>
-        <ion-col width-30 >
-          <button ion-button block (click)="question(1, 1, 'L3P36', 3)">
-            1
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button ion-button block (click)="question(1)">
+            P1
           </button>
         </ion-col>
-        <ion-col width-30 >
-          <button ion-button block (click)="question(2, 2, 'L3P36', 5)">
-            2
+        <ion-col width-50 >
+          <button ion-button block (click)="question(2)">
+            P2
           </button>
         </ion-col>
-      </ion-row>
-      <ion-row center>
-        <ion-col width-30 >
-          <button ion-button block (click)="question(3, 2, 'L3P36', 11)">
-            3
+        <ion-col width-50 >
+          <button ion-button block (click)="question(3)">
+            P3
           </button>
         </ion-col>
-        <ion-col width-30 >
-          <button ion-button block (click)="question(4, 1, 'L3P36', 12)">
-            4
+        <ion-col width-50 >
+          <button ion-button block (click)="question(4)">
+            P4
           </button>
         </ion-col>
-      </ion-row>
-      <ion-row center>
-        <ion-col width-30 >
-          <button ion-button block (click)="question(5, 2, 'L3P36', 13)">
-            5
+        <ion-col width-50 >
+          <button ion-button block (click)="question(5)">
+            P5
           </button>
         </ion-col>
-        <ion-col width-30 >
-          <button ion-button block (click)="question(6, 3, 'L3P36', 9)">
-            6
+        <ion-col width-50 >
+          <button ion-button block (click)="question(6)">
+            P6
           </button>
         </ion-col>
       </ion-row>
-
     </ion-grid>
+
 
 </ion-content>
 
-<ion-footer sbtn-question home-footer>
+<ion-footer>
   <ion-toolbar>
-    <button style="float: left;" ion-button clear (click)="button_exit_application()">
+    <button ion-button clear (click)="exit()">
       <ion-icon name="power"></ion-icon>
     </button>
-    <button style="float: right;" ion-button clear (click)="button_play_audio()">
+    <button ion-button clear (click)="play()">
       <ion-icon name="play"></ion-icon>
     </button>
 

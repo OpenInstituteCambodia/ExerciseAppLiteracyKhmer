@@ -5,7 +5,7 @@ import { xelaController } from './xelaController';
 import { MyApp } from './app.component';
 import { MenuPage } from '../pages/menu/menu';
 import { QuestionPage } from '../pages/question/question';
-import { ResultPage } from '../pages/result/result';
+
 
 /*
   NOTHING TO EDIT HERE !!!
@@ -16,8 +16,7 @@ import { ResultPage } from '../pages/result/result';
   declarations: [
     MyApp,
     MenuPage,
-    QuestionPage,
-    ResultPage
+    QuestionPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,8 +25,7 @@ import { ResultPage } from '../pages/result/result';
   entryComponents: [
     MyApp,
     MenuPage,
-    QuestionPage,
-    ResultPage
+    QuestionPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, xelaController]
 })
