@@ -1,0 +1,11 @@
+<question id=”L3P47Q3” style=”M3”>
+     <description>ចូរជ្រើសរើសរូបភាពឱ្យត្រូវនឹងពាក្យ</description>
+     <audio>M3.mp3</audio>
+     <text>បង្អែម</text>
+     <choice id=”1” image=”L3.4P47.jpg” sound=”L3P47_8.mp3”></choice>
+     <choice id=”2” image=”L3.1P47.jpg” sound=”L3P47_9.mp3”></choice>
+     <choice id=”3” image=”L3.2P47.jpg” sound=”L3P47_3.mp3”></choice>
+     <choice id=”4” image=”L3.3P47.jpg” sound=”L3P47_10.mp3”></choice>
+<correct>2</correct>
+<next>L3P47Q4</next>
+</question>
