@@ -53,15 +53,6 @@ export class QuestionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QPage');
-    // let waiting = setInterval(() => {
-    //   if(this._audioPlayer.isFinishedPlaying == true) {
-    //     console.log("It IS, ", this._audioPlayer.isFinishedPlaying);
-    //     this.isEnableAnswer = true;
-    //     // clearInterval(waiting);
-    //   }else{
-    //     this.isEnableAnswer = false;
-    //   }
-    // }, 1000);
   }
 
   private _question(_id): void {
@@ -190,6 +181,18 @@ export class QuestionPage {
     this._play_question(questions[_id]);
   }
 
+  private enableAnswerButton() {
+    let waiting = setInterval(() => {
+      if(this._audioPlayer.isFinishedPlaying == true) {
+        console.log("It IS, ", this._audioPlayer.isFinishedPlaying);
+        this.isEnableAnswer = true;
+        clearInterval(waiting);
+      }else{
+        this.isEnableAnswer = false;
+      }
+    }, 2000);
+  }
+
   private _play_question(options: any): boolean {
     this.isEnableAnswer = false;
     let opt;
@@ -206,6 +209,7 @@ export class QuestionPage {
           path: 'assets/audio/lessons/'+options["choice_"+options["correct_answer"]+"_audio"]
         };
         this._audioPlayer.play(opt);
+        this.enableAnswerButton();
       }, 2500);
     }else{
       opt = {
@@ -213,8 +217,9 @@ export class QuestionPage {
         path: 'assets/audio/general/M'+this.question_type+'.mp3'
       };
       this._audioPlayer.play(opt);
+      this.enableAnswerButton();
     }
-    this.isEnableAnswer = true;
+
     return true;
   }
 
@@ -362,10 +367,6 @@ export class QuestionPage {
         _id: _id
       }
     );
-  }
-
-  private _resetQuestion():void {
-
   }
 
   public popToRoot() {
