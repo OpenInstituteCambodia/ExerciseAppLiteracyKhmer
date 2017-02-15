@@ -178,7 +178,10 @@ export class QuestionPage {
     this.next_question = questions[_id]["next_question"];
     this.menu_id = questions[_id]["menu_id"];
 
-    this._play_question(questions[_id]);
+
+    setTimeout(() => {
+      this._play_question(questions[_id]);
+    }, 1500);
   }
 
   private enableAnswerButton() {
@@ -191,7 +194,7 @@ export class QuestionPage {
         console.log("It IS, ", this._audioPlayer.isFinishedPlaying);
         this.isEnableAnswer = false;
       }
-    }, 2000);
+    }, 1000);
   }
 
   private _play_question(options: any): boolean {
@@ -251,7 +254,7 @@ export class QuestionPage {
     }
 
     let opt = {
-      u_id: 'Media2',
+      u_id: 'Media1',
       path: 'assets/audio/lessons/'+question["choice_"+options+"_audio"]
     };
     this._audioPlayer.play(opt);
@@ -259,13 +262,13 @@ export class QuestionPage {
     if(options == this.correct_answer){
       console.log("Answer Is Correct!");
       opt = {
-        u_id: 'Media1',
+        u_id: 'Media2',
         path: 'assets/audio/general/Yes.mp3'
       };
     }else {
       console.log("Answer Is Incorrect!");
       opt = {
-        u_id: 'Media1',
+        u_id: 'Media2',
         path: 'assets/audio/general/No.mp3'
       };
     }
@@ -285,6 +288,9 @@ export class QuestionPage {
   };
 
   public replay() {
+    if (this.isEnableAnswer == false || this.isNextButton == true) {
+      return false;
+    }
     this._render(99);
     this.isNextButton = false;
 
