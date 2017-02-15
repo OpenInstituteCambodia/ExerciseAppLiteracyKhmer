@@ -61,7 +61,7 @@ page-question {
         top: 50%;
         font-size: 6em;
         width: 100%;
-        font-weight: bold;
+        // font-weight: bold;
         text-align: center;
         color: #000;
         left: 0;
@@ -101,7 +101,7 @@ page-question {
       [ion-button] {
         font-size: 5em;
         padding: 33% 0;
-        transition: 1s;
+        transition: all 1s;
 
         &[m3] {
           padding: 37% 0;
@@ -126,7 +126,7 @@ page-question {
       ion-card {
         img {
           height: 240px;
-          transition: 1s;
+          transition: all 1s;
         }
       }
     }
@@ -177,13 +177,15 @@ ion-toolbar {
   height: 100%;
   width: 100%;
   z-index: 20;
-  transition: 1s background-color;
+  transition: background-color 1s;
 }
 
 [is-correct="true"] {
   ion-card[sticky-center] {
     min-height: 38% !important;
-    transition: 0.7s min-height;
+    box-shadow: none;
+    background-color: transparent !important;
+    transition: all 0.7s;
   }
   [isNextButton] {
     position: relative;
@@ -204,18 +206,18 @@ ion-toolbar {
       [ion-button] {
         font-size: 4.5em;
         padding: 26% 0;
-        transition: 0.7s padding;
+        transition: padding 0.7s;
         background-color: transparent;
-        transition: 3s background-color;
+        transition: background-color 3s;
       }
     }
   }
   [width-100] {
     background-color: transparent;
-    transition: 3s background-color;
+    transition: background-color 3s;
     ion-card {
       height: 64%;
-      transition: 1s height;
+      transition: height 1s;
       // height: 145px;
     }
   }

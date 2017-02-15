@@ -55,6 +55,10 @@ export class QuestionPage {
     console.log('ionViewDidLoad QPage');
   }
 
+  ionViewWillLeave() {
+    this._audioPlayer.unload();
+  }
+
   private _question(_id): void {
     let questions: Array<any> = [
       {

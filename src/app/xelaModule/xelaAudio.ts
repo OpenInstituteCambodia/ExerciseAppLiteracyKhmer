@@ -16,6 +16,7 @@ import { Device, NativeAudio } from 'ionic-native';
 @Injectable()
 export class xelaAudio {
   public isFinished: boolean = true;
+  private playbackUUID: Array<any> = [];
   private _platform = Device.platform
   constructor() {
 
@@ -25,8 +26,16 @@ export class xelaAudio {
     return this.isFinished;
   }
 
+  private setupPlaybackUUID(options) {
+    if (this.playbackUUID.indexOf(options) == -1) {
+      this.playbackUUID.push(options);
+    }
+    console.log("Media Playback UUID", this.playbackUUID);
+  }
+
   public play(options: any): boolean {
     // Inspecting Platform for linking asset file
+    this.setupPlaybackUUID(options["u_id"]);
     if (this._platform != 'Android') {
       console.log("xelaController: xelaAudio: play() -> Platform Does Not Support");
       this.isFinished = true;
@@ -53,8 +62,21 @@ export class xelaAudio {
         console.log("xelaController: xelaAudio: play() -> preloadSimple() -> Something went wrong, Error: ", err);
       }
     );
+  } //play()
 
-
+  public unload() {
+    if (this._platform != 'Android') {
+      console.log("xelaController: xelaAudio: unload() -> Platform Does Not Support");
+      return false;
+    }
+    for (let i = 0; i < this.playbackUUID.length; i++) {
+      console.log("xelaController: xelaAudio: unload() -> Unloading -> ", this.playbackUUID[i]);
+        NativeAudio.unload(this.playbackUUID[i]).then((suc) => {
+          console.log("xelaController: xelaAudio: unload() -> ", this.playbackUUID[i], suc);
+        },(err) => {
+          console.log("xelaController: xelaAudio: unload() -> ", err);
+        });
+    }
   }
 
 }
