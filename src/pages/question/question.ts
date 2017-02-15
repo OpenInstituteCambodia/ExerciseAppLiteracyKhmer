@@ -39,8 +39,8 @@ export class QuestionPage {
   public isWidth50: boolean = true;
   public isWrap: boolean = true;
   public isFlex: boolean = true;
-  public isEnableAnswer: boolean = false;
   public isNextButton: boolean = false;
+  public isEnableAnswer: boolean = false;
 
   public isChoice1: boolean = true;
   public isChoice2: boolean = true;
@@ -53,10 +53,15 @@ export class QuestionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QPage');
-  }
-
-  viewWillLeave() {
-
+    // let waiting = setInterval(() => {
+    //   if(this._audioPlayer.isFinishedPlaying == true) {
+    //     console.log("It IS, ", this._audioPlayer.isFinishedPlaying);
+    //     this.isEnableAnswer = true;
+    //     // clearInterval(waiting);
+    //   }else{
+    //     this.isEnableAnswer = false;
+    //   }
+    // }, 1000);
   }
 
   private _question(_id): void {
@@ -186,6 +191,7 @@ export class QuestionPage {
   }
 
   private _play_question(options: any): boolean {
+    this.isEnableAnswer = false;
     let opt;
     if (this.question_type == 2) {
       opt = {
@@ -201,22 +207,23 @@ export class QuestionPage {
         };
         this._audioPlayer.play(opt);
       }, 2500);
-      return true;
+    }else{
+      opt = {
+        u_id: 'Media1',
+        path: 'assets/audio/general/M'+this.question_type+'.mp3'
+      };
+      this._audioPlayer.play(opt);
     }
-
-    opt = {
-      u_id: 'Media1',
-      path: 'assets/audio/general/M'+this.question_type+'.mp3'
-    };
-    this._audioPlayer.play(opt);
+    this.isEnableAnswer = true;
     return true;
   }
 
   public answer(options): boolean {
-    if (/*this.isEnableAnswer == false || */ this.isNextButton == true || this._audioPlayer.isFinishedPlaying == false) {
+    if (this.isEnableAnswer == false || this.isNextButton == true) {
       return false;
     }
 
+    this.isEnableAnswer = false;
     this._render(options);
 
     let question = {
@@ -261,26 +268,17 @@ export class QuestionPage {
     }, 1200);
     setTimeout(() => {
       if(options == this.correct_answer){
-        // if (this.question_type == 3) {
-        //   this._render(0);
-        // }
         this.isNextButton = true;
       }else{
         this._render(99);
         this.isNextButton = false;
+        this.isEnableAnswer = true;
       }
     }, 3000);
     return true;
   };
 
   public replay() {
-    if (this._audioPlayer.isFinishedPlaying == false) {
-      return false;
-    }
-    // if (this.isEnableAnswer == false) {
-    //   return false;
-    // }
-
     this._render(99);
     this.isNextButton = false;
 
@@ -371,25 +369,11 @@ export class QuestionPage {
   }
 
   public popToRoot() {
-    if (this._audioPlayer.isFinishedPlaying == false) {
-      return false;
-    }
-    // if (this.isEnableAnswer == false) {
-    //   return false;
-    // }
     this._route.popToRoot();
   }
 
   public exit() {
     this._toolbar.exit();
-  }
-
-  public releaseAudio(delay): void {
-    setTimeout(() => {
-      this._audioPlayer.unload("Media1");
-      this._audioPlayer.unload("Media2");
-      this.isEnableAnswer = true;
-    }, delay);
   }
 
 }

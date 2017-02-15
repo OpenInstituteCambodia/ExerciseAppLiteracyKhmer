@@ -15,7 +15,7 @@ import { Device, NativeAudio } from 'ionic-native';
 
 @Injectable()
 export class xelaAudio {
-  private isFinished: boolean = true;
+  public isFinished: boolean = true;
   private _platform = Device.platform
   constructor() {
 
@@ -26,10 +26,10 @@ export class xelaAudio {
   }
 
   public play(options: any): boolean {
-    this.isFinished = false;
     // Inspecting Platform for linking asset file
     if (this._platform != 'Android') {
       console.log("xelaController: xelaAudio: play() -> Platform Does Not Support");
+      this.isFinished = true;
       return false;
     }
     NativeAudio.preloadSimple(options["u_id"], options["path"]).then(
@@ -37,7 +37,6 @@ export class xelaAudio {
         NativeAudio.play(options["u_id"]).then(
           function(suc){
             console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Playing: ", suc);
-
           },
           function(err){
             console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Something went wrong, Error: ", err);
@@ -60,7 +59,7 @@ export class xelaAudio {
           console.log("xelaController: xelaAudio: unload() -> NativeAudio.unload() Something went wrong, Error -> " + options["u_id"], err);
         }
       );
-      this.isFinished = true;
+      this.isFinished = false;
     });
   }
 
