@@ -13,8 +13,8 @@
 </ion-header>
 
 
-<ion-content xela>
-  <div [attr.overlay]="isNextButton"></div>
+<ion-content xela [attr.is-correct]="isNextButton">
+  <!-- <div [attr.overlay]="isNextButton"></div> -->
   <!-- QUESTION -->
   <!-- If Type is M1 -->
     <ion-card *ngIf="question_type == 1" sticky-center m [ngStyle]="{'background': 'url('+question_content+')'}">
@@ -33,18 +33,29 @@
     </ion-card>
   <!-- END If Type is M3 -->
 
+  <ion-grid [attr.is-next]="isNextButton" *ngIf="isNextButton">
+    <!-- Next Question -->
+    <ion-row [attr.wrap]="isWrap" >
+      <ion-col width-100>
+        <button ion-button block color="secondary" isNextButton (click)="question_next(id+1)">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   <!-- ANSWER -->
   <!-- If Type is M1 and M2 -->
-    <ion-grid sticky-bottom [attr.is-correct]="isNextButton" *ngIf="question_type != 3">
+    <ion-grid sticky-bottom *ngIf="question_type != 3">
 
       <!-- Next Question -->
-      <ion-row [attr.wrap]="isWrap" *ngIf="isNextButton">
+      <!-- <ion-row [attr.wrap]="isWrap" *ngIf="isNextButton">
         <ion-col width-100>
           <button ion-button block color="secondary" isNextButton (click)="question_next(id+1)">
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
         </ion-col>
-      </ion-row>
+      </ion-row> -->
 
       <ion-row [attr.wrap]="isWrap" M12>
         <ion-col [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice1">
@@ -67,13 +78,13 @@
     <ion-grid sticky-bottom [attr.is-correct]="isNextButton" *ngIf="question_type == 3">
 
       <!-- Next Question -->
-      <ion-row [attr.wrap]="isWrap" *ngIf="isNextButton">
+      <!-- <ion-row [attr.wrap]="isWrap" *ngIf="isNextButton">
         <ion-col width-100>
           <button ion-button block color="secondary" isNextButton (click)="question_next(id+1)">
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
         </ion-col>
-      </ion-row>
+      </ion-row> -->
 
       <ion-row [attr.wrap]="isWrap">
           <ion-col color-1 [attr.width-50]="isWidth50" [attr.width-100]="isWidth100" *ngIf="isChoice1">
