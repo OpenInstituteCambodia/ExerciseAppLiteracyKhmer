@@ -186,7 +186,6 @@ export class QuestionPage {
   }
 
   private _play_question(options: any): boolean {
-    this.isEnableAnswer = false;
     let opt;
     if (this.question_type == 2) {
       opt = {
@@ -202,7 +201,6 @@ export class QuestionPage {
         };
         this._audioPlayer.play(opt);
       }, 2500);
-      this.releaseAudio(4000);
       return true;
     }
 
@@ -211,18 +209,15 @@ export class QuestionPage {
       path: 'assets/audio/general/M'+this.question_type+'.mp3'
     };
     this._audioPlayer.play(opt);
-    this.releaseAudio(3200);
     return true;
   }
 
   public answer(options): boolean {
-    if (this.isEnableAnswer == false || this.isNextButton == true) {
+    if (/*this.isEnableAnswer == false || */ this.isNextButton == true || this._audioPlayer.isFinishedPlaying == false) {
       return false;
     }
 
     this._render(options);
-
-    this.isEnableAnswer = false;
 
     let question = {
       id: this.id,
@@ -264,7 +259,6 @@ export class QuestionPage {
     setTimeout(() => {
       this._audioPlayer.play(opt);
     }, 1200);
-    this.releaseAudio(2500);
     setTimeout(() => {
       if(options == this.correct_answer){
         // if (this.question_type == 3) {
@@ -280,13 +274,15 @@ export class QuestionPage {
   };
 
   public replay() {
-    if (this.isEnableAnswer == false) {
+    if (this._audioPlayer.isFinishedPlaying == false) {
       return false;
     }
+    // if (this.isEnableAnswer == false) {
+    //   return false;
+    // }
 
     this._render(99);
     this.isNextButton = false;
-    this.isEnableAnswer = false;
 
     let question = {
       id: this.id,
@@ -375,10 +371,12 @@ export class QuestionPage {
   }
 
   public popToRoot() {
-    if (this.isEnableAnswer == false) {
+    if (this._audioPlayer.isFinishedPlaying == false) {
       return false;
     }
-    this.releaseAudio(0);
+    // if (this.isEnableAnswer == false) {
+    //   return false;
+    // }
     this._route.popToRoot();
   }
 
