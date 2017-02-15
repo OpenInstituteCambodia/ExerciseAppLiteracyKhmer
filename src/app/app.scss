@@ -5,6 +5,12 @@ $eyeCandy3DHighligh: #4C8CF5;
 $primary_background_color: #fff;
 $secondary_background_color: #42A5F5;
 
+page-question {
+  .scroll-content {
+    overflow-y: hidden;
+  }
+}
+
 [xela-app] {
   [ion-button] {
     font-size: 3em;
@@ -176,7 +182,7 @@ ion-toolbar {
 
 [is-correct="true"] {
   ion-card[sticky-center] {
-    min-height: 40% !important;
+    min-height: 38% !important;
     transition: 0.7s min-height;
   }
   [isNextButton] {
@@ -197,7 +203,7 @@ ion-toolbar {
     [width-100] {
       [ion-button] {
         font-size: 4.5em;
-        padding: 24% 0;
+        padding: 26% 0;
         transition: 0.7s padding;
         background-color: transparent;
         transition: 3s background-color;
@@ -208,7 +214,9 @@ ion-toolbar {
     background-color: transparent;
     transition: 3s background-color;
     ion-card {
-      height: 145px;
+      height: 64%;
+      transition: 1s height;
+      // height: 145px;
     }
   }
 }
