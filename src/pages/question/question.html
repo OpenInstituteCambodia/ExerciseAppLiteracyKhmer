@@ -14,7 +14,7 @@
 
 
 <ion-content xela>
-
+  <div [attr.overlay]="isNextButton"></div>
   <!-- QUESTION -->
   <!-- If Type is M1 -->
     <ion-card *ngIf="question_type == 1" sticky-center m [ngStyle]="{'background': 'url('+question_content+')'}">
