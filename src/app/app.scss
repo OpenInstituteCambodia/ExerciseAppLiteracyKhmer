@@ -19,8 +19,8 @@ $secondary_background_color: #42A5F5;
     margin: 0;
   }
   [ion-button] {
-    padding: 58px 0;
-    font-size: 3em;
+    // padding: 58px 0;
+    font-size: 2.3em;
     margin: 0;
     border: 0;
     box-shadow: none;
@@ -102,6 +102,8 @@ $secondary_background_color: #42A5F5;
         }
 
         &[isNextButton] {
+          position: relative;
+          z-index: 30;
           font-size: 4em;
           padding: 13% 0;
           // box-shadow: 1px 1px solid black;
@@ -109,6 +111,9 @@ $secondary_background_color: #42A5F5;
           // padding: 0 0;
           // height: 0;
           animation: revealNextButton 1s;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+          transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
         }
       }
 
@@ -160,21 +165,39 @@ ion-toolbar {
   }
 }
 
+[overlay="true"] {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+  transition: 1s background-color;
+}
+
 [is-correct="true"] {
   [M12] {
     [width-100] {
       [ion-button] {
-        font-size: 5em;
+        font-size: 4.5em;
         padding: 20% 0;
         transition: 0.7s padding;
+        background-color: transparent;
+        transition: 3s background-color;
       }
+    }
+  }
+  [width-100] {
+    background-color: transparent;
+    transition: 3s background-color;
+    ion-card {
+      height: 145px;
     }
   }
 }
 
-.back-button {
-  display: none !important;
-}
+// .back-button {
+//   display: none !important;
+// }
 
 @each $color in $eyeCandy {
   $i: index($eyeCandy, $color);
@@ -200,9 +223,12 @@ ion-toolbar {
     padding: 0 0;
     height: 0;
     width: 100%;
+    box-shadow: none;
   }
   70%, 100% {
     font-size: 4em;
     padding: 45px 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

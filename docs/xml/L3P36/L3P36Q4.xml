@@ -1,0 +1,12 @@
+<question id=”L3P36Q4” style=”M1” >
+     <description>ចូរជ្រើសរើសពាក្យឱ្យត្រូវនឹងរូបភាព</description>
+     <audio>M1.mp3</audio>
+     <image>L3.2P36.jpg</image>
+     <choice id=”1” text=”បបរគ្រឿង” sound=”L3P36_12.mp3”></choice>
+     <choice id=”2” text=”សរសើរ” sound=”L3P36_13.mp3”></choice>
+     <choice id=”3” text=”បី” sound=”L3P36_14.mp3”></choice>
+     <choice id=”4” text=”ដំបៅ” sound=”L3P36_6.mp3”></choice>
+<correct>1</correct>
+<next>L3P36Q5</next>
+</question>
+
