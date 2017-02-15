@@ -15,17 +15,29 @@ import { Device, NativeAudio } from 'ionic-native';
 
 @Injectable()
 export class xelaAudio {
-
+  private isFinished: boolean = true;
+  private _platform = Device.platform
   constructor() {
 
   }
 
-  public play(options: any): void {
+  get isFinishedPlaying() {
+    return this.isFinished;
+  }
+
+  public play(options: any): boolean {
+    this.isFinished = false;
+    // Inspecting Platform for linking asset file
+    if (this._platform != 'Android') {
+      console.log("xelaController: xelaAudio: play() -> Platform Does Not Support");
+      return false;
+    }
     NativeAudio.preloadSimple(options["u_id"], options["path"]).then(
       function(suc){
         NativeAudio.play(options["u_id"]).then(
           function(suc){
             console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Playing: ", suc);
+
           },
           function(err){
             console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Something went wrong, Error: ", err);
@@ -36,6 +48,20 @@ export class xelaAudio {
         console.log("xelaController: xelaAudio: play() -> preloadSimple() -> Something went wrong, Error: ", err);
       }
     );
+
+    // Unload Playback once Finished
+    NativeAudio.play(options["u_id"], () => {
+      console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Is Done Playing");
+      NativeAudio.unload(options["u_id"]).then(
+        function(suc){
+          console.log("xelaController: xelaAudio: unload() -> NativeAudio.unload() Success -> " + options["u_id"], suc);
+        },
+        function(err){
+          console.log("xelaController: xelaAudio: unload() -> NativeAudio.unload() Something went wrong, Error -> " + options["u_id"], err);
+        }
+      );
+      this.isFinished = true;
+    });
   }
 
   public playAdvance(options: any): void {
