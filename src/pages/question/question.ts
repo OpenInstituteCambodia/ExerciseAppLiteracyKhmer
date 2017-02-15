@@ -188,6 +188,7 @@ export class QuestionPage {
         this.isEnableAnswer = true;
         clearInterval(waiting);
       }else{
+        console.log("It IS, ", this._audioPlayer.isFinishedPlaying);
         this.isEnableAnswer = false;
       }
     }, 2000);
