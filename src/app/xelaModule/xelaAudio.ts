@@ -15,9 +15,11 @@ import { Device, NativeAudio } from 'ionic-native';
 
 @Injectable()
 export class xelaAudio {
+  private _platform = Device.platform;
+  
   public isFinished: boolean = true;
-  private _playbackUUID: Array<any> = [];
-  private _platform = Device.platform
+  private _unloadTimer: number = 0;
+  private _playbackUUID: Array<any> = []; // Store Media Playback UID for Unloading when there is error during automatic unload once the playback finished
   constructor() {
 
   }
@@ -77,6 +79,6 @@ export class xelaAudio {
           console.log("xelaController: xelaAudio: unload() -> ", err);
         });
     }
-  }
+  } //unload()
 
 }
