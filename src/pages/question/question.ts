@@ -55,6 +55,10 @@ export class QuestionPage {
     console.log('ionViewDidLoad QPage');
   }
 
+  ionViewWillLeave() {
+    this._audioPlayer.unload();
+  }
+
   private _question(_id): void {
     let questions: Array<any> = [
       {
@@ -187,11 +191,11 @@ export class QuestionPage {
   private enableAnswerButton() {
     let waiting = setInterval(() => {
       if(this._audioPlayer.isFinishedPlaying == true) {
-        console.log("It IS, ", this._audioPlayer.isFinishedPlaying);
+        console.log("Waiting for Audio Playback: Finished -> ", this._audioPlayer.isFinishedPlaying);
         this.isEnableAnswer = true;
         clearInterval(waiting);
       }else{
-        console.log("It IS, ", this._audioPlayer.isFinishedPlaying);
+        console.log("Waiting for Audio Playback: Finished -> ", this._audioPlayer.isFinishedPlaying);
         this.isEnableAnswer = false;
       }
     }, 1000);
