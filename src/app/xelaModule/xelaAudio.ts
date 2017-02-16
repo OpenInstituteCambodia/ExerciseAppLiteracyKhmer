@@ -16,7 +16,7 @@ import { Device, NativeAudio } from 'ionic-native';
 @Injectable()
 export class xelaAudio {
   private _platform = Device.platform;
-  
+
   public isFinished: boolean = true;
   private _unloadTimer: number = 0;
   private _playbackUUID: Array<any> = []; // Store Media Playback UID for Unloading when there is error during automatic unload once the playback finished
@@ -46,15 +46,16 @@ export class xelaAudio {
     this.isFinished = false;
     NativeAudio.preloadSimple(options["u_id"], options["path"]).then(
       (suc) => {
+        console.log("xelaController: xelaAudio: play() -> NativeAudio.preloadSimple() -> Mediaplayer Init", suc);
         // Unload Playback once Finished
-        NativeAudio.play(options["u_id"], () => {
-          console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Is Done Playing");
+        NativeAudio.play(options["u_id"], (suc) => {
+          console.log("xelaController: xelaAudio: play() -> NativeAudio.play() -> Playback Finished", suc);
           NativeAudio.unload(options["u_id"]).then(
             function(suc){
-              console.log("xelaController: xelaAudio: unload() -> NativeAudio.unload() Success -> " + options["u_id"], suc);
+              console.log("xelaController: xelaAudio: play() -> NativeAudio.unload() Success -> " + options["u_id"], suc);
             },
             function(err){
-              console.log("xelaController: xelaAudio: unload() -> NativeAudio.unload() Something went wrong, Error -> " + options["u_id"], err);
+              console.log("xelaController: xelaAudio: play() -> NativeAudio.unload() Something went wrong, Error -> " + options["u_id"], err);
             }
           );
           this.isFinished = true;
