@@ -18,6 +18,7 @@ import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
   providers:  [ xelaRoute, xelaAudio, xelaToolbar ]
 })
 export class QuestionPage {
+  private _question_length: number = 0;
   public id;
   public question_id;
   public question_type;
@@ -284,6 +285,7 @@ export class QuestionPage {
     this.next_question = questions[_id]["next_question"];
     this.menu_id = questions[_id]["menu_id"];
 
+    this._question_length = questions.length;
 
     setTimeout(() => {
       this._play_question(questions[_id]);
@@ -471,7 +473,8 @@ export class QuestionPage {
   }
 
   public question_next(_id) {
-    if (_id === 13) {
+    console.log("this._question_length", this._question_length);
+    if (_id > this._question_length) {
       this.popToRoot();
       return true;
     }
