@@ -471,7 +471,7 @@ export class QuestionPage {
   }
 
   public question_next(_id) {
-    if (_id === 7) {
+    if (_id === 13) {
       this.popToRoot();
       return true;
     }
