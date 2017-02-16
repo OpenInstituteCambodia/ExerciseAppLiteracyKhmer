@@ -486,6 +486,9 @@ export class QuestionPage {
   }
 
   public popToRoot() {
+    if (this.isEnableAnswer == false ) {
+      return false;
+    }
     this._route.popToRoot();
   }
 
