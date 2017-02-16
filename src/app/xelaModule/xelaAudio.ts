@@ -16,7 +16,7 @@ import { Device, NativeAudio } from 'ionic-native';
 @Injectable()
 export class xelaAudio {
   public isFinished: boolean = true;
-  private playbackUUID: Array<any> = [];
+  private _playbackUUID: Array<any> = [];
   private _platform = Device.platform
   constructor() {
 
@@ -26,16 +26,16 @@ export class xelaAudio {
     return this.isFinished;
   }
 
-  private setupPlaybackUUID(options) {
-    if (this.playbackUUID.indexOf(options) == -1) {
-      this.playbackUUID.push(options);
+  private setup_playbackUUID(options): void {
+    if (this._playbackUUID.indexOf(options) == -1) {
+      this._playbackUUID.push(options);
     }
-    console.log("Media Playback UUID", this.playbackUUID);
+    console.log("Media Playback UUID", this._playbackUUID);
   }
 
   public play(options: any): boolean {
     // Inspecting Platform for linking asset file
-    this.setupPlaybackUUID(options["u_id"]);
+    this.setup_playbackUUID(options["u_id"]);
     if (this._platform != 'Android') {
       console.log("xelaController: xelaAudio: play() -> Platform Does Not Support");
       this.isFinished = true;
@@ -64,15 +64,15 @@ export class xelaAudio {
     );
   } //play()
 
-  public unload() {
+  public unload(): any {
     if (this._platform != 'Android') {
       console.log("xelaController: xelaAudio: unload() -> Platform Does Not Support");
       return false;
     }
-    for (let i = 0; i < this.playbackUUID.length; i++) {
-      console.log("xelaController: xelaAudio: unload() -> Unloading -> ", this.playbackUUID[i]);
-        NativeAudio.unload(this.playbackUUID[i]).then((suc) => {
-          console.log("xelaController: xelaAudio: unload() -> ", this.playbackUUID[i], suc);
+    for (let i = 0; i < this._playbackUUID.length; i++) {
+      console.log("xelaController: xelaAudio: unload() -> Unloading -> ", this._playbackUUID[i]);
+        NativeAudio.unload(this._playbackUUID[i]).then((suc) => {
+          console.log("xelaController: xelaAudio: unload() -> ", this._playbackUUID[i], suc);
         },(err) => {
           console.log("xelaController: xelaAudio: unload() -> ", err);
         });
