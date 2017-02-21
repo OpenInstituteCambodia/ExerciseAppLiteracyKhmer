@@ -1,11 +1,26 @@
-<question id=”L3P42Q5” style=”M2” >
-     <description>ចូរចុចពាក្យដែលអ្នកបានឮ</description>
-     < audio>M2.mp3</audio>
+<unit id="L3P42Q5" style="M2">
+     <audio-text>ចូរចុចពាក្យដែលអ្នកបានឮ</audio-text>
+     <pre-audio>M2.mp3</pre-audio>
+     <audio>L3P42_2.mp3</audio>
      <image>question.jpg</image>
-     <choice id=”1” text=”ឃ្មោះ” sound=”L3P42_2.mp3”></choice>
-     <choice id=”2” text=”ឃ្លង់” sound=”L3P42_12.mp3”></choice>
-     <choice id=”3” text=”ឃ្វាល” sound=”L3P42_4.mp3”></choice>
-     <choice id=”4” text=”គ្រុំ” sound=”L3P42_6.mp3”></choice>
+     <choice id="1">
+       <text>ឃ្មោះ</text>
+       <audio>L3P42_2.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ឃ្លង់</text>
+       <audio>L3P42_12.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ឃ្វាល</text>
+       <audio>L3P42_4.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>គ្រុំ</text>
+       <audio>L3P42_6.mp3</audio>
+     </choice>
 <correct>1</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
 <next>L3P42Q6</next>
-</question>
+</unit>
