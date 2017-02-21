@@ -475,6 +475,7 @@ export class QuestionPage {
   public question_next(_id) {
     console.log("this._question_length", this._question_length);
     if (_id > this._question_length) {
+      this.isEnableAnswer = true;
       this.popToRoot();
       return true;
     }
@@ -486,6 +487,9 @@ export class QuestionPage {
   }
 
   public popToRoot() {
+    if (this.isEnableAnswer == false ) {
+      return false;
+    }
     this._route.popToRoot();
   }
 
