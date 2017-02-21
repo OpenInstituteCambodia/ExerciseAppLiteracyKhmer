@@ -15,6 +15,26 @@ page-question {
   [ion-button] {
     font-size: 3em;
     padding: 50px 20px;
+    span {
+      margin-top: 0;
+      padding-top: 0;
+      display: block;
+      text-align: center;
+    }
+    &[withText] {
+      padding: 15px 10px;
+      height: 100px;
+      text-align: center;
+      .text {
+        display: block;
+        font-size: 0.5em;
+        padding-top: 2px;
+        padding-bottom: 10px;
+      }
+      .number {
+        display: block;
+      }
+    }
   }
 } // [xela-app]
 

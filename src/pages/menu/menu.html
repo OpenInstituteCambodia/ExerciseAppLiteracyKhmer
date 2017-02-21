@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar  align-title="right" >
+  <ion-navbar align-title="right" >
     <ion-title  >
       Exercise App Literacy Khmer
     </ion-title>
@@ -8,66 +8,211 @@
 
 <ion-content xela-app>
 
-    <ion-grid>
+    <ion-grid *ngIf="menuID == 0">
       <ion-row wrap>
         <ion-col width-50 >
-          <button ion-button block (click)="question(1)">
-            1
+          <button ion-button block withText (click)="menu(1)">
+            <div class="text">
+              មេរៀន​
+            </div>
+            <div class="number">
+              ១
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(2)">
-            2
+          <button ion-button block withText (click)="menu(2)">
+            <div class="text">
+              មេរៀន​
+            </div>
+            <div class="number">
+              ២
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(3)">
-            3
+          <button ion-button block withText (click)="menu(3)">
+            <div class="text">
+              មេរៀន​
+            </div>
+            <div class="number">
+              ៣
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(4)">
-            4
+          <button ion-button block withText (click)="menu(4)">
+            <div class="text">
+              មេរៀន​
+            </div>
+            <div class="number">
+              ៤
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(5)">
-            5
+          <button ion-button block withText (click)="menu(5)">
+            <div class="text">
+              មេរៀន​
+            </div>
+            <div class="number">
+              ៥
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(6)">
-            6
+          <button ion-button block withText (click)="menu(6)">
+            <div class="text">
+              មេរៀន​
+            </div>
+            <div class="number">
+              ៦
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(7)">
-            7
+          <button ion-button block withText (click)="menu(7)">
+            <div class="text">
+              មេរៀន​
+            </div>
+            <div class="number">
+              ៧
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(8)">
-            8
+          <button ion-button block withText (click)="menu(8)">
+            <div class="text">
+              មេរៀន​
+            </div>
+            <div class="number">
+              ៨
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="menuID == 1">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button ion-button block withText (click)="question(1)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ១
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(9)">
-            9
+          <button ion-button block withText (click)="question(2)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ២
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(10)">
-            10
+          <button ion-button block withText (click)="question(3)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៣
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(11)">
-            11
+          <button ion-button block withText (click)="question(4)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៤
+            </div>
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block (click)="question(12)">
-            12
+          <button ion-button block withText (click)="question(5)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៥
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button ion-button block withText (click)="question(6)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៦
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button ion-button block withText (click)="question(7)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៧
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button ion-button block withText (click)="question(8)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៨
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button ion-button block withText (click)="question(9)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៩
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button ion-button block withText (click)="question(10)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ១០
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button ion-button block withText (click)="question(11)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ១១
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button ion-button block withText (click)="question(12)">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ១២
+            </div>
           </button>
         </ion-col>
       </ion-row>

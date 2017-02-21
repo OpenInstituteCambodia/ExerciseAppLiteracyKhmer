@@ -479,7 +479,7 @@ export class QuestionPage {
       this.popToRoot();
       return true;
     }
-    this._route.question(
+    this._route.go(
       QuestionPage, {
         _id: _id
       }

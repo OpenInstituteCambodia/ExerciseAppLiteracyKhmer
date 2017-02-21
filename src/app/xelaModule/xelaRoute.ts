@@ -23,7 +23,7 @@ export class xelaRoute {
       console.log("xelaController: xelaRoute: Active!");
   }
 
-  public question(page: any, option: any): void{
+  public go(page: any, option: any): void{
     console.log("xelaController: xelaRoute: route->question() -> ", option);
     this.navCtrl.push( page, option );
   }
