@@ -1,12 +1,26 @@
-<question id=”L3P41Q4” style=”M1” >
-     <description>ចូរជ្រើសរើសពាក្យឱ្យត្រូវនឹងរូបភាព</description>
-     < audio>M1.mp3</audio>
+<unit id="L3P41Q4" style="M1">
+     <audio-text>ចូរជ្រើសរើសពាក្យឱ្យត្រូវនឹងរូបភាព</audio-text>
+     <pre-audio>M1.mp3</pre-audio>
+     <audio></audio>
      <image>L3.4P41.jpg</image>
-     <choice id=”1” text=”ទាខ្វៃ” sound=”L3P41_10.mp3”></choice>
-     <choice id=”2” text=”ខ្លារខិន” sound=”L3P41_11.mp3”></choice>
-     <choice id=”3” text=”ក្ងិចក្ងក់” sound=”L3P41_12.mp3”></choice>
-     <choice id=”4” text=”ខ្លុយ” sound=”L3P41_2.mp3”></choice>
+     <choice id="1">
+       <text>ទាខ្វៃ</text>
+       <audio>L3P41_10.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ខ្លារខិន</text>
+       <audio>L3P41_11.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ក្ងិចក្ងក់</text>
+       <audio>L3P41_12.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ខ្លុយ</text>
+       <audio>L3P41_2.mp3</audio>
+     </choice>
 <correct>1</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
 <next>L3P41Q5</next>
-</question>
-
+</unit>

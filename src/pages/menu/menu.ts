@@ -40,8 +40,8 @@ export class MenuPage {
   public menu(_id) {
     this._route.go(
       MenuPage, {
-        _id: _id
-      }
+      _id: _id
+    }
     );
   }
 
