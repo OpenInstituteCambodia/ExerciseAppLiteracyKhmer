@@ -272,7 +272,7 @@ export class QuestionPage {
       .then((isDebug: boolean) => {
         console.log('Is debug:', isDebug);
         if (isDebug == true) {
-          this.navCtrl.push(DebugPage, {mode: 'unit'});
+          this.navCtrl.push(DebugPage, {mode: 'unit', content: this.content});
         }
       })
       .catch(
