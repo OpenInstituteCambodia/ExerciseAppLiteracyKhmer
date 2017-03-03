@@ -271,8 +271,8 @@ export class QuestionPage {
       IsDebug.getIsDebug()
       .then((isDebug: boolean) => {
         console.log('Is debug:', isDebug);
-        if (isDebug != true) {
-          this.navCtrl.push(DebugPage, {mode: 'menu'});
+        if (isDebug == true) {
+          this.navCtrl.push(DebugPage, {mode: 'unit'});
         }
       })
       .catch(

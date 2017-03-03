@@ -55,7 +55,7 @@ export class MenuPage {
       IsDebug.getIsDebug()
       .then((isDebug: boolean) => {
         console.log('Is debug:', isDebug);
-        if (isDebug != true) {
+        if (isDebug == true) {
           this.navCtrl.push(DebugPage, {mode: 'menu'});
         }
       })
