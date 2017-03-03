@@ -21,10 +21,10 @@
     <ion-item-divider color="light">Route</ion-item-divider>
     <ion-item>
       <ion-label floating>Unit ID</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input #routeID type="text"></ion-input>
     </ion-item>
     <div padding>
-      <button ion-button block>Go</button>
+      <button ion-button block (click)="route(routeID)">Go</button>
     </div>
   </ion-item-group>
 

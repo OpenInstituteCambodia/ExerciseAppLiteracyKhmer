@@ -1,22 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, Input, Renderer } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Debug page.
+import { xelaRoute } from '../../app/xelaModule/xelaRoute';
+import { QuestionPage } from '../question/question';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-debug',
-  templateUrl: 'debug.html'
+  templateUrl: 'debug.html',
+  providers: [ xelaRoute ]
 })
 export class DebugPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _route: xelaRoute) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DebugPage');
+  }
+
+  public route(routeID) {
+    this._route.go(
+      QuestionPage, {
+        _id: routeID.value
+      }
+    );
   }
 
 }
