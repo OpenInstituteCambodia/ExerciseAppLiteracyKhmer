@@ -200,46 +200,51 @@ export class QuestionPage {
 
   private _render(choice) {
     // Is use for Enable / Disable Element on the HTML Page
-
-    if (choice == 1) {
-      this.isChoice2 = false;
-      this.isChoice3 = false;
-      this.isChoice4 = false;
-      console.log("_render(choice) -> ", choice);
-    }else if(choice == 2) {
-      this.isChoice1 = false;
-      this.isChoice3 = false;
-      this.isChoice4 = false;
-      console.log("_render(choice) -> ", choice);
-    }else if(choice == 3) {
-      this.isChoice1 = false;
-      this.isChoice2 = false;
-      this.isChoice4 = false;
-      console.log("_render(choice) -> ", choice);
-    }else if(choice == 4) {
-      this.isChoice1 = false;
-      this.isChoice2 = false;
-      this.isChoice3 = false;
-      console.log("_render(choice) -> ", choice);
-    }else if(choice == 0) {
-      this.isChoice1 = false;
-      this.isChoice2 = false;
-      this.isChoice3 = false;
-      this.isChoice4 = false;
-      this.isWidth100 = null;
-      console.log("_render(choice) -> ", choice);
-      return true;
-    }else if(choice == 99) { // 99 = Reset
-      this.isChoice1 = true;
-      this.isChoice2 = true;
-      this.isChoice3 = true;
-      this.isChoice4 = true;
-      this.isWrap = true;
-      this.isWidth100 = null;
-      this.isWidth50 = true;
-      console.log("_render(choice) -> ", choice);
-      return true;
+    switch(choice) {
+      case 1:
+        this.isChoice2 = false;
+        this.isChoice3 = false;
+        this.isChoice4 = false;
+        console.log("_render(choice) -> ", choice);
+        break;
+      case 2:
+        this.isChoice1 = false;
+        this.isChoice3 = false;
+        this.isChoice4 = false;
+        console.log("_render(choice) -> ", choice);
+        break;
+      case 3:
+        this.isChoice1 = false;
+        this.isChoice2 = false;
+        this.isChoice4 = false;
+        console.log("_render(choice) -> ", choice);
+        break;
+      case 4:
+        this.isChoice1 = false;
+        this.isChoice2 = false;
+        this.isChoice3 = false;
+        console.log("_render(choice) -> ", choice);
+        break;
+      case 0:
+        this.isChoice1 = false;
+        this.isChoice2 = false;
+        this.isChoice3 = false;
+        this.isChoice4 = false;
+        this.isWidth100 = null;
+        console.log("_render(choice) -> ", choice);
+        return true;
+      case 99:
+        this.isChoice1 = true;
+        this.isChoice2 = true;
+        this.isChoice3 = true;
+        this.isChoice4 = true;
+        this.isWrap = true;
+        this.isWidth100 = null;
+        this.isWidth50 = true;
+        console.log("_render(choice) -> ", choice);
+        return true;
     }
+
     this.isWidth100 = true;
     this.isWidth50 = null;
     this.isWrap = null;
