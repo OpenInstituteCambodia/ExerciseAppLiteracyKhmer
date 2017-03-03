@@ -145,6 +145,8 @@ export class QuestionPage {
     if (this._audioPlayer.isFinishedPlaying == true) {
       this._audioPlayer.unload();
     }
+    this.isNextButton = false;
+    this._render(99);
     this.playQuestion();
   }
 
