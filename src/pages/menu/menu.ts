@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { Device, IsDebug } from 'ionic-native';
 
 import { xelaController } from '../../app/xelaController';
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
 import { QuestionPage } from '../question/question';
+import { DebugPage } from '../debug/debug';
 
 
 @Component({
@@ -14,9 +16,11 @@ import { QuestionPage } from '../question/question';
 })
 export class MenuPage {
   public menuID; // 1 is for root menu
+  private _platform = Device.platform;
 
   constructor(
     public navCtrl: NavController,
+    public modalCtrl: ModalController,
     public navParams: NavParams,
     private _xela: xelaController,
     private _route: xelaRoute,
@@ -27,6 +31,7 @@ export class MenuPage {
       }else {
         this.menuID = this.navParams.get("_id");
       }
+
 
   }
 
@@ -43,6 +48,22 @@ export class MenuPage {
         _id: _id
       }
     );
+  }
+
+  private debug(state) {
+    // if (this._platform == 'Android') {
+    //   IsDebug.getIsDebug()
+    //   .then((isDebug: boolean) => {
+    //       console.log('Is debug:', isDebug);
+    //
+    //     })
+    //   .catch(
+    //     (error: any) => console.error(error)
+    //   );
+    // }
+
+    let debugModal = this.modalCtrl.create(DebugPage);
+    debugModal.present();
   }
 
   public exit() {
