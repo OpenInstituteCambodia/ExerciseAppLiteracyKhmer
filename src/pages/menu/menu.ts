@@ -51,19 +51,21 @@ export class MenuPage {
   }
 
   private debug(state) {
-    // if (this._platform == 'Android') {
-    //   IsDebug.getIsDebug()
-    //   .then((isDebug: boolean) => {
-    //       console.log('Is debug:', isDebug);
-    //
-    //     })
-    //   .catch(
-    //     (error: any) => console.error(error)
-    //   );
-    // }
-
     let debugModal = this.modalCtrl.create(DebugPage);
-    debugModal.present();
+
+    if (this._platform == 'Android') {
+      IsDebug.getIsDebug()
+      .then((isDebug: boolean) => {
+          console.log('Is debug:', isDebug);
+          debugModal.present();
+        })
+      .catch(
+        (error: any) => console.error(error)
+      );
+    }else {
+      debugModal.present();
+    }
+
   }
 
   public exit() {
