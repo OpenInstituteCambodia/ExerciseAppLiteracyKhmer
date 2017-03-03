@@ -47,6 +47,11 @@ export class QuestionPage {
     this.question_id = this.navParams.get("_id");
   }
 
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave QPage');
+    // this._audioPlayer.unload();
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad QPage');
     console.clear();
@@ -86,10 +91,6 @@ export class QuestionPage {
     return document.querySelector(
       parent
     ).getAttribute(attr);
-  }
-
-  ionViewWillLeave() {
-    // this._audioPlayer.unload();
   }
 
   private enableAnswerButton() {
@@ -264,7 +265,7 @@ export class QuestionPage {
     if (this.isEnableAnswer == false ) {
       return false;
     }
-    this._route.popToRoot();
+    this.navCtrl.pop();
   }
 
   public exit() {
