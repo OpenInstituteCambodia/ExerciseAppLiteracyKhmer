@@ -23,7 +23,7 @@ export class MenuPage {
     private _toolbar: xelaToolbar) {
       console.log(this.navParams.get("_id"));
       if (typeof this.navParams.get("_id") == 'undefined') {
-        this.menuID = 0;
+        this.menuID = 'root';
       }else {
         this.menuID = this.navParams.get("_id");
       }

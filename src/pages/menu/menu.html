@@ -8,7 +8,92 @@
 
 <ion-content xela-app>
 
-    <ion-grid >
+  <ion-grid *ngIf="menuID == 'root'">
+    <ion-row wrap>
+      <ion-col width-50 >
+        <button ion-button block withText (click)="menu('L1')">
+          <div class="text">
+            មេរៀនទី
+          </div>
+          <div class="number">
+            ១
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button ion-button block withText (click)="menu('L2')">
+          <div class="text">
+            មេរៀនទី
+          </div>
+          <div class="number">
+            ២
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button ion-button block withText (click)="menu('L3')">
+          <div class="text">
+            មេរៀនទី
+          </div>
+          <div class="number">
+            ៣
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button ion-button block withText (click)="menu('L4')">
+          <div class="text">
+            មេរៀនទី
+          </div>
+          <div class="number">
+            ៤
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button ion-button block withText (click)="menu('L5')">
+          <div class="text">
+            មេរៀនទី
+          </div>
+          <div class="number">
+            ៥
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button ion-button block withText (click)="menu('L6')">
+          <div class="text">
+            មេរៀនទី
+          </div>
+          <div class="number">
+            ៦
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button ion-button block withText (click)="menu('L7')">
+          <div class="text">
+            មេរៀនទី
+          </div>
+          <div class="number">
+            ៧
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button ion-button block withText (click)="menu('L8')">
+          <div class="text">
+            មេរៀនទី
+          </div>
+          <div class="number">
+            ៨
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <ion-grid *ngIf="menuID == 'L3'">
       <ion-row wrap>
         <ion-col width-50 >
           <button ion-button block withText (click)="question('L3P36Q1')">
