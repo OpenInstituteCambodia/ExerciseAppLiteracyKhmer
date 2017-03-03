@@ -287,7 +287,7 @@ export class QuestionPage {
     if (this.isEnableAnswer == false ) {
       return false;
     }
-    this.navCtrl.pop();
+    this.navCtrl.popToRoot();
   }
 
   public exit() {
