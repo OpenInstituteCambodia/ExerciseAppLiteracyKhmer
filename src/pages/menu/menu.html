@@ -8,95 +8,215 @@
 
 <ion-content xela-app>
 
-  <ion-grid *ngIf="menuID == 'root'">
-    <ion-row wrap>
-      <ion-col width-50 >
-        <button ion-button block withText (click)="menu('L1')">
-          <div class="text">
-            មេរៀនទី
-          </div>
-          <div class="number">
-            ១
-          </div>
-        </button>
-      </ion-col>
-      <ion-col width-50 >
-        <button ion-button block withText (click)="menu('L2')">
-          <div class="text">
-            មេរៀនទី
-          </div>
-          <div class="number">
-            ២
-          </div>
-        </button>
-      </ion-col>
-      <ion-col width-50 >
-        <button ion-button block withText (click)="menu('L3')">
-          <div class="text">
-            មេរៀនទី
-          </div>
-          <div class="number">
-            ៣
-          </div>
-        </button>
-      </ion-col>
-      <ion-col width-50 >
-        <button ion-button block withText (click)="menu('L4')">
-          <div class="text">
-            មេរៀនទី
-          </div>
-          <div class="number">
-            ៤
-          </div>
-        </button>
-      </ion-col>
-      <ion-col width-50 >
-        <button ion-button block withText (click)="menu('L5')">
-          <div class="text">
-            មេរៀនទី
-          </div>
-          <div class="number">
-            ៥
-          </div>
-        </button>
-      </ion-col>
-      <ion-col width-50 >
-        <button ion-button block withText (click)="menu('L6')">
-          <div class="text">
-            មេរៀនទី
-          </div>
-          <div class="number">
-            ៦
-          </div>
-        </button>
-      </ion-col>
-      <ion-col width-50 >
-        <button ion-button block withText (click)="menu('L7')">
-          <div class="text">
-            មេរៀនទី
-          </div>
-          <div class="number">
-            ៧
-          </div>
-        </button>
-      </ion-col>
-      <ion-col width-50 >
-        <button ion-button block withText (click)="menu('L8')">
-          <div class="text">
-            មេរៀនទី
-          </div>
-          <div class="number">
-            ៨
-          </div>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <!-- ROOT -->
+    <ion-grid *ngIf="menuID == 'root'">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="menu('L1')">
+            <div class="text">
+              មេរៀនទី
+            </div>
+            <div class="number">
+              ១
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-2 ion-button block withText (click)="menu('L2')">
+            <div class="text">
+              មេរៀនទី
+            </div>
+            <div class="number">
+              ២
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-3 ion-button block withText (click)="menu('L3')">
+            <div class="text">
+              មេរៀនទី
+            </div>
+            <div class="number">
+              ៣
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-4 ion-button block withText (click)="menu('L4')">
+            <div class="text">
+              មេរៀនទី
+            </div>
+            <div class="number">
+              ៤
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="menu('L5')">
+            <div class="text">
+              មេរៀនទី
+            </div>
+            <div class="number">
+              ៥
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-2 ion-button block withText (click)="menu('L6')">
+            <div class="text">
+              មេរៀនទី
+            </div>
+            <div class="number">
+              ៦
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-3 ion-button block withText (click)="menu('L7')">
+            <div class="text">
+              មេរៀនទី
+            </div>
+            <div class="number">
+              ៧
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-4 ion-button block withText (click)="menu('L8')">
+            <div class="text">
+              មេរៀនទី
+            </div>
+            <div class="number">
+              ៨
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- END ROOT -->
 
+  <!-- Divider of the Menu -->
+  <!-- You shall not pass!! -->
+
+  <!-- L1 -->
+    <ion-grid *ngIf="menuID == 'L1'">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L1P12Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ១២ - ១៣
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-2 ion-button block withText (click)="question('L1P14Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ១៤ - ១៥
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-3 ion-button block withText (click)="question('L1P16Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ១៦ - ១៧
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-4 ion-button block withText (click)="question('L1P18Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ១៨ - ១៩
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L1P20Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ២០ - ២១
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- L1 -->
+
+  <!-- L2 -->
+    <ion-grid *ngIf="menuID == 'L2'">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L2P24Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ២៤ - ២៥
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-2 ion-button block withText (click)="question('L2P26Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ២៦ - ២៧
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-3 ion-button block withText (click)="question('L2P28Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ២៨ - ២៩
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-4 ion-button block withText (click)="question('L2P30Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៣០ - ៣១
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L2P32Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៣២ - ៣៣
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- L2 -->
+
+  <!-- L3 -->
     <ion-grid *ngIf="menuID == 'L3'">
       <ion-row wrap>
         <ion-col width-50 >
-          <button ion-button block withText (click)="question('L3P36Q1')">
+          <button color-1 ion-button block withText (click)="question('L3P36Q1')">
             <div class="text">
               ទំព័រ
             </div>
@@ -106,7 +226,7 @@
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block withText (click)="question('L3P38Q1')">
+          <button color-2 ion-button block withText (click)="question('L3P38Q1')">
             <div class="text">
               ទំព័រ
             </div>
@@ -116,7 +236,7 @@
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block withText (click)="question('L3P40Q1')">
+          <button color-3 ion-button block withText (click)="question('L3P40Q1')">
             <div class="text">
               ទំព័រ
             </div>
@@ -126,7 +246,7 @@
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block withText (click)="question('L3P42Q1')">
+          <button color-4 ion-button block withText (click)="question('L3P42Q1')">
             <div class="text">
               ទំព័រ
             </div>
@@ -136,7 +256,7 @@
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block withText (click)="question('L3P44Q1')">
+          <button color-1 ion-button block withText (click)="question('L3P44Q1')">
             <div class="text">
               ទំព័រ
             </div>
@@ -146,7 +266,7 @@
           </button>
         </ion-col>
         <ion-col width-50 >
-          <button ion-button block withText (click)="question('L3P46Q1')">
+          <button color-2 ion-button block withText (click)="question('L3P46Q1')">
             <div class="text">
               ទំព័រ
             </div>
@@ -157,7 +277,152 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+  <!-- L3 -->
 
+  <!-- L4 -->
+    <ion-grid *ngIf="menuID == 'L4'">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L4P52Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៥២ - ៥៣
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-2 ion-button block withText (click)="question('L4P54Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៥៤ - ៥៥
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-3 ion-button block withText (click)="question('L4P56Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៥៦ - ៥៧
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-4 ion-button block withText (click)="question('L4P58Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៥៨ - ៥៨
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L4P60Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៦០ - ៦១
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-2 ion-button block withText (click)="question('L4P62Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៦២ - ៦៣
+            </div>
+          </button>
+        </ion-col>
+        <ion-col width-50 >
+          <button color-3 ion-button block withText (click)="question('L4P64Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៦៤ - ៦៥
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- L4 -->
+
+  <!-- L5 -->
+    <ion-grid *ngIf="menuID == 'L5'">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L5P68Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៦៨ - ៦៩
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- L5 -->
+
+  <!-- L6 -->
+    <ion-grid *ngIf="menuID == 'L6'">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L6P70Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៧០ - ៧១
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- L6 -->
+
+  <!-- L7 -->
+    <ion-grid *ngIf="menuID == 'L7'">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L7P84Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៨៤ - ៨៥
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- L7 -->
+
+  <!-- L8 -->
+    <ion-grid *ngIf="menuID == 'L8'">
+      <ion-row wrap>
+        <ion-col width-50 >
+          <button color-1 ion-button block withText (click)="question('L8P92Q1')">
+            <div class="text">
+              ទំព័រ
+            </div>
+            <div class="number">
+              ៩២
+            </div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- L8 -->
 
 </ion-content>
 
@@ -172,3 +437,51 @@
 
   </ion-toolbar>
 </ion-footer>
+
+
+<!-- LX -->
+  <!-- <ion-grid *ngIf="menuID == 'LX'">
+    <ion-row wrap>
+      <ion-col width-50 >
+        <button color-1 ion-button block withText (click)="question('LXP36Q1')">
+          <div class="text">
+            ទំព័រ
+          </div>
+          <div class="number">
+            ៣៦ - ៣៧
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button color-2 ion-button block withText (click)="question('LXP36Q1')">
+          <div class="text">
+            ទំព័រ
+          </div>
+          <div class="number">
+            ៣៦ - ៣៧
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button color-3 ion-button block withText (click)="question('LXP36Q1')">
+          <div class="text">
+            ទំព័រ
+          </div>
+          <div class="number">
+            ៣៦ - ៣៧
+          </div>
+        </button>
+      </ion-col>
+      <ion-col width-50 >
+        <button color-4 ion-button block withText (click)="question('LXP36Q1')">
+          <div class="text">
+            ទំព័រ
+          </div>
+          <div class="number">
+            ៣៦ - ៣៧
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+<!-- LX -->
