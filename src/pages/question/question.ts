@@ -25,10 +25,6 @@ export class QuestionPage {
     audio: 'assets/app/audio/'
   }];
 
-  @ViewChild('unit') unit;
-
-  public UNIT;
-
   private _question_length: number = 0;
   public question_id;
   public content:any;
@@ -56,28 +52,40 @@ export class QuestionPage {
     console.clear();
 
     // Initialize UNIT DATA
-    console.group('Initialize UNIT DATA');
-    this.UNIT = this.unit.nativeElement;
-    console.log(
-      "%cDisplaying UNIT: ", 'font-size: 20px;',
-      this.question_id
-    );
-
-    console.log(this.unit);
+    let unit = 'unit[id="'+this.question_id+'"]';
     this.content = {
-      'audio_1': this.UNIT.attributes[0].value,
-      'audio_2': this.UNIT.attributes[1].value,
-      'answer_correct_audio': this.UNIT.children[2].attributes[0].value,
-      'answer_wrong_audio': this.UNIT.children[2].attributes[1].value,
-      'choice_1_audio': this.UNIT.children[2].children["0"].children[0].children["0"].attributes[1].value,
-      'choice_2_audio': this.UNIT.children[2].children["0"].children[1].children["0"].attributes[1].value,
-      'choice_3_audio': this.UNIT.children[2].children["0"].children[2].children["0"].attributes[1].value,
-      'choice_4_audio': this.UNIT.children[2].children["0"].children[3].children["0"].attributes[1].value,
+      'audio_1': this.attr(unit, 'audio-1'),
+      'audio_2': this.attr(unit, 'audio-2'),
+      'answer_correct_audio': this.attr(unit+' ion-grid', 'choice-correct-answer'),
+      'answer_wrong_audio': this.attr(unit+' ion-grid', 'choice-wrong-answer'),
+      'choice_1_audio': this.attr(unit+' [choice-1-audio]', 'choice-1-audio'),
+      'choice_2_audio': this.attr(unit+' [choice-2-audio]', 'choice-2-audio'),
+      'choice_3_audio': this.attr(unit+' [choice-3-audio]', 'choice-3-audio'),
+      'choice_4_audio': this.attr(unit+' [choice-4-audio]', 'choice-4-audio'),
     }
 
-    console.log("UNIT Content: ", this.content);
+    console.group('Initialized UNIT DATA');
+      console.log( "%cDisplaying UNIT: "+this.question_id, 'font-size: 20px;' );
+
+      console.log( "%cAudio 1: "+this.content['audio_1'], 'font-size: 16px;' );
+      console.log( "%cAudio 2: "+this.content['audio_2'], 'font-size: 16px;', );
+
+      console.log( "%cCorrect Audio: "+this.content['answer_correct_audio'], 'font-size: 16px;' );
+      console.log( "%cWrong Audio: "+this.content['answer_wrong_audio'], 'font-size: 16px;' );
+
+      console.log( "%cChoice 1: "+this.content['choice_1_audio'], 'font-size: 16px;' );
+      console.log( "%cChoice 2: "+this.content['choice_2_audio'], 'font-size: 16px;' );
+      console.log( "%cChoice 3: "+this.content['choice_3_audio'], 'font-size: 16px;' );
+      console.log( "%cChoice 4: "+this.content['choice_4_audio'], 'font-size: 16px;' );
     console.groupEnd();
+
     this.playQuestion();
+  }
+
+  private attr(parent, attr) {
+    return document.querySelector(
+      parent
+    ).getAttribute(attr);
   }
 
   ionViewWillLeave() {
@@ -261,26 +269,6 @@ export class QuestionPage {
 
   public exit() {
     this._toolbar.exit();
-  }
-
-  private unitLog() {
-    console.group("UNIT:");
-      console.log("UNIT Audio: ", this.unit.nativeElement.attributes);
-
-      console.log("UNIT Children: ", this.unit.nativeElement.children);
-
-      console.group('UNIT Choices');
-      for (let i = 0; i < this.unit.nativeElement.children[2].children["0"].children.length; i++) {
-        console.log("Choice "+i,this.unit.nativeElement.children[2].children["0"].children[i].children["0"].attributes);
-      }
-      console.log('UNIT Choices: Length: ', this.unit.nativeElement.children[2].children["0"].children.length);
-      console.groupEnd();
-
-      console.log("Correct Audio", this.unit.nativeElement.children[2].attributes[0]);
-      console.log("Wrong Audio", this.unit.nativeElement.children[2].attributes[1]);
-
-      console.log(this.unit);
-    console.groupEnd();
   }
 
 }
