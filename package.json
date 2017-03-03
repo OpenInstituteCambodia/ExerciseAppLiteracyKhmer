@@ -37,8 +37,12 @@
     "cordova-plugin-statusbar",
     "cordova-plugin-device",
     "cordova-plugin-console",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-is-debug"
   ],
-  "cordovaPlatforms": [],
+  "cordovaPlatforms": [
+    "android"
+  ],
   "description": "test: An Ionic project"
 }
