@@ -1,10 +1,11 @@
 import { Component, ViewChild, Input, Renderer } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { Device, IsDebug } from 'ionic-native';
 
 import { xelaRoute } from '../../app/xelaModule/xelaRoute';
 import { xelaAudio } from '../../app/xelaModule/xelaAudio';
 import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
-
+import { DebugPage } from '../debug/debug';
 
 /*
   Generated class for the Q page.
@@ -18,6 +19,7 @@ import { xelaToolbar } from '../../app/xelaModule/xelaToolbar';
   providers:  [ xelaRoute, xelaAudio, xelaToolbar ]
 })
 export class QuestionPage {
+  private _platform = Device.platform;
 
   // New Code
   public assets:Array<any> = [{
@@ -43,7 +45,7 @@ export class QuestionPage {
   public isChoice3: boolean = true;
   public isChoice4: boolean = true;
 
-  constructor(private _toolbar: xelaToolbar, public navCtrl: NavController, public navParams: NavParams, public _route: xelaRoute, public _audioPlayer: xelaAudio) {
+  constructor(private _toolbar: xelaToolbar, public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams, public _route: xelaRoute, public _audioPlayer: xelaAudio) {
     this.question_id = this.navParams.get("_id");
   }
 
@@ -59,6 +61,7 @@ export class QuestionPage {
     // Initialize UNIT DATA
     let unit = 'unit[id="'+this.question_id+'"]';
     this.content = {
+      'unit_id': this.question_id,
       'audio_1': this.attr(unit, 'audio-1'),
       'audio_2': this.attr(unit, 'audio-2'),
       'answer_correct_audio': this.attr(unit+' ion-grid', 'choice-correct-answer'),
@@ -261,6 +264,23 @@ export class QuestionPage {
     this.isWrap = null;
     this.isFlex = null;
     console.log("_render(choice) -> Ending", choice);
+  }
+
+  private debug(state) {
+    if (this._platform == 'Android') {
+      IsDebug.getIsDebug()
+      .then((isDebug: boolean) => {
+        console.log('Is debug:', isDebug);
+        if (isDebug != true) {
+          this.navCtrl.push(DebugPage, {mode: 'menu'});
+        }
+      })
+      .catch(
+        (error: any) => console.error(error)
+      );
+    }else {
+      this.navCtrl.push(DebugPage, {mode: 'unit', content: this.content});
+    }
   }
 
   public popToRoot() {

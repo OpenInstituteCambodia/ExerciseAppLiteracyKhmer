@@ -10,8 +10,15 @@ import { QuestionPage } from '../question/question';
   providers: [ xelaRoute ]
 })
 export class DebugPage {
+  public mode;
+  public content = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _route: xelaRoute) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _route: xelaRoute) {
+    this.mode = this.navParams.get('mode');
+    if (this.navParams.get('content') != 'undefined') {
+        this.content = this.navParams.get('content');
+    }
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DebugPage');

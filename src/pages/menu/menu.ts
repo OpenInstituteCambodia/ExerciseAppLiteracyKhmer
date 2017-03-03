@@ -51,21 +51,20 @@ export class MenuPage {
   }
 
   private debug(state) {
-    let debugModal = this.modalCtrl.create(DebugPage);
-
     if (this._platform == 'Android') {
       IsDebug.getIsDebug()
       .then((isDebug: boolean) => {
-          console.log('Is debug:', isDebug);
-          debugModal.present();
-        })
+        console.log('Is debug:', isDebug);
+        if (isDebug != true) {
+          this.navCtrl.push(DebugPage, {mode: 'menu'});
+        }
+      })
       .catch(
         (error: any) => console.error(error)
       );
     }else {
-      debugModal.present();
+      this.navCtrl.push(DebugPage, {mode: 'menu'});
     }
-
   }
 
   public exit() {
