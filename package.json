@@ -39,6 +39,7 @@
     "cordova-plugin-console",
     "ionic-plugin-keyboard",
     "cordova-plugin-crosswalk-webview",
+    "cordova-plugin-nativeaudio",
     "cordova-plugin-is-debug"
   ],
   "cordovaPlatforms": [
