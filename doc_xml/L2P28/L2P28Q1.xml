@@ -1,0 +1,26 @@
+<unit id="L2P28Q1" style="M1">
+     <audio-text>ចូរជ្រើសរើសពាក្យឱ្យត្រូវនឹងរូបភាព</audio-text>
+     <pre-audio>M1.mp3</pre-audio>
+     <audio></audio>
+     <image>L2.3P28.jpg</image>
+     <choice id="1">
+       <text>ពេញ</text>
+       <audio>L2P28_1.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ចេញ</text>
+       <audio>L2P28_2.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ដេញ</text>
+       <audio>L2P28_3.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ធ្មេញ</text>
+       <audio>L2P28_4.mp3</audio>
+     </choice>
+<correct>4</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L2P28Q2</next>
+</unit>

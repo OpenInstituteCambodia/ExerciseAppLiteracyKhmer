@@ -1,0 +1,26 @@
+<unit id="L2P29Q1" style="M1">
+     <audio-text>ចូរជ្រើសរើសពាក្យឱ្យត្រូវនឹងរូបភាព</audio-text>
+     <pre-audio>M1.mp3</pre-audio>
+     <audio></audio>
+     <image>L2.2P29.jpg</image>
+     <choice id="1">
+       <text>ខ្នង</text>
+       <audio>L2P29_1.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ខ្នុរ</text>
+       <audio>L2P29_2.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ខ្យល់</text>
+       <audio>L2P29_3.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ខ្នើយ</text>
+       <audio>L2P29_4.mp3</audio>
+     </choice>
+<correct>2</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L2P29Q2</next>
+</unit>

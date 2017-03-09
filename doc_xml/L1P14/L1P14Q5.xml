@@ -1,0 +1,26 @@
+<unit id="L1P14Q5" style="M2">
+     <audio-text>ចូរចុចពាក្យដែលអ្នកបានឮ</audio-text>
+     <pre-audio>M2.mp3</pre-audio>
+     <audio>L1P14_19.mp3</audio>
+     <image>question.jpg</image>
+     <choice id="1">
+       <text>ញាុំ</text>
+       <audio>L1P14_21.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ងិុកង៉ក់</text>
+       <audio>L1P14_23.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ញឹុង</text>
+       <audio>L1P14_22.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ញ៉ែម</text>
+       <audio>L1P14_19.mp3</audio>
+     </choice>
+<correct>4</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L1P14Q6</next>
+</unit>
