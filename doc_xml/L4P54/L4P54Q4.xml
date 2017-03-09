@@ -1,0 +1,26 @@
+<unit id="L4P54Q4" style="M1">
+     <audio-text>ចូរជ្រើសរើសពាក្យឱ្យត្រូវនឹងរូបភាព</audio-text>
+     <pre-audio>M1.mp3</pre-audio>
+     <audio></audio>
+     <image>L4.3P54.jpg</image>
+     <choice id="1">
+       <text>វ៉ស</text>
+       <audio>L4P54_12.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>វ៉ង់</text>
+       <audio>L4P54_11.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>វ៉ាន់ស៊ុយ</text>
+       <audio>L4P54_9.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ទ្រអ៊ូ</text>
+       <audio>L4P54_10.mp3</audio>
+     </choice>
+<correct>4</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L4P54Q5</next>
+</unit>

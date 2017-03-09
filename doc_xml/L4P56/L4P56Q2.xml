@@ -1,0 +1,26 @@
+<unit id="L4P56Q2" style="M2">
+     <audio-text>ចូរចុចពាក្យដែលអ្នកបានឮ</audio-text>
+     <pre-audio>M2.mp3</pre-audio>
+     <audio>L4P56_5.mp3</audio>
+     <image>question.jpg</image>
+     <choice id="1">
+       <text>ដួល</text>
+       <audio>L4P56_5.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ជាល</text>
+       <audio>L4P56_6.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ព្រួល</text>
+       <audio>L4P56_7.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ដាវ</text>
+       <audio>L4P56_8.mp3</audio>
+     </choice>
+<correct>1</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L4P56Q3</next>
+</unit>
