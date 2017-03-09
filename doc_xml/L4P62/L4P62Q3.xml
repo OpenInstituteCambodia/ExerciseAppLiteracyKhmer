@@ -1,0 +1,26 @@
+<unit id="L4P62Q3" style="M1">
+     <audio-text>ចូរជ្រើសរើសពាក្យឱ្យត្រូវនឹងរូបភាព</audio-text>
+     <pre-audio>M1.mp3</pre-audio>
+     <audio></audio>
+     <image>L4.1P62.jpg</image>
+     <choice id="1">
+       <text>ទូសម្អាង</text>
+       <audio>L4P62_9.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>កម្អួត</text>
+       <audio>L4P62_10.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>សម្អាត</text>
+       <audio>L4P62_3.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>សម្អប់</text>
+       <audio>L4P62_4.mp3</audio>
+     </choice>
+<correct>1</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L4P62Q4</next>
+</unit>

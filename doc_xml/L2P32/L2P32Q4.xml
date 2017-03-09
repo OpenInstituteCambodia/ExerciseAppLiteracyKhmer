@@ -1,0 +1,26 @@
+<unit id="L2P32Q4" style="M2">
+     <audio-text>ចូរចុចពាក្យដែលអ្នកបានឮ</audio-text>
+     <pre-audio>M2.mp3</pre-audio>
+     <audio>L2P32_14.mp3</audio>
+     <image>question.jpg</image>
+     <choice id="1">
+       <text>បង្គន់</text>
+       <audio>L2P32_13.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>អនាម័យ</text>
+       <audio>L2P32_14.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ជំងឺ</text>
+       <audio>L2P32_.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>វេចខ្ចប់</text>
+       <audio>L2P32_15.mp3</audio>
+     </choice>
+<correct>2</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L2P32Q5</next>
+</unit>

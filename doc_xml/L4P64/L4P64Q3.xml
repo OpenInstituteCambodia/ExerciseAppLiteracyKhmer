@@ -1,0 +1,25 @@
+<unit id="L4P64Q3" style="M1">
+     <audio-text>ចូរផ្គុំពាក្យអោយក្លាយជាពាក្យមានន័យ</audio-text>
+     <pre-audio>M1.mp3</pre-audio>
+     <text>ស្លឹក</text>
+     <choice id="1">
+       <text>បាស</text>
+       <audio>L4P64_7.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ហ៊ូ</text>
+       <audio>L4P64_.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>បាច់</text>
+       <audio>L4P64_8.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ត្រី</text>
+       <audio>L4P64_9.mp3</audio>
+     </choice>
+<correct>1</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L4P64Q4</next>
+</unit>
