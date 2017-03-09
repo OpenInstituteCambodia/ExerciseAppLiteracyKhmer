@@ -1,10 +1,11 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, NO_ERRORS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { xelaController } from './xelaController';
 import { MyApp } from './app.component';
 import { MenuPage } from '../pages/menu/menu';
 import { QuestionPage } from '../pages/question/question';
+import { DebugPage } from '../pages/debug/debug';
 
 
 /*
@@ -16,7 +17,8 @@ import { QuestionPage } from '../pages/question/question';
   declarations: [
     MyApp,
     MenuPage,
-    QuestionPage
+    QuestionPage,
+    DebugPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,8 +27,10 @@ import { QuestionPage } from '../pages/question/question';
   entryComponents: [
     MyApp,
     MenuPage,
-    QuestionPage
+    QuestionPage,
+    DebugPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, xelaController]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, xelaController],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule {}

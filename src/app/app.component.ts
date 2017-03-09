@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar, Splashscreen, Keyboard } from 'ionic-native';
 import { MenuPage } from '../pages/menu/menu';
 
 /*
