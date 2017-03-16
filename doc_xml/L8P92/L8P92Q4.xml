@@ -1,0 +1,26 @@
+<unit id="L8P92Q4" style="M2">
+     <audio-text>ចូរចុចពាក្យដែលអ្នកបានឮ</audio-text>
+     <pre-audio>M2.mp3</pre-audio>
+     <audio>L8P92_10.mp3</audio>
+     <image>question.jpg</image>
+     <choice id="1">
+       <text>មរណភាព</text>
+       <audio>L8P92_8.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>កំណើត</text>
+       <audio>L8P92_9.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>កេងប្រវ័ញ្ច</text>
+       <audio>L8P92_10.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>អាណាព្យបាល</text>
+       <audio>L8P92_11.mp3</audio>
+     </choice>
+<correct>3</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L8P92Q5</next>
+</unit>

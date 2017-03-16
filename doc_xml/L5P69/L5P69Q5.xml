@@ -1,0 +1,26 @@
+<unit id="L5P69Q5" style="M2">
+     <audio-text>ចូរចុចពាក្យដែលអ្នកបានឮ</audio-text>
+     <pre-audio>M2.mp3</pre-audio>
+     <audio>L5P69_8.mp3</audio>
+     <image>question.jpg</image>
+     <choice id="1">
+       <text>តម្រូវការ</text>
+       <audio>L5P69_9.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ធនាគារ</text>
+       <audio>L3P37_5.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>សង</text>
+       <audio>L5P69_4.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ខ្ចី</text>
+       <audio>L5P69_8.mp3</audio>
+     </choice>
+<correct>4</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L5P69Q6</next>
+</unit>

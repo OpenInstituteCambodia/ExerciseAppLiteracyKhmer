@@ -4,19 +4,19 @@
      <audio>L2P24_8.mp3</audio>
      <image>question.jpg</image>
      <choice id="1">
-       <text>ការងារ</text>
+       <text>ចំណាំ</text>
        <audio>L2P24_5.mp3</audio>
      </choice>
      <choice id="2">
-       <text>ឃោរឃៅ</text>
+       <text>ចំណី</text>
        <audio>L2P24_6.mp3</audio>
      </choice>
      <choice id="3">
-       <text>ងីងើ</text>
+       <text>ដាំដុះ</text>
        <audio>L2P24_7.mp3</audio>
      </choice>
      <choice id="4">
-       <text>ជំងឺ</text>
+       <text>ណែនាំ</text>
        <audio>L2P24_8.mp3</audio>
      </choice>
 <correct>4</correct>

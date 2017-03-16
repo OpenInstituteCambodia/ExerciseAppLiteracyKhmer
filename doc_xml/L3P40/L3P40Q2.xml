@@ -5,19 +5,19 @@
      <image>question.jpg</image>
      <choice id="1">
        <text>បិទ</text>
-       <audio>”L3P40_6.mp3</audio>
+       <audio>L3P40_6.mp3</audio>
      </choice>
      <choice id="2">
        <text>រៀន</text>
-       <audio>”L3P40_3.mp3</audio>
+       <audio>L3P40_3.mp3</audio>
      </choice>
      <choice id="3">
        <text>គូថ</text>
-       <audio>”L3P40_8.mp3</audio>
+       <audio>L3P40_8.mp3</audio>
      </choice>
      <choice id="4">
        <text>កូន</text>
-       <audio>”L3P40_5.mp3</audio>
+       <audio>L3P40_5.mp3</audio>
      </choice>
 <correct>4</correct>
 <correct_answer>correct.mp3</correct_answer>

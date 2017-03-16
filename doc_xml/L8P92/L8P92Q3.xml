@@ -1,0 +1,25 @@
+<unit id="L8P92Q3" style="M4">
+     <audio-text>ចូរផ្គុំពាក្យអោយក្លាយជាពាក្យមានន័យ</audio-text>
+     <pre-audio>M4.mp3</pre-audio>
+     <text>អា</text>
+     <choice id="1">
+       <text>ណើត</text>
+       <audio>L3P48_2.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>យុ</text>
+       <audio>L8P92_6.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ព្យាបាល</text>
+       <audio>L8P92_7.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ប្រវ័ញ្ច</text>
+       <audio>L8P92_4.mp3</audio>
+     </choice>
+<correct>2</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L8P92Q4</next>
+</unit>

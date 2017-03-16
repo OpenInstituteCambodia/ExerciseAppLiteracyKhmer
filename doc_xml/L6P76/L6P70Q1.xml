@@ -1,0 +1,25 @@
+<unit id="L6P70Q1" style="M4">
+     <audio-text>ចូរផ្គុំពាក្យអោយក្លាយជាពាក្យមានន័យ</audio-text>
+     <pre-audio>M4.mp3</pre-audio>
+     <text>យោ</text>
+     <choice id="1">
+       <text>គ្រោះ</text>
+       <audio>L6P70_1.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>បល់</text>
+       <audio>L6P70_2.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ឱន</text>
+       <audio>L6P70_3.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ធម៌</text>
+       <audio>L6P70_4.mp3</audio>
+     </choice>
+<correct>2</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L6P70Q2</next>
+</unit>

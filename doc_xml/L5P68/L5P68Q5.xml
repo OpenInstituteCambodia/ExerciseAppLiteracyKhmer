@@ -1,0 +1,26 @@
+<unit id="L5P68Q5" style="M2">
+     <audio-text>ចូរចុចពាក្យដែលអ្នកបានឮ</audio-text>
+     <pre-audio>M2.mp3</pre-audio>
+     <audio>L5P68_8.mp3</audio>
+     <image>question.jpg</image>
+     <choice id="1">
+       <text>ដូរ</text>
+       <audio>L5P68_10.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ចាយ</text>
+       <audio>L5P68_11.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>ប្រាក់</text>
+       <audio>L5P68_8.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>គ្រប់គ្រង</text>
+       <audio>L5P68_12.mp3</audio>
+     </choice>
+<correct>3</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L5P68Q6</next>
+</unit>

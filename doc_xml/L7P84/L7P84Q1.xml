@@ -1,0 +1,25 @@
+<unit id="L7P84Q1" style="M4">
+     <audio-text>ចូរផ្គុំពាក្យអោយក្លាយជាពាក្យមានន័យ</audio-text>
+     <pre-audio>M4.mp3</pre-audio>
+     <text>គំ</text>
+     <choice id="1">
+       <text>ជែង</text>
+       <audio>L7P84_1.mp3</audio>
+     </choice>
+     <choice id="2">
+       <text>ជើង</text>
+       <audio>L7P84_2.mp3</audio>
+     </choice>
+     <choice id="3">
+       <text>នូស</text>
+       <audio>L7P84_3.mp3</audio>
+     </choice>
+     <choice id="4">
+       <text>ថ្នាក់</text>
+       <audio>L7P84_4.mp3</audio>
+     </choice>
+<correct>3</correct>
+<correct_answer>correct.mp3</correct_answer>
+<wrong_answer>wrong.mp3</wrong_answer>
+<next>L7P84Q2</next>
+</unit>

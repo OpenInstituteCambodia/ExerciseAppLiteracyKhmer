@@ -1,7 +1,7 @@
 <unit id="L4P53Q2" style="M2">
      <audio-text>ចូរចុចពាក្យដែលអ្នកបានឮ</audio-text>
      <pre-audio>M2.mp3</pre-audio>
-     <audio>L4P53_.mp3</audio>
+     <audio>L3P40_2.mp3</audio>
      <image>question.jpg</image>
      <choice id="1">
        <text>មមើ</text>
@@ -17,7 +17,7 @@
      </choice>
      <choice id="4">
        <text>មៀន</text>
-       <audio>L4P53_.mp3</audio>
+       <audio>L3P40_2.mp3</audio>
      </choice>
 <correct>4</correct>
 <correct_answer>correct.mp3</correct_answer>
