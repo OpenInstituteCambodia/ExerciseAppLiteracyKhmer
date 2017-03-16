@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>unit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content unit-content>
+  <unit id="{{unit.unit_id}}" audio-1="{{unit.unit_audio_1}}" audio-2="{{unit.unit_audio_1}}" unit-next="{{unit.unit_next_id}}">
+    <ion-grid unit-view>
+      <ion-row unit-view-head wrap>
+        <ion-col width-100>
+          <ion-card>
+            <img [src]="_path_images+unit.unit_content" alt="">
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row [attr.isVisible]="isNextButtonVisible == true && isHelperAllow == false">
+        <ion-col width-100>
+          <button ion-button block color="secondary" (click)="unit('L1P12Q2')">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row choice-correct-answer="correct.mp3" choice-wrong-answer="wrong.mp3" class="animated fadeIn" unit-view-options two-by-two borderless wrap>
+        <ion-col width-50>
+          <button ion-button block color-1 choice-1-audio="L1P12_2.mp3" (click)="trigger(2, 1)">
+            {{unit.choice_1_content}}
+          </button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block color-2 choice-2-audio="L1P12_1.mp3" (click)="trigger(2, 2)">
+            {{unit.choice_2_content}}
+          </button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block color-3 choice-3-audio="L1P12_4.mp3" (click)="trigger(2, 3)">
+            {{unit.choice_3_content}}
+          </button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block color-4 choice-4-audio="L1P12_3.mp3" (click)="trigger(2, 4)">
+            {{unit.choice_4_content}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </unit>
+</ion-content>
