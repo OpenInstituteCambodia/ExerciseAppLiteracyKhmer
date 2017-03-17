@@ -29,7 +29,6 @@ export class UnitPage {
       spinner: 'dots'
     });
     pending.present();
-www
     this._db.executeSQL("SELECT * FROM units WHERE unit_id == '"+uri+"'", []).then((unitData) => {
       console.log(unitData.rows.item(0));
       this.navCtrl.push(
