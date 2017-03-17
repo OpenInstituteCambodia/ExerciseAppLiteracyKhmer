@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
 import { DatabaseController } from '../../app/database';
-import { DebugController } from '../../debug/debug';
 
 import { UnitPage } from '../unit/unit';
 import { HelperPage } from '../helper/helper';
+
+import { DebugController } from '../../debug/debug';
 
 @Component({
   selector: 'page-menu',

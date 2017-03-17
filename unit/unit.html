@@ -67,16 +67,16 @@
     <!-- Choice M3/M4 -->
       <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless [attr.hideAllExcept]="hideAllExcept" [attr.animateOn]="animateOn" *ngIf="unit.unit_style == 'M3' || unit.unit_style == 'M4'">
         <ion-col width-50 color-1 ion-card>
-          <ion-card (click)="trigger(1, 1)" style="background: url('{{_path_images+unit.unit_content}}')"></ion-card>
+          <ion-card (click)="trigger(1)" style="background: url('{{_path_images+unit.choice_1_content}}')"></ion-card>
         </ion-col>
         <ion-col width-50 color-2 ion-card>
-          <ion-card (click)="trigger(1, 2)" style="background: url('{{_path_images+unit.unit_content}}')"></ion-card>
+          <ion-card (click)="trigger(2)" style="background: url('{{_path_images+unit.choice_2_content}}')"></ion-card>
         </ion-col>
         <ion-col width-50 color-3 ion-card>
-          <ion-card (click)="trigger(1, 3)" style="background: url('{{_path_images+unit.unit_content}}')"></ion-card>
+          <ion-card (click)="trigger(3)" style="background: url('{{_path_images+unit.choice_3_content}}')"></ion-card>
         </ion-col>
         <ion-col width-50 color-4 ion-card>
-          <ion-card (click)="trigger(1, 4)" style="background: url('{{_path_images+unit.unit_content}}')"></ion-card>
+          <ion-card (click)="trigger(4)" style="background: url('{{_path_images+unit.choice_4_content}}')"></ion-card>
         </ion-col>
       </ion-row>
     <!-- End Choice M3/M4 -->
