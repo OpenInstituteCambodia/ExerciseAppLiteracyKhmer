@@ -10,7 +10,7 @@ import { DebugController } from '../../debug/debug';
 
 @Component({
   selector: 'page-menu',
-  templateUrl: 'menu.html'
+  templateUrl: 'menu.html',
 })
 export class MenuPage {
   public app_name = 'Biology for Grade 12';
@@ -20,9 +20,7 @@ export class MenuPage {
   public menu_group_id: string = '';
   public menus: Array<any> = [];
 
-  private _db = new DatabaseController();
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private _db: DatabaseController) {
     if(typeof this.navParams.get('menu_id') != 'undefined') {
       this.menu_id = this.navParams.get('menu_id');
     }

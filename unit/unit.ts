@@ -13,8 +13,7 @@ export class UnitPage {
   private _path_images: string;
   private _path_sounds: string;
 
-  private _db = new DatabaseController();
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private _db: DatabaseController) {
     this.unit = this.navParams.get('data');
 
     this._path_images = window.localStorage.getItem('path_images');
@@ -30,7 +29,7 @@ export class UnitPage {
       spinner: 'dots'
     });
     pending.present();
-
+www
     this._db.executeSQL("SELECT * FROM units WHERE unit_id == '"+uri+"'", []).then((unitData) => {
       console.log(unitData.rows.item(0));
       this.navCtrl.push(
@@ -41,6 +40,10 @@ export class UnitPage {
       pending.dismiss();
     });
 
+  }
+
+  private backButtonClick() {
+    this.navCtrl.popToRoot();
   }
 
 }
