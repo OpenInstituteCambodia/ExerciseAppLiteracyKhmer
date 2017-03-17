@@ -30,8 +30,7 @@
     </ion-row>
 
     <!-- Next Button -->
-      <ion-row>
-      <!-- <ion-row [attr.isVisible]="isNextButtonVisible == true && isHelperAllow == false"> -->
+      <ion-row [attr.isVisible]="_isCorrect">
         <ion-col width-100>
           <button ion-button block color="secondary" (click)="navigate(unit.unit_next_id)">
             <ion-icon name="arrow-forward"></ion-icon>
@@ -41,24 +40,24 @@
     <!-- End Next Button -->
 
     <!-- Choice M1/M2 -->
-      <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless *ngIf="unit.unit_style == 'M1' || unit.unit_style == 'M2' || unit.unit_style == 'M4'">
+      <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless [attr.hideAllExcept]="_selectedTriggerIndex" [attr.animateOn]="_selectedTriggerIndex" *ngIf="unit.unit_style == 'M1' || unit.unit_style == 'M2' || unit.unit_style == 'M4'">
         <ion-col width-50>
-          <button ion-button block color-1 (click)="trigger(2, 1)">
+          <button ion-button block color-1 (click)="trigger(1)">
             {{unit.choice_1_content}}
           </button>
         </ion-col>
         <ion-col width-50>
-          <button ion-button block color-2 (click)="trigger(2, 2)">
+          <button ion-button block color-2 (click)="trigger(2)">
             {{unit.choice_2_content}}
           </button>
         </ion-col>
         <ion-col width-50>
-          <button ion-button block color-3 (click)="trigger(2, 3)">
+          <button ion-button block color-3 (click)="trigger(3)">
             {{unit.choice_3_content}}
           </button>
         </ion-col>
         <ion-col width-50>
-          <button ion-button block color-4 (click)="trigger(2, 4)">
+          <button ion-button block color-4 (click)="trigger(4)">
             {{unit.choice_4_content}}
           </button>
         </ion-col>
@@ -66,7 +65,7 @@
     <!-- End Choice M1/M2 -->
 
     <!-- Choice M3/M4 -->
-      <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless [attr.hideAllExcept]="hideAllExcept" [attr.animateOn]="animateOn" *ngIf="unit.unit_style == 'M3'">
+      <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless [attr.hideAllExcept]="_selectedTriggerIndex" [attr.animateOn]="_selectedTriggerIndex" *ngIf="unit.unit_style == 'M3'">
         <ion-col width-50 color-1 ion-card>
           <ion-card (click)="trigger(1)">
             <img [src]="_path_images+unit.choice_1_content" alt="">
