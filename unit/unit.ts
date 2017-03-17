@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { Platform, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 
 import { DatabaseController } from '../../app/database';
 import { PlaybackController } from '../../app/playback';
@@ -17,7 +17,7 @@ export class UnitPage {
   private _isCorrect: boolean = false;
   private _selectedTriggerIndex: number;
   private _mediaplayer = new PlaybackController();
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private _db: DatabaseController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private _db: DatabaseController, private alertCtrl: AlertController, private platform: Platform) {
     this.unit = this.navParams.get('data');
 
     this._path_images = window.localStorage.getItem('path_images');
@@ -25,6 +25,10 @@ export class UnitPage {
   }
 
   ionViewDidLoad() {
+    this.init();
+  }
+
+  private init() {
     this._disableTrigger = true;
     this._mediaplayer.playSound(this.unit.unit_audio_1)
       .then((audio_primary) => {
@@ -42,6 +46,7 @@ export class UnitPage {
 
   private trigger(index) {
     if (this._disableTrigger) { return false; }
+    if (this._isCorrect) { return false; }
     this._disableTrigger = true;
     this._selectedTriggerIndex = index;
     this._mediaplayer.playSound(this.unit['choice_'+index+'_audio'])
@@ -71,14 +76,55 @@ export class UnitPage {
 
   }
 
-  private backButtonClick() {
-    this.navCtrl.popToRoot();
+  private backButtonClick(){
+    let confirm = this.alertCtrl.create({
+      title: 'ចាកចេញ​ពីទំព័រនេះ?​',
+      subTitle: '',
+      buttons: [
+        {
+          text: 'បន្តសំនួរ',
+          role: 'calcel'
+        }, {
+          text: 'ចាកចេញ',
+          handler: () => {
+            this.navCtrl.popToRoot();
+          }
+        }
+      ]
+    });
+    confirm.present();
+
   }
 
-  private animationTrigger(stage) {
-    switch(stage){
+  private replayButtonClick() {
+    if (this._disableTrigger) { return false; }
 
-    }
+    // Replaying Unit
+    this.init();
+
+    // reseting button
+    this._selectedTriggerIndex = null;
+    this._isCorrect = false;
+  }
+
+  private exitButtonClick() {
+    let alert = this.alertCtrl.create({
+      title: 'ចាកចេញ',
+      message: 'តើ​អ្នក​ពិត​ជា​ចង់​ចាក​ចេញ​ពី​កម្មវិធី​នេះ?​',
+      buttons: [
+        {
+          text: "ទេ",
+          role: 'cancel'
+        },
+        {
+          text: "បាទ​ / ចាស",
+          handler: () => {
+            this.platform.exitApp();
+          }
+        },
+      ]
+    });
+    alert.present();
   }
 
 }
