@@ -30,9 +30,10 @@
     </ion-row>
 
     <!-- Next Button -->
-      <ion-row [attr.isVisible]="isNextButtonVisible == true && isHelperAllow == false">
+      <ion-row>
+      <!-- <ion-row [attr.isVisible]="isNextButtonVisible == true && isHelperAllow == false"> -->
         <ion-col width-100>
-          <button ion-button block color="secondary" (click)="unit('L1P12Q2')">
+          <button ion-button block color="secondary" (click)="navigate(unit.unit_next_id)">
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
         </ion-col>
@@ -40,24 +41,24 @@
     <!-- End Next Button -->
 
     <!-- Choice M1/M2 -->
-      <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless *ngIf="unit.unit_style == 'M1' || unit.unit_style == 'M2'">
+      <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless *ngIf="unit.unit_style == 'M1' || unit.unit_style == 'M2' || unit.unit_style == 'M4'">
         <ion-col width-50>
-          <button ion-button block color-1 choice-1-audio="L1P12_2.mp3" (click)="trigger(2, 1)">
+          <button ion-button block color-1 (click)="trigger(2, 1)">
             {{unit.choice_1_content}}
           </button>
         </ion-col>
         <ion-col width-50>
-          <button ion-button block color-2 choice-2-audio="L1P12_1.mp3" (click)="trigger(2, 2)">
+          <button ion-button block color-2 (click)="trigger(2, 2)">
             {{unit.choice_2_content}}
           </button>
         </ion-col>
         <ion-col width-50>
-          <button ion-button block color-3 choice-3-audio="L1P12_4.mp3" (click)="trigger(2, 3)">
+          <button ion-button block color-3 (click)="trigger(2, 3)">
             {{unit.choice_3_content}}
           </button>
         </ion-col>
         <ion-col width-50>
-          <button ion-button block color-4 choice-4-audio="L1P12_3.mp3" (click)="trigger(2, 4)">
+          <button ion-button block color-4 (click)="trigger(2, 4)">
             {{unit.choice_4_content}}
           </button>
         </ion-col>
@@ -65,64 +66,31 @@
     <!-- End Choice M1/M2 -->
 
     <!-- Choice M3/M4 -->
-      <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless [attr.hideAllExcept]="hideAllExcept" [attr.animateOn]="animateOn" *ngIf="unit.unit_style == 'M3' || unit.unit_style == 'M4'">
+      <ion-row wrap class="animated fadeIn" unit-view-options two-by-two borderless [attr.hideAllExcept]="hideAllExcept" [attr.animateOn]="animateOn" *ngIf="unit.unit_style == 'M3'">
         <ion-col width-50 color-1 ion-card>
-          <ion-card (click)="trigger(1)" style="background: url('{{_path_images+unit.choice_1_content}}')"></ion-card>
+          <ion-card (click)="trigger(1)">
+            <img [src]="_path_images+unit.choice_1_content" alt="">
+          </ion-card>
         </ion-col>
         <ion-col width-50 color-2 ion-card>
-          <ion-card (click)="trigger(2)" style="background: url('{{_path_images+unit.choice_2_content}}')"></ion-card>
+          <ion-card (click)="trigger(2)">
+            <img [src]="_path_images+unit.choice_2_content" alt="">
+          </ion-card>
         </ion-col>
         <ion-col width-50 color-3 ion-card>
-          <ion-card (click)="trigger(3)" style="background: url('{{_path_images+unit.choice_3_content}}')"></ion-card>
+          <ion-card (click)="trigger(3)">
+            <img [src]="_path_images+unit.choice_3_content" alt="">
+          </ion-card>
         </ion-col>
         <ion-col width-50 color-4 ion-card>
-          <ion-card (click)="trigger(4)" style="background: url('{{_path_images+unit.choice_4_content}}')"></ion-card>
+          <ion-card (click)="trigger(4)">
+            <img [src]="_path_images+unit.choice_4_content" alt="">
+          </ion-card>
         </ion-col>
       </ion-row>
     <!-- End Choice M3/M4 -->
   </ion-grid>
 
-
-  <unit hidden id="{{unit.unit_id}}" audio-1="{{unit.unit_audio_1}}" audio-2="{{unit.unit_audio_1}}" unit-next="{{unit.unit_next_id}}">
-    <ion-grid unit-view>
-      <ion-row unit-view-head wrap>
-        <ion-col width-100>
-          <ion-card>
-            <img [src]="_path_images+unit.unit_content" alt="">
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <ion-row [attr.isVisible]="isNextButtonVisible == true && isHelperAllow == false">
-        <ion-col width-100>
-          <button ion-button block color="secondary" (click)="unit('L1P12Q2')">
-            <ion-icon name="arrow-forward"></ion-icon>
-          </button>
-        </ion-col>
-      </ion-row>
-      <ion-row choice-correct-answer="correct.mp3" choice-wrong-answer="wrong.mp3" class="animated fadeIn" unit-view-options two-by-two borderless wrap>
-        <ion-col width-50>
-          <button ion-button block color-1 choice-1-audio="L1P12_2.mp3" (click)="trigger(2, 1)">
-            {{unit.choice_1_content}}
-          </button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button block color-2 choice-2-audio="L1P12_1.mp3" (click)="trigger(2, 2)">
-            {{unit.choice_2_content}}
-          </button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button block color-3 choice-3-audio="L1P12_4.mp3" (click)="trigger(2, 3)">
-            {{unit.choice_3_content}}
-          </button>
-        </ion-col>
-        <ion-col width-50>
-          <button ion-button block color-4 choice-4-audio="L1P12_3.mp3" (click)="trigger(2, 4)">
-            {{unit.choice_4_content}}
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </unit>
 </ion-content>
 
 <ion-footer unit-footer>

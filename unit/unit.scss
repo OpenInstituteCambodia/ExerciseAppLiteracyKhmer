@@ -63,6 +63,12 @@ page-unit {
                 background-repeat: no-repeat !important;
                 background-position: center !important;
                 box-shadow: none;
+
+                img {
+                  height: 100%;
+                  width: auto;
+                  margin: 0 auto;
+                }
               }
             }
 

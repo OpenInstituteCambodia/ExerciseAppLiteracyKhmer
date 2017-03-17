@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 
-/*
-  Generated class for the Unit page.
+import { DatabaseController } from '../../app/database';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-unit',
   templateUrl: 'unit.html'
@@ -17,7 +13,8 @@ export class UnitPage {
   private _path_images: string;
   private _path_sounds: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private _db = new DatabaseController();
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController) {
     this.unit = this.navParams.get('data');
 
     this._path_images = window.localStorage.getItem('path_images');
@@ -26,6 +23,24 @@ export class UnitPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UnitPage');
+  }
+
+  private navigate(uri) {
+    let pending = this.loadingCtrl.create({
+      spinner: 'dots'
+    });
+    pending.present();
+
+    this._db.executeSQL("SELECT * FROM units WHERE unit_id == '"+uri+"'", []).then((unitData) => {
+      console.log(unitData.rows.item(0));
+      this.navCtrl.push(
+        UnitPage, {
+          data: unitData.rows.item(0)
+        }
+      );
+      pending.dismiss();
+    });
+
   }
 
 }
