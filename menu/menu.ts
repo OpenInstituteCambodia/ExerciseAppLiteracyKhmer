@@ -39,7 +39,7 @@ export class MenuPage {
 
   private init() {
     let pending = this.loadingCtrl.create({
-      content: 'Please wait...'
+      spinner: 'dots'
     });
     pending.present();
 
